@@ -25,7 +25,15 @@
 
 + (BaseView *)initNavigationBarWith:(CGRect )frame
 {
-    return nil;
+    BaseView *resultView = [[BaseView alloc] initWithFrame:frame];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:frame];
+    
+    label.text = @"text";
+    
+    [resultView addSubview:label];
+    
+    return resultView;
 }
 
 /*
