@@ -6,15 +6,6 @@
 
 #import <Availability.h>
 
-//----------Mydefine----------//
-
-#define kF(x,y,w,h) CGRectMake(x,y,w,h)
-#define kBDAppKey @"LQf7ezGPBEKwv9Efyp42jufN"
-
-#define kScreenWidth [UIScreen mainScreen].bounds.size.width
-#define kScreenHeight [UIScreen mainScreen].bounds.size.height
-
-//----------------------------//
 
 #ifndef __IPHONE_3_0
 #warning "This project uses features only available in iOS SDK 3.0 and later."

@@ -10,6 +10,16 @@
 		219890AC19F2219F009E5575 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219890AB19F2219F009E5575 /* BaseViewController.m */; };
 		219890B019F221B2009E5575 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219890AE19F221B2009E5575 /* MainViewController.m */; };
 		219890B119F221B2009E5575 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219890AF19F221B2009E5575 /* MainViewController.xib */; };
+		219890C419F242A5009E5575 /* BaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 219890B319F242A5009E5575 /* BaseButton.m */; };
+		219890C519F242A5009E5575 /* BaseImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 219890B519F242A5009E5575 /* BaseImageView.m */; };
+		219890C619F242A5009E5575 /* BaseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 219890B719F242A5009E5575 /* BaseLabel.m */; };
+		219890C719F242A5009E5575 /* BaseNavgationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219890B919F242A5009E5575 /* BaseNavgationViewController.m */; };
+		219890C819F242A5009E5575 /* BaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219890BB19F242A5009E5575 /* BaseTabBarViewController.m */; };
+		219890C919F242A5009E5575 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 219890BD19F242A5009E5575 /* BaseTableView.m */; };
+		219890CA19F242A5009E5575 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 219890BF19F242A5009E5575 /* BaseTableViewCell.m */; };
+		219890CB19F242A5009E5575 /* BaseTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 219890C119F242A5009E5575 /* BaseTextField.m */; };
+		219890CC19F242A5009E5575 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 219890C319F242A5009E5575 /* BaseView.m */; };
+		219890CF19F243AA009E5575 /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 219890CE19F243AA009E5575 /* CustomNavigationBar.m */; };
 		3BA8712E19F21D04000C17CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8712D19F21D04000C17CA /* Foundation.framework */; };
 		3BA8713019F21D04000C17CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8712F19F21D04000C17CA /* CoreGraphics.framework */; };
 		3BA8713219F21D04000C17CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8713119F21D04000C17CA /* UIKit.framework */; };
@@ -50,6 +60,26 @@
 		219890AD19F221B2009E5575 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		219890AE19F221B2009E5575 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		219890AF19F221B2009E5575 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		219890B219F242A5009E5575 /* BaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseButton.h; sourceTree = "<group>"; };
+		219890B319F242A5009E5575 /* BaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseButton.m; sourceTree = "<group>"; };
+		219890B419F242A5009E5575 /* BaseImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseImageView.h; sourceTree = "<group>"; };
+		219890B519F242A5009E5575 /* BaseImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseImageView.m; sourceTree = "<group>"; };
+		219890B619F242A5009E5575 /* BaseLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLabel.h; sourceTree = "<group>"; };
+		219890B719F242A5009E5575 /* BaseLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLabel.m; sourceTree = "<group>"; };
+		219890B819F242A5009E5575 /* BaseNavgationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavgationViewController.h; sourceTree = "<group>"; };
+		219890B919F242A5009E5575 /* BaseNavgationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavgationViewController.m; sourceTree = "<group>"; };
+		219890BA19F242A5009E5575 /* BaseTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarViewController.h; sourceTree = "<group>"; };
+		219890BB19F242A5009E5575 /* BaseTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarViewController.m; sourceTree = "<group>"; };
+		219890BC19F242A5009E5575 /* BaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
+		219890BD19F242A5009E5575 /* BaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
+		219890BE19F242A5009E5575 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
+		219890BF19F242A5009E5575 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		219890C019F242A5009E5575 /* BaseTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTextField.h; sourceTree = "<group>"; };
+		219890C119F242A5009E5575 /* BaseTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTextField.m; sourceTree = "<group>"; };
+		219890C219F242A5009E5575 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		219890C319F242A5009E5575 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		219890CD19F243AA009E5575 /* CustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationBar.h; sourceTree = "<group>"; };
+		219890CE19F243AA009E5575 /* CustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationBar.m; sourceTree = "<group>"; };
 		3BA8712A19F21D04000C17CA /* CAVmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAVmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA8712D19F21D04000C17CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3BA8712F19F21D04000C17CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -266,6 +296,24 @@
 			children = (
 				219890AA19F2219F009E5575 /* BaseViewController.h */,
 				219890AB19F2219F009E5575 /* BaseViewController.m */,
+				219890B219F242A5009E5575 /* BaseButton.h */,
+				219890B319F242A5009E5575 /* BaseButton.m */,
+				219890B419F242A5009E5575 /* BaseImageView.h */,
+				219890B519F242A5009E5575 /* BaseImageView.m */,
+				219890B619F242A5009E5575 /* BaseLabel.h */,
+				219890B719F242A5009E5575 /* BaseLabel.m */,
+				219890B819F242A5009E5575 /* BaseNavgationViewController.h */,
+				219890B919F242A5009E5575 /* BaseNavgationViewController.m */,
+				219890BA19F242A5009E5575 /* BaseTabBarViewController.h */,
+				219890BB19F242A5009E5575 /* BaseTabBarViewController.m */,
+				219890BC19F242A5009E5575 /* BaseTableView.h */,
+				219890BD19F242A5009E5575 /* BaseTableView.m */,
+				219890BE19F242A5009E5575 /* BaseTableViewCell.h */,
+				219890BF19F242A5009E5575 /* BaseTableViewCell.m */,
+				219890C019F242A5009E5575 /* BaseTextField.h */,
+				219890C119F242A5009E5575 /* BaseTextField.m */,
+				219890C219F242A5009E5575 /* BaseView.h */,
+				219890C319F242A5009E5575 /* BaseView.m */,
 			);
 			name = BaseClass;
 			sourceTree = "<group>";
@@ -280,6 +328,8 @@
 		3BA8716519F21D43000C17CA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				219890CD19F243AA009E5575 /* CustomNavigationBar.h */,
+				219890CE19F243AA009E5575 /* CustomNavigationBar.m */,
 				219890AD19F221B2009E5575 /* MainViewController.h */,
 				219890AE19F221B2009E5575 /* MainViewController.m */,
 				219890AF19F221B2009E5575 /* MainViewController.xib */,
@@ -460,10 +510,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				219890CA19F242A5009E5575 /* BaseTableViewCell.m in Sources */,
+				219890C719F242A5009E5575 /* BaseNavgationViewController.m in Sources */,
 				3BA8714319F21D04000C17CA /* CAVmap.xcdatamodeld in Sources */,
+				219890C619F242A5009E5575 /* BaseLabel.m in Sources */,
 				219890AC19F2219F009E5575 /* BaseViewController.m in Sources */,
+				219890CB19F242A5009E5575 /* BaseTextField.m in Sources */,
+				219890C519F242A5009E5575 /* BaseImageView.m in Sources */,
+				219890CF19F243AA009E5575 /* CustomNavigationBar.m in Sources */,
 				3BA8714019F21D04000C17CA /* AppDelegate.m in Sources */,
+				219890C919F242A5009E5575 /* BaseTableView.m in Sources */,
+				219890CC19F242A5009E5575 /* BaseView.m in Sources */,
 				219890B019F221B2009E5575 /* MainViewController.m in Sources */,
+				219890C819F242A5009E5575 /* BaseTabBarViewController.m in Sources */,
+				219890C419F242A5009E5575 /* BaseButton.m in Sources */,
 				3BA8713C19F21D04000C17CA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
