@@ -33,6 +33,8 @@
     
     [resultView addSubview:label];
     
+    NSLog(@"test commit");
+    
     return resultView;
 }
 
