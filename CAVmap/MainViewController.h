@@ -8,9 +8,10 @@
 
 #import "BaseViewController.h"
 
-@interface MainViewController : BaseViewController
-
-
+@interface MainViewController : BaseViewController<BMKGeneralDelegate>
+{
+    BMKMapManager *mapManager;
+}
 @property (retain, nonatomic) UIView *searchBarView;
 
 @end

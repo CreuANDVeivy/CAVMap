@@ -22,6 +22,12 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        mapManager = [[BMKMapManager alloc]init];
+        // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+        BOOL ret = [mapManager start:kBDAppKey generalDelegate:self];
+        if (!ret) {
+            NSLog(@"manager start failed!");
+        }
     }
     return self;
 }
