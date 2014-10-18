@@ -23,20 +23,16 @@
 }
 
 
-+ (BaseView *)initNavigationBarWith:(CGRect )frame
-{
-    BaseView *resultView = [[BaseView alloc] initWithFrame:frame];
-    
-    UILabel *label = [[UILabel alloc] initWithFrame:frame];
-    
-    label.text = @"text";
-    
-    [resultView addSubview:label];
-    
-    NSLog(@"test commit");
-    
-    return resultView;
-}
+//+ (BaseView *)initNavigationBarWith:(CGRect )frame
+//{
+//    BaseView *resultView = [[BaseView alloc] initWithFrame:frame];
+//    
+//    UILabel *label = [[UILabel alloc] initWithFrame:frame];
+//    
+//    [resultView addSubview:label];
+//    
+//    return resultView;
+//}
 
 /*
 // Only override drawRect: if you perform custom drawing.

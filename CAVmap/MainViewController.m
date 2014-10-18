@@ -27,7 +27,7 @@
         BOOL ret = [mapManager start:kBDAppKey generalDelegate:self];
         if (!ret)
         {
-            NSLog(@"manager start failed!");
+            NSLog(@"地图管理者开启失败");
         }
     }
     return self;

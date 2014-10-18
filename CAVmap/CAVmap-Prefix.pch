@@ -6,6 +6,8 @@
 
 #import <Availability.h>
 
+
+
 //----------Mydefine----------//
 
 #define kFrame(x,y,w,h) CGRectMake(x,y,w,h)
@@ -25,4 +27,15 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
     #import "BMapKit.h"
+    // 引入基类的头文件
+    #import "BaseNavgationViewController.h"
+    #import "BaseLabel.h"
+    #import "BaseButton.h"
+    #import "BaseImageView.h"
+    #import "BaseView.h"
+    #import "BaseTextField.h"
+    #import "BaseViewController.h"
+    
+    //
+
 #endif

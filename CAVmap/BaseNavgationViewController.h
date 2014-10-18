@@ -10,9 +10,9 @@
 
 @interface BaseNavgationViewController : UINavigationController
 
-{
-    UIView *navView; // 导航栏视图
-}
 
+
+@property (retain, nonatomic) UIView *navView; // 导航栏视图
+@property (retain, nonatomic) UIButton *backButton;  // 返回按钮
 
 @end

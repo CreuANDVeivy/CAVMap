@@ -20,6 +20,8 @@
 		219890CB19F242A5009E5575 /* BaseTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 219890C119F242A5009E5575 /* BaseTextField.m */; };
 		219890CC19F242A5009E5575 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 219890C319F242A5009E5575 /* BaseView.m */; };
 		219890CF19F243AA009E5575 /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 219890CE19F243AA009E5575 /* CustomNavigationBar.m */; };
+		219890D519F2689B009E5575 /* nav_settings_icon_back_btn_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 219890D419F2689B009E5575 /* nav_settings_icon_back_btn_normal.png */; };
+		219890D719F271B8009E5575 /* mini_webview_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 219890D619F271B8009E5575 /* mini_webview_back.png */; };
 		3BA8712E19F21D04000C17CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8712D19F21D04000C17CA /* Foundation.framework */; };
 		3BA8713019F21D04000C17CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8712F19F21D04000C17CA /* CoreGraphics.framework */; };
 		3BA8713219F21D04000C17CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8713119F21D04000C17CA /* UIKit.framework */; };
@@ -80,6 +82,8 @@
 		219890C319F242A5009E5575 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		219890CD19F243AA009E5575 /* CustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationBar.h; sourceTree = "<group>"; };
 		219890CE19F243AA009E5575 /* CustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationBar.m; sourceTree = "<group>"; };
+		219890D419F2689B009E5575 /* nav_settings_icon_back_btn_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_settings_icon_back_btn_normal.png; sourceTree = "<group>"; };
+		219890D619F271B8009E5575 /* mini_webview_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mini_webview_back.png; sourceTree = "<group>"; };
 		3BA8712A19F21D04000C17CA /* CAVmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAVmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA8712D19F21D04000C17CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3BA8712F19F21D04000C17CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -304,6 +308,8 @@
 				219890B719F242A5009E5575 /* BaseLabel.m */,
 				219890B819F242A5009E5575 /* BaseNavgationViewController.h */,
 				219890B919F242A5009E5575 /* BaseNavgationViewController.m */,
+				219890D419F2689B009E5575 /* nav_settings_icon_back_btn_normal.png */,
+				219890D619F271B8009E5575 /* mini_webview_back.png */,
 				219890BA19F242A5009E5575 /* BaseTabBarViewController.h */,
 				219890BB19F242A5009E5575 /* BaseTabBarViewController.m */,
 				219890BC19F242A5009E5575 /* BaseTableView.h */,
@@ -489,8 +495,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BA871B219F21F38000C17CA /* mapapi.bundle in Resources */,
+				219890D719F271B8009E5575 /* mini_webview_back.png in Resources */,
 				3BA8713A19F21D04000C17CA /* InfoPlist.strings in Resources */,
 				3BA8714519F21D04000C17CA /* Images.xcassets in Resources */,
+				219890D519F2689B009E5575 /* nav_settings_icon_back_btn_normal.png in Resources */,
 				219890B119F221B2009E5575 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

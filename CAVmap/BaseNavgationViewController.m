@@ -16,11 +16,14 @@
 
 @implementation BaseNavgationViewController
 
+@synthesize navView,backButton;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if (self)
+    {
+        
     }
     return self;
 }
@@ -28,14 +31,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    NSDictionary *attribute = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
     
-    self.navigationBar.titleTextAttributes = attribute;  // 设置标题的颜色
-    self.navigationBar.tintColor = [UIColor whiteColor];  // 设置导航栏系统自带图标颜色
+    self.navigationBar.hidden = YES;  // 隐藏自带的导航栏
+    
+    [self initCustomNavgationBar];  // 自定义导航栏
+    
+//    NSDictionary *attribute = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+    
+//    self.navigationBar.titleTextAttributes = attribute;  // 设置标题的颜色
+//    self.navigationBar.tintColor = [UIColor whiteColor];  // 设置导航栏系统自带图标颜色
     
 //    [self.navigationBar setBackgroundImage:[UIImage redraw:[UIImage imageNamed:@"btn_seg_right_nor@2x"] Frame:CGRectMake(0, 0, ScreenWidth + 20, 64)] forBarMetrics:UIBarMetricsDefault];
 
+}
+
+
+- (void)initCustomNavgationBar
+{
+    navView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 60)];
+    backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)]
+    
 }
 
 
