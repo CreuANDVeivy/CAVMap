@@ -10,4 +10,7 @@
 
 @interface MainViewController : BaseViewController
 
+
+@property (retain, nonatomic) UIView *searchBarView;
+
 @end
