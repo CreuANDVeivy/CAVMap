@@ -10,6 +10,9 @@
 
 @implementation AppDelegate
 
+@synthesize mainCtrl;
+
+
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
@@ -20,6 +23,11 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    mainCtrl = [[MainViewController alloc] init];
+    
+    self.window.rootViewController = mainCtrl;
+    
     return YES;
 }
 
