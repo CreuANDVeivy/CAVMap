@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3BA8712E19F21D04000C17CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8712D19F21D04000C17CA /* Foundation.framework */; };
+		3BA8713019F21D04000C17CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8712F19F21D04000C17CA /* CoreGraphics.framework */; };
+		3BA8713219F21D04000C17CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8713119F21D04000C17CA /* UIKit.framework */; };
+		3BA8713419F21D04000C17CA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8713319F21D04000C17CA /* CoreData.framework */; };
+		3BA8713A19F21D04000C17CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3BA8713819F21D04000C17CA /* InfoPlist.strings */; };
+		3BA8713C19F21D04000C17CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8713B19F21D04000C17CA /* main.m */; };
+		3BA8714019F21D04000C17CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8713F19F21D04000C17CA /* AppDelegate.m */; };
+		3BA8714319F21D04000C17CA /* CAVmap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8714119F21D04000C17CA /* CAVmap.xcdatamodeld */; };
+		3BA8714519F21D04000C17CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BA8714419F21D04000C17CA /* Images.xcassets */; };
+		3BA8714C19F21D05000C17CA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8714B19F21D05000C17CA /* XCTest.framework */; };
+		3BA8714D19F21D05000C17CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8712D19F21D04000C17CA /* Foundation.framework */; };
+		3BA8714E19F21D05000C17CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8713119F21D04000C17CA /* UIKit.framework */; };
+		3BA8714F19F21D05000C17CA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8713319F21D04000C17CA /* CoreData.framework */; };
+		3BA8715719F21D05000C17CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3BA8715519F21D05000C17CA /* InfoPlist.strings */; };
+		3BA8715919F21D05000C17CA /* CAVmapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8715819F21D05000C17CA /* CAVmapTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3BA8715019F21D05000C17CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BA8712219F21D04000C17CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BA8712919F21D04000C17CA;
+			remoteInfo = CAVmap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3BA8712A19F21D04000C17CA /* CAVmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAVmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BA8712D19F21D04000C17CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3BA8712F19F21D04000C17CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3BA8713119F21D04000C17CA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3BA8713319F21D04000C17CA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3BA8713719F21D04000C17CA /* CAVmap-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CAVmap-Info.plist"; sourceTree = "<group>"; };
+		3BA8713919F21D04000C17CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3BA8713B19F21D04000C17CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3BA8713D19F21D04000C17CA /* CAVmap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CAVmap-Prefix.pch"; sourceTree = "<group>"; };
+		3BA8713E19F21D04000C17CA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3BA8713F19F21D04000C17CA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3BA8714219F21D04000C17CA /* CAVmap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CAVmap.xcdatamodel; sourceTree = "<group>"; };
+		3BA8714419F21D04000C17CA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3BA8714A19F21D05000C17CA /* CAVmapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CAVmapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BA8714B19F21D05000C17CA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3BA8715419F21D05000C17CA /* CAVmapTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CAVmapTests-Info.plist"; sourceTree = "<group>"; };
+		3BA8715619F21D05000C17CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3BA8715819F21D05000C17CA /* CAVmapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAVmapTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3BA8712719F21D04000C17CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA8713019F21D04000C17CA /* CoreGraphics.framework in Frameworks */,
+				3BA8713419F21D04000C17CA /* CoreData.framework in Frameworks */,
+				3BA8713219F21D04000C17CA /* UIKit.framework in Frameworks */,
+				3BA8712E19F21D04000C17CA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BA8714719F21D05000C17CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA8714C19F21D05000C17CA /* XCTest.framework in Frameworks */,
+				3BA8714F19F21D05000C17CA /* CoreData.framework in Frameworks */,
+				3BA8714E19F21D05000C17CA /* UIKit.framework in Frameworks */,
+				3BA8714D19F21D05000C17CA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3BA8712119F21D04000C17CA = {
+			isa = PBXGroup;
+			children = (
+				3BA8713519F21D04000C17CA /* CAVmap */,
+				3BA8715219F21D05000C17CA /* CAVmapTests */,
+				3BA8712C19F21D04000C17CA /* Frameworks */,
+				3BA8712B19F21D04000C17CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3BA8712B19F21D04000C17CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BA8712A19F21D04000C17CA /* CAVmap.app */,
+				3BA8714A19F21D05000C17CA /* CAVmapTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3BA8712C19F21D04000C17CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BA8712D19F21D04000C17CA /* Foundation.framework */,
+				3BA8712F19F21D04000C17CA /* CoreGraphics.framework */,
+				3BA8713119F21D04000C17CA /* UIKit.framework */,
+				3BA8713319F21D04000C17CA /* CoreData.framework */,
+				3BA8714B19F21D05000C17CA /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3BA8713519F21D04000C17CA /* CAVmap */ = {
+			isa = PBXGroup;
+			children = (
+				3BA8713E19F21D04000C17CA /* AppDelegate.h */,
+				3BA8713F19F21D04000C17CA /* AppDelegate.m */,
+				3BA8714419F21D04000C17CA /* Images.xcassets */,
+				3BA8714119F21D04000C17CA /* CAVmap.xcdatamodeld */,
+				3BA8713619F21D04000C17CA /* Supporting Files */,
+			);
+			path = CAVmap;
+			sourceTree = "<group>";
+		};
+		3BA8713619F21D04000C17CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3BA8713719F21D04000C17CA /* CAVmap-Info.plist */,
+				3BA8713819F21D04000C17CA /* InfoPlist.strings */,
+				3BA8713B19F21D04000C17CA /* main.m */,
+				3BA8713D19F21D04000C17CA /* CAVmap-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3BA8715219F21D05000C17CA /* CAVmapTests */ = {
+			isa = PBXGroup;
+			children = (
+				3BA8715819F21D05000C17CA /* CAVmapTests.m */,
+				3BA8715319F21D05000C17CA /* Supporting Files */,
+			);
+			path = CAVmapTests;
+			sourceTree = "<group>";
+		};
+		3BA8715319F21D05000C17CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3BA8715419F21D05000C17CA /* CAVmapTests-Info.plist */,
+				3BA8715519F21D05000C17CA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3BA8712919F21D04000C17CA /* CAVmap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BA8715C19F21D05000C17CA /* Build configuration list for PBXNativeTarget "CAVmap" */;
+			buildPhases = (
+				3BA8712619F21D04000C17CA /* Sources */,
+				3BA8712719F21D04000C17CA /* Frameworks */,
+				3BA8712819F21D04000C17CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CAVmap;
+			productName = CAVmap;
+			productReference = 3BA8712A19F21D04000C17CA /* CAVmap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3BA8714919F21D05000C17CA /* CAVmapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BA8715F19F21D05000C17CA /* Build configuration list for PBXNativeTarget "CAVmapTests" */;
+			buildPhases = (
+				3BA8714619F21D05000C17CA /* Sources */,
+				3BA8714719F21D05000C17CA /* Frameworks */,
+				3BA8714819F21D05000C17CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BA8715119F21D05000C17CA /* PBXTargetDependency */,
+			);
+			name = CAVmapTests;
+			productName = CAVmapTests;
+			productReference = 3BA8714A19F21D05000C17CA /* CAVmapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3BA8712219F21D04000C17CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = CAV;
+				TargetAttributes = {
+					3BA8714919F21D05000C17CA = {
+						TestTargetID = 3BA8712919F21D04000C17CA;
+					};
+				};
+			};
+			buildConfigurationList = 3BA8712519F21D04000C17CA /* Build configuration list for PBXProject "CAVmap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3BA8712119F21D04000C17CA;
+			productRefGroup = 3BA8712B19F21D04000C17CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3BA8712919F21D04000C17CA /* CAVmap */,
+				3BA8714919F21D05000C17CA /* CAVmapTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3BA8712819F21D04000C17CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA8713A19F21D04000C17CA /* InfoPlist.strings in Resources */,
+				3BA8714519F21D04000C17CA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BA8714819F21D05000C17CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA8715719F21D05000C17CA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3BA8712619F21D04000C17CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA8714319F21D04000C17CA /* CAVmap.xcdatamodeld in Sources */,
+				3BA8714019F21D04000C17CA /* AppDelegate.m in Sources */,
+				3BA8713C19F21D04000C17CA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BA8714619F21D05000C17CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA8715919F21D05000C17CA /* CAVmapTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3BA8715119F21D05000C17CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BA8712919F21D04000C17CA /* CAVmap */;
+			targetProxy = 3BA8715019F21D05000C17CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3BA8713819F21D04000C17CA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BA8713919F21D04000C17CA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3BA8715519F21D05000C17CA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BA8715619F21D05000C17CA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3BA8715A19F21D05000C17CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3BA8715B19F21D05000C17CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3BA8715D19F21D05000C17CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CAVmap/CAVmap-Prefix.pch";
+				INFOPLIST_FILE = "CAVmap/CAVmap-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3BA8715E19F21D05000C17CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CAVmap/CAVmap-Prefix.pch";
+				INFOPLIST_FILE = "CAVmap/CAVmap-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3BA8716019F21D05000C17CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CAVmap.app/CAVmap";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CAVmap/CAVmap-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CAVmapTests/CAVmapTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3BA8716119F21D05000C17CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CAVmap.app/CAVmap";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CAVmap/CAVmap-Prefix.pch";
+				INFOPLIST_FILE = "CAVmapTests/CAVmapTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3BA8712519F21D04000C17CA /* Build configuration list for PBXProject "CAVmap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BA8715A19F21D05000C17CA /* Debug */,
+				3BA8715B19F21D05000C17CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BA8715C19F21D05000C17CA /* Build configuration list for PBXNativeTarget "CAVmap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BA8715D19F21D05000C17CA /* Debug */,
+				3BA8715E19F21D05000C17CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3BA8715F19F21D05000C17CA /* Build configuration list for PBXNativeTarget "CAVmapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BA8716019F21D05000C17CA /* Debug */,
+				3BA8716119F21D05000C17CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3BA8714119F21D04000C17CA /* CAVmap.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3BA8714219F21D04000C17CA /* CAVmap.xcdatamodel */,
+			);
+			currentVersion = 3BA8714219F21D04000C17CA /* CAVmap.xcdatamodel */;
+			path = CAVmap.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3BA8712219F21D04000C17CA /* Project object */;
+}
