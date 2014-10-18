@@ -13,7 +13,7 @@
 
 @property (retain, nonatomic) BaseView *customNavigationBarView;  // 自定义的navgationBar
 
-//+ (BaseView *)initNavigationBarWith
++ (BaseView *)initNavigationBarWith:(CGRect )frame;
 
 
 @end
