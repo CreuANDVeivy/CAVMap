@@ -8,10 +8,11 @@
 
 #import "BaseViewController.h"
 
-@interface MainViewController : BaseViewController<BMKGeneralDelegate>
+@interface MainViewController : BaseViewController<BMKGeneralDelegate,BMKMapViewDelegate>
 {
-    BMKMapManager *mapManager;
+    BMKMapManager *mapManager;//地图管理者
+    BMKMapView *mapV;//地图视图
 }
-@property (retain, nonatomic) UIView *searchBarView;
+@property (retain, nonatomic) UIView *searchBarView;//搜
 
 @end

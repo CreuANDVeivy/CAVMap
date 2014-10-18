@@ -9,12 +9,15 @@
 
 
 //----------Mydefine----------//
-
 #define kFrame(x,y,w,h) CGRectMake(x,y,w,h)
-#define kBDAppKey @"LQf7ezGPBEKwv9Efyp42jufN"
+
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
+
+//----------------------------//
+
+#define kBDAppKey @"Ip0w2mkmc7lZmBbulpx8MpFR"  // 百度地图appKey
 
 //----------------------------//
 

@@ -44,6 +44,13 @@
 		3BA8717019F21E97000C17CA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8716F19F21E97000C17CA /* SystemConfiguration.framework */; };
 		3BA8717219F21EAB000C17CA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8717119F21EAB000C17CA /* Security.framework */; };
 		3BA871B219F21F38000C17CA /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3BA871B119F21F38000C17CA /* mapapi.bundle */; };
+		3BA871B619F26E00000C17CA /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA871B519F26E00000C17CA /* location.png */; };
+		3BA871BD19F26E5D000C17CA /* zoomin_idle_tool_dis.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA871B719F26E5D000C17CA /* zoomin_idle_tool_dis.png */; };
+		3BA871BE19F26E5D000C17CA /* zoomin_idle_tool_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA871B819F26E5D000C17CA /* zoomin_idle_tool_hl.png */; };
+		3BA871BF19F26E5D000C17CA /* zoomin_idle_tool.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA871B919F26E5D000C17CA /* zoomin_idle_tool.png */; };
+		3BA871C019F26E5D000C17CA /* zoomout_idle_tool_dis.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA871BA19F26E5D000C17CA /* zoomout_idle_tool_dis.png */; };
+		3BA871C119F26E5D000C17CA /* zoomout_idle_tool_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA871BB19F26E5D000C17CA /* zoomout_idle_tool_hl.png */; };
+		3BA871C219F26E5D000C17CA /* zoomout_idle_tool.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA871BC19F26E5D000C17CA /* zoomout_idle_tool.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +177,13 @@
 		3BA871AF19F21F38000C17CA /* BMKUtilsComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKUtilsComponent.h; sourceTree = "<group>"; };
 		3BA871B019F21F38000C17CA /* BMKVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKVersion.h; sourceTree = "<group>"; };
 		3BA871B119F21F38000C17CA /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
+		3BA871B519F26E00000C17CA /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
+		3BA871B719F26E5D000C17CA /* zoomin_idle_tool_dis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zoomin_idle_tool_dis.png; sourceTree = "<group>"; };
+		3BA871B819F26E5D000C17CA /* zoomin_idle_tool_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zoomin_idle_tool_hl.png; sourceTree = "<group>"; };
+		3BA871B919F26E5D000C17CA /* zoomin_idle_tool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zoomin_idle_tool.png; sourceTree = "<group>"; };
+		3BA871BA19F26E5D000C17CA /* zoomout_idle_tool_dis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zoomout_idle_tool_dis.png; sourceTree = "<group>"; };
+		3BA871BB19F26E5D000C17CA /* zoomout_idle_tool_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zoomout_idle_tool_hl.png; sourceTree = "<group>"; };
+		3BA871BC19F26E5D000C17CA /* zoomout_idle_tool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zoomout_idle_tool.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +258,7 @@
 		3BA8713519F21D04000C17CA /* CAVmap */ = {
 			isa = PBXGroup;
 			children = (
+				3BA871B419F26E00000C17CA /* CAVImages */,
 				3BA8716319F21D34000C17CA /* BaseClass */,
 				3BA8716219F21D2B000C17CA /* Kit */,
 				3BA8716619F21D47000C17CA /* Model */,
@@ -327,6 +342,9 @@
 		3BA8716419F21D3D000C17CA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				219890AD19F221B2009E5575 /* MainViewController.h */,
+				219890AE19F221B2009E5575 /* MainViewController.m */,
+				3BA871B319F26607000C17CA /* Controller_xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -336,9 +354,6 @@
 			children = (
 				219890CD19F243AA009E5575 /* CustomNavigationBar.h */,
 				219890CE19F243AA009E5575 /* CustomNavigationBar.m */,
-				219890AD19F221B2009E5575 /* MainViewController.h */,
-				219890AE19F221B2009E5575 /* MainViewController.m */,
-				219890AF19F221B2009E5575 /* MainViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -419,6 +434,28 @@
 			path = inc;
 			sourceTree = "<group>";
 		};
+		3BA871B319F26607000C17CA /* Controller_xib */ = {
+			isa = PBXGroup;
+			children = (
+				219890AF19F221B2009E5575 /* MainViewController.xib */,
+			);
+			name = Controller_xib;
+			sourceTree = "<group>";
+		};
+		3BA871B419F26E00000C17CA /* CAVImages */ = {
+			isa = PBXGroup;
+			children = (
+				3BA871B719F26E5D000C17CA /* zoomin_idle_tool_dis.png */,
+				3BA871B819F26E5D000C17CA /* zoomin_idle_tool_hl.png */,
+				3BA871B919F26E5D000C17CA /* zoomin_idle_tool.png */,
+				3BA871BA19F26E5D000C17CA /* zoomout_idle_tool_dis.png */,
+				3BA871BB19F26E5D000C17CA /* zoomout_idle_tool_hl.png */,
+				3BA871BC19F26E5D000C17CA /* zoomout_idle_tool.png */,
+				3BA871B519F26E00000C17CA /* location.png */,
+			);
+			path = CAVImages;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -494,12 +531,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA871C019F26E5D000C17CA /* zoomout_idle_tool_dis.png in Resources */,
 				3BA871B219F21F38000C17CA /* mapapi.bundle in Resources */,
 				219890D719F271B8009E5575 /* mini_webview_back.png in Resources */,
 				3BA8713A19F21D04000C17CA /* InfoPlist.strings in Resources */,
+				3BA871C119F26E5D000C17CA /* zoomout_idle_tool_hl.png in Resources */,
+				3BA871C219F26E5D000C17CA /* zoomout_idle_tool.png in Resources */,
+				3BA871B619F26E00000C17CA /* location.png in Resources */,
 				3BA8714519F21D04000C17CA /* Images.xcassets in Resources */,
 				219890D519F2689B009E5575 /* nav_settings_icon_back_btn_normal.png in Resources */,
 				219890B119F221B2009E5575 /* MainViewController.xib in Resources */,
+				3BA871BE19F26E5D000C17CA /* zoomin_idle_tool_hl.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
