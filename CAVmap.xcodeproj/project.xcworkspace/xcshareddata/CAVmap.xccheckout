@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>33BBFA94-B6C7-40D8-B03F-C4431EB6DB8C</string>
+	<string>1FFBD14B-60B2-49D1-928D-B96FFE4A7178</string>
 	<key>IDESourceControlProjectName</key>
 	<string>CAVmap</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>2578C246-45F2-47A0-BFB9-1C0C91238765</key>
-		<string>https://github.com/CAVMap/Map.git</string>
+		<key>22C9C4B5-282F-41E4-8AAB-F549EB93A8B8</key>
+		<string>ssh://github.com/CreuANDVeivy/CAVMap.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>CAVmap.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>2578C246-45F2-47A0-BFB9-1C0C91238765</key>
+		<key>22C9C4B5-282F-41E4-8AAB-F549EB93A8B8</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/CAVMap/Map.git</string>
+	<string>ssh://github.com/CreuANDVeivy/CAVMap.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>2578C246-45F2-47A0-BFB9-1C0C91238765</string>
+	<string>22C9C4B5-282F-41E4-8AAB-F549EB93A8B8</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>2578C246-45F2-47A0-BFB9-1C0C91238765</string>
+			<string>22C9C4B5-282F-41E4-8AAB-F549EB93A8B8</string>
 			<key>IDESourceControlWCCName</key>
 			<string>CAVmap</string>
 		</dict>

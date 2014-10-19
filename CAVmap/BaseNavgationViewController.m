@@ -49,7 +49,7 @@
 - (void)initCustomNavgationBar
 {
     navView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 60)];
-    backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)]
+    backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     
 }
 
