@@ -13,7 +13,6 @@
 
 @property (retain, nonatomic) MainViewController *mainCtrl;
 
-
 @property (strong, nonatomic) UIWindow *window;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;

@@ -7,21 +7,31 @@
 //
 
 #import "MainViewController.h"
+#import "NearByViewController.h"
 
 @interface MainViewController ()
 
 @end
+
+
+NSMutableArray *btnImageArr;
 
 @implementation MainViewController
 
 
 @synthesize searchBarView;
 
+@synthesize nearBy;
+
+
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if (self)
+    {
+        
         mapManager = [[BMKMapManager alloc]init];
         // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
         BOOL ret = [mapManager start:kBDAppKey generalDelegate:self];
@@ -36,9 +46,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    btnImageArr = [[NSMutableArray alloc] init];
     [self initMapView];  // 初始化地图视图
     [self initButtonView];  // 初始化按钮视图
+    
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"zoomout_idle_tool"]];
+    
+    // 测试Button
+    nearBy = [[BaseButton alloc] initWithFrame:kFrame(0, kScreenHeight - 40, 60, 40)];
+    [nearBy addTarget:self action:@selector(nearByClicksAction:) forControlEvents:UIControlEventTouchUpInside];
+    nearBy.backgroundColor = [UIColor redColor];
+    [self.view addSubview:nearBy];
     
 }
 
@@ -67,24 +85,41 @@
 #pragma mark - 初始化按钮视图
 - (void)initButtonView
 {
-    NSArray *btnImageArr = [NSArray arrayWithObjects:[UIImage imageNamed:@"zoomin_idle_tool"],[UIImage imageNamed:@"zoomin_idle_tool_hl"],[UIImage imageNamed:@"zoomout_idle_tool"],[UIImage imageNamed:@"zoomout_idle_tool_hl"], nil];  // 加减按钮图片数组
     
+    UIImage *image1 = [UIImage imageNamed:@"zoomin_idle_tool"];
+    UIImage *image2 = [UIImage imageNamed:@"zoomin_idle_tool_hl"];
+    UIImage *image3 = [UIImage imageNamed:@"zoomout_idle_tool"];
+    UIImage *image4 = [UIImage imageNamed:@"zoomout_idle_tool_hl"];
+    
+    NSLog(@"iamge=%@",image3);
+    
+//    [btnImageArr addObject:image1];
+
+
+    NSLog(@"%@",btnImageArr);
     int temp = 0;
     for (int i = 0; i < 2; i++)
     {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.frame = kFrame(kScreenWidth-40, kScreenHeight-120+i*30, 30, 30);
-        [btn setImage:btnImageArr[temp] forState:UIControlStateNormal];
+        [btn setImage:image3 forState:UIControlStateNormal];
         temp ++;
-        [btn setImage:btnImageArr[temp] forState:UIControlStateHighlighted];
+//        [btn setImage:btnImageArr[0] forState:UIControlStateHighlighted];
         temp ++;
         
         [self.view addSubview:btn];
     }
 }
 
-#pragma mark - MapView Delegate
 
+#pragma mark - ButtonClicksAction
+
+- (void)nearByClicksAction:(BaseButton *)sender
+{
+    [self.navigationController pushViewController:[NearByViewController new] animated:YES];
+}
+
+#pragma mark - MapView Delegate
 
 - (void)didReceiveMemoryWarning
 {

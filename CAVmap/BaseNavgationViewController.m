@@ -48,10 +48,30 @@
 
 - (void)initCustomNavgationBar
 {
-    navView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 60)];
-    backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    navView = [[UIView alloc] initWithFrame:CGRectMake(-2, -2, kScreenWidth + 4, 62)];  //
+    //
+    navView.backgroundColor = [UIColor whiteColor];  // 测试
     
+    navView.layer.borderWidth = 0.3;
+    navView.layer.borderColor = [UIColor grayColor].CGColor;
+    
+    backButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 60 - 30, 20, 20)];  // 按钮的frame
+    [backButton addTarget:self action:@selector(backButtonClickAction:) forControlEvents:UIControlEventTouchUpInside];  // 添加返回的方法
+//    backButton.backgroundColor = [UIColor redColor];  // 测试
+    [backButton setImage:[UIImage imageNamed:@"mini_webview_back"] forState:0];  // 设置图片
+    
+    [navView addSubview:backButton];   // 将按钮加载到视图
+    
+    [self.view addSubview:navView];
 }
+
+- (void)backButtonClickAction:(UIButton *)sender
+{
+    NSLog(@"返回按钮按了");
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 
 
 - (void)didReceiveMemoryWarning

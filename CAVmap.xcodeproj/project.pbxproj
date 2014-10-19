@@ -22,6 +22,10 @@
 		219890CF19F243AA009E5575 /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 219890CE19F243AA009E5575 /* CustomNavigationBar.m */; };
 		219890D519F2689B009E5575 /* nav_settings_icon_back_btn_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 219890D419F2689B009E5575 /* nav_settings_icon_back_btn_normal.png */; };
 		219890D719F271B8009E5575 /* mini_webview_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 219890D619F271B8009E5575 /* mini_webview_back.png */; };
+		21A2B10519F3A70000050EE5 /* nav_backbtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A2B10419F3A70000050EE5 /* nav_backbtn@2x.png */; };
+		21A2B10F19F3B0BB00050EE5 /* NearByViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A2B10D19F3B0BB00050EE5 /* NearByViewController.m */; };
+		21A2B11019F3B0BB00050EE5 /* NearByViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A2B10E19F3B0BB00050EE5 /* NearByViewController.xib */; };
+		21A2B11319F3B35300050EE5 /* BaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A2B11219F3B35300050EE5 /* BaseCollectionView.m */; };
 		3BA8712E19F21D04000C17CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8712D19F21D04000C17CA /* Foundation.framework */; };
 		3BA8713019F21D04000C17CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8712F19F21D04000C17CA /* CoreGraphics.framework */; };
 		3BA8713219F21D04000C17CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8713119F21D04000C17CA /* UIKit.framework */; };
@@ -45,9 +49,7 @@
 		3BA8717219F21EAB000C17CA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8717119F21EAB000C17CA /* Security.framework */; };
 		3BA871B219F21F38000C17CA /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3BA871B119F21F38000C17CA /* mapapi.bundle */; };
 		3BA871B619F26E00000C17CA /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA871B519F26E00000C17CA /* location.png */; };
-		3BA871BD19F26E5D000C17CA /* zoomin_idle_tool_dis.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA871B719F26E5D000C17CA /* zoomin_idle_tool_dis.png */; };
 		3BA871BE19F26E5D000C17CA /* zoomin_idle_tool_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA871B819F26E5D000C17CA /* zoomin_idle_tool_hl.png */; };
-		3BA871BF19F26E5D000C17CA /* zoomin_idle_tool.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA871B919F26E5D000C17CA /* zoomin_idle_tool.png */; };
 		3BA871C019F26E5D000C17CA /* zoomout_idle_tool_dis.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA871BA19F26E5D000C17CA /* zoomout_idle_tool_dis.png */; };
 		3BA871C119F26E5D000C17CA /* zoomout_idle_tool_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA871BB19F26E5D000C17CA /* zoomout_idle_tool_hl.png */; };
 		3BA871C219F26E5D000C17CA /* zoomout_idle_tool.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA871BC19F26E5D000C17CA /* zoomout_idle_tool.png */; };
@@ -89,8 +91,14 @@
 		219890C319F242A5009E5575 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		219890CD19F243AA009E5575 /* CustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationBar.h; sourceTree = "<group>"; };
 		219890CE19F243AA009E5575 /* CustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationBar.m; sourceTree = "<group>"; };
-		219890D419F2689B009E5575 /* nav_settings_icon_back_btn_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_settings_icon_back_btn_normal.png; sourceTree = "<group>"; };
-		219890D619F271B8009E5575 /* mini_webview_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mini_webview_back.png; sourceTree = "<group>"; };
+		219890D419F2689B009E5575 /* nav_settings_icon_back_btn_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nav_settings_icon_back_btn_normal.png; path = ../nav_settings_icon_back_btn_normal.png; sourceTree = "<group>"; };
+		219890D619F271B8009E5575 /* mini_webview_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mini_webview_back.png; path = ../mini_webview_back.png; sourceTree = "<group>"; };
+		21A2B10419F3A70000050EE5 /* nav_backbtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_backbtn@2x.png"; sourceTree = "<group>"; };
+		21A2B10C19F3B0BB00050EE5 /* NearByViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearByViewController.h; sourceTree = "<group>"; };
+		21A2B10D19F3B0BB00050EE5 /* NearByViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearByViewController.m; sourceTree = "<group>"; };
+		21A2B10E19F3B0BB00050EE5 /* NearByViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearByViewController.xib; sourceTree = "<group>"; };
+		21A2B11119F3B35300050EE5 /* BaseCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionView.h; sourceTree = "<group>"; };
+		21A2B11219F3B35300050EE5 /* BaseCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionView.m; sourceTree = "<group>"; };
 		3BA8712A19F21D04000C17CA /* CAVmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAVmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA8712D19F21D04000C17CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3BA8712F19F21D04000C17CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -260,15 +268,10 @@
 			children = (
 				3BA871B419F26E00000C17CA /* CAVImages */,
 				3BA8716319F21D34000C17CA /* BaseClass */,
-				3BA8716219F21D2B000C17CA /* Kit */,
 				3BA8716619F21D47000C17CA /* Model */,
 				3BA8716519F21D43000C17CA /* View */,
 				3BA8716419F21D3D000C17CA /* Controller */,
-				3BA8713E19F21D04000C17CA /* AppDelegate.h */,
-				3BA8713F19F21D04000C17CA /* AppDelegate.m */,
-				3BA8714419F21D04000C17CA /* Images.xcassets */,
-				3BA8714119F21D04000C17CA /* CAVmap.xcdatamodeld */,
-				3BA8713619F21D04000C17CA /* Supporting Files */,
+				3BA8716219F21D2B000C17CA /* Kit */,
 			);
 			path = CAVmap;
 			sourceTree = "<group>";
@@ -323,8 +326,6 @@
 				219890B719F242A5009E5575 /* BaseLabel.m */,
 				219890B819F242A5009E5575 /* BaseNavgationViewController.h */,
 				219890B919F242A5009E5575 /* BaseNavgationViewController.m */,
-				219890D419F2689B009E5575 /* nav_settings_icon_back_btn_normal.png */,
-				219890D619F271B8009E5575 /* mini_webview_back.png */,
 				219890BA19F242A5009E5575 /* BaseTabBarViewController.h */,
 				219890BB19F242A5009E5575 /* BaseTabBarViewController.m */,
 				219890BC19F242A5009E5575 /* BaseTableView.h */,
@@ -335,6 +336,8 @@
 				219890C119F242A5009E5575 /* BaseTextField.m */,
 				219890C219F242A5009E5575 /* BaseView.h */,
 				219890C319F242A5009E5575 /* BaseView.m */,
+				21A2B11119F3B35300050EE5 /* BaseCollectionView.h */,
+				21A2B11219F3B35300050EE5 /* BaseCollectionView.m */,
 			);
 			name = BaseClass;
 			sourceTree = "<group>";
@@ -342,8 +345,15 @@
 		3BA8716419F21D3D000C17CA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				21A2B10C19F3B0BB00050EE5 /* NearByViewController.h */,
+				21A2B10D19F3B0BB00050EE5 /* NearByViewController.m */,
 				219890AD19F221B2009E5575 /* MainViewController.h */,
 				219890AE19F221B2009E5575 /* MainViewController.m */,
+				3BA8713E19F21D04000C17CA /* AppDelegate.h */,
+				3BA8713F19F21D04000C17CA /* AppDelegate.m */,
+				3BA8714419F21D04000C17CA /* Images.xcassets */,
+				3BA8714119F21D04000C17CA /* CAVmap.xcdatamodeld */,
+				3BA8713619F21D04000C17CA /* Supporting Files */,
 				3BA871B319F26607000C17CA /* Controller_xib */,
 			);
 			name = Controller;
@@ -437,6 +447,7 @@
 		3BA871B319F26607000C17CA /* Controller_xib */ = {
 			isa = PBXGroup;
 			children = (
+				21A2B10E19F3B0BB00050EE5 /* NearByViewController.xib */,
 				219890AF19F221B2009E5575 /* MainViewController.xib */,
 			);
 			name = Controller_xib;
@@ -452,6 +463,9 @@
 				3BA871BB19F26E5D000C17CA /* zoomout_idle_tool_hl.png */,
 				3BA871BC19F26E5D000C17CA /* zoomout_idle_tool.png */,
 				3BA871B519F26E00000C17CA /* location.png */,
+				219890D419F2689B009E5575 /* nav_settings_icon_back_btn_normal.png */,
+				219890D619F271B8009E5575 /* mini_webview_back.png */,
+				21A2B10419F3A70000050EE5 /* nav_backbtn@2x.png */,
 			);
 			path = CAVImages;
 			sourceTree = "<group>";
@@ -531,6 +545,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A2B10519F3A70000050EE5 /* nav_backbtn@2x.png in Resources */,
 				3BA871C019F26E5D000C17CA /* zoomout_idle_tool_dis.png in Resources */,
 				3BA871B219F21F38000C17CA /* mapapi.bundle in Resources */,
 				219890D719F271B8009E5575 /* mini_webview_back.png in Resources */,
@@ -539,6 +554,7 @@
 				3BA871C219F26E5D000C17CA /* zoomout_idle_tool.png in Resources */,
 				3BA871B619F26E00000C17CA /* location.png in Resources */,
 				3BA8714519F21D04000C17CA /* Images.xcassets in Resources */,
+				21A2B11019F3B0BB00050EE5 /* NearByViewController.xib in Resources */,
 				219890D519F2689B009E5575 /* nav_settings_icon_back_btn_normal.png in Resources */,
 				219890B119F221B2009E5575 /* MainViewController.xib in Resources */,
 				3BA871BE19F26E5D000C17CA /* zoomin_idle_tool_hl.png in Resources */,
@@ -561,6 +577,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				219890CA19F242A5009E5575 /* BaseTableViewCell.m in Sources */,
+				21A2B11319F3B35300050EE5 /* BaseCollectionView.m in Sources */,
+				21A2B10F19F3B0BB00050EE5 /* NearByViewController.m in Sources */,
 				219890C719F242A5009E5575 /* BaseNavgationViewController.m in Sources */,
 				3BA8714319F21D04000C17CA /* CAVmap.xcdatamodeld in Sources */,
 				219890C619F242A5009E5575 /* BaseLabel.m in Sources */,

@@ -13,6 +13,8 @@
     BMKMapManager *mapManager;//地图管理者
     BMKMapView *mapV;//地图视图
 }
+
+@property (retain, nonatomic) BaseButton *nearBy;  // 附近的按钮
 @property (retain, nonatomic) UIView *searchBarView;//搜
 
 @end

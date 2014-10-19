@@ -10,4 +10,12 @@
 
 @interface BaseViewController : UIViewController
 
+@property (retain, nonatomic) UIView *navView; // 导航栏视图
+@property (retain, nonatomic) UIButton *backButton;  // 返回按钮
+
+// 初始化自定义导航栏的方法
+- (void)initCustomNavgationBar;
+// 返回按钮的方法
+- (void)backButtonClickAction:(UIButton *)sender;
+
 @end

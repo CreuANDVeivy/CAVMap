@@ -12,7 +12,6 @@
 
 @synthesize mainCtrl;
 
-
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
@@ -25,8 +24,9 @@
     [self.window makeKeyAndVisible];
     
     mainCtrl = [[MainViewController alloc] init];
+    UINavigationController *nav_mainCtrl = [[UINavigationController alloc] initWithRootViewController:mainCtrl];
     
-    self.window.rootViewController = mainCtrl;
+    self.window.rootViewController = nav_mainCtrl;
     
     return YES;
 }

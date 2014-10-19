@@ -13,7 +13,7 @@
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
-
+#define kBundleFlie(name,type) [[NSBundle mainBundle] pathForResource:name ofType:type]
 
 //----------------------------//
 
@@ -38,7 +38,7 @@
     #import "BaseView.h"
     #import "BaseTextField.h"
     #import "BaseViewController.h"
-    
+    #import "BaseCollectionView.h"
     //
 
 #endif

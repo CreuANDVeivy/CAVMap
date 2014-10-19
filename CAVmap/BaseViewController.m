@@ -14,6 +14,8 @@
 
 @implementation BaseViewController
 
+@synthesize navView,backButton;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,8 +28,42 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.navigationController.navigationBar.hidden = YES;  // 隐藏自带的导航栏
+    [self initCustomNavgationBar];  // 自定义导航栏
 }
+
+
+
+
+- (void)initCustomNavgationBar
+{
+    navView = [[UIView alloc] initWithFrame:CGRectMake(-2, -2, kScreenWidth + 4, 62)];  //
+    //
+    navView.backgroundColor = [UIColor whiteColor];  // 测试
+    
+    navView.layer.borderWidth = 0.3;
+    navView.layer.borderColor = [UIColor grayColor].CGColor;
+    
+    backButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 60 - 30, 20, 20)];  // 按钮的frame
+    [backButton addTarget:self action:@selector(backButtonClickAction:) forControlEvents:UIControlEventTouchUpInside];  // 添加返回的方法
+    //    backButton.backgroundColor = [UIColor redColor];  // 测试
+    [backButton setImage:[UIImage imageNamed:@"mini_webview_back"] forState:0];  // 设置图片
+    
+    [navView addSubview:backButton];   // 将按钮加载到视图
+    
+    [self.view addSubview:navView];
+}
+
+- (void)backButtonClickAction:(UIButton *)sender
+{
+    NSLog(@"返回按钮按了");
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
