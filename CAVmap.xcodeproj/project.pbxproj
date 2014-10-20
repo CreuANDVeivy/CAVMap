@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2197EA2B19F4BD0600B0B632 /* hotWordSearchModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2197EA2A19F4BD0600B0B632 /* hotWordSearchModelData.m */; };
+		2197EA3819F4BF2900B0B632 /* zhoumoqunaer.png in Resources */ = {isa = PBXBuildFile; fileRef = 2197EA3719F4BF2900B0B632 /* zhoumoqunaer.png */; };
+		2197EA3C19F4C07300B0B632 /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 2197EA3B19F4C07300B0B632 /* bus.png */; };
+		2197EA3E19F4C18E00B0B632 /* main_map_drawer_icon_poi_scene_meishi.png in Resources */ = {isa = PBXBuildFile; fileRef = 2197EA3D19F4C18E00B0B632 /* main_map_drawer_icon_poi_scene_meishi.png */; };
+		2197EA4019F4C19400B0B632 /* main_map_drawer_icon_poi_scene_jiudian.png in Resources */ = {isa = PBXBuildFile; fileRef = 2197EA3F19F4C19400B0B632 /* main_map_drawer_icon_poi_scene_jiudian.png */; };
+		2197EA4219F4C1A000B0B632 /* main_map_drawer_icon_poi_scene_xiuxianyule.png in Resources */ = {isa = PBXBuildFile; fileRef = 2197EA4119F4C1A000B0B632 /* main_map_drawer_icon_poi_scene_xiuxianyule.png */; };
+		2197EA4419F4C1A800B0B632 /* main_map_drawer_icon_poi_scene_jiaotongsheshi.png in Resources */ = {isa = PBXBuildFile; fileRef = 2197EA4319F4C1A800B0B632 /* main_map_drawer_icon_poi_scene_jiaotongsheshi.png */; };
+		2197EA4619F4C1B600B0B632 /* main_map_drawer_icon_poi_scene_shenghuofuwu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2197EA4519F4C1B600B0B632 /* main_map_drawer_icon_poi_scene_shenghuofuwu.png */; };
+		2197EA4819F4C1C600B0B632 /* main_map_drawer_icon_poi_tour_recommand.png in Resources */ = {isa = PBXBuildFile; fileRef = 2197EA4719F4C1C600B0B632 /* main_map_drawer_icon_poi_tour_recommand.png */; };
+		2197EA4D19F4C27D00B0B632 /* scene_arrow_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 2197EA4919F4C27D00B0B632 /* scene_arrow_blue.png */; };
+		2197EA4E19F4C27D00B0B632 /* scene_arrow_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 2197EA4A19F4C27D00B0B632 /* scene_arrow_green.png */; };
+		2197EA4F19F4C27D00B0B632 /* scene_arrow_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 2197EA4B19F4C27D00B0B632 /* scene_arrow_orange.png */; };
+		2197EA5019F4C27D00B0B632 /* scene_arrow_pink.png in Resources */ = {isa = PBXBuildFile; fileRef = 2197EA4C19F4C27D00B0B632 /* scene_arrow_pink.png */; };
+		2197EA5719F51A2700B0B632 /* cinema.png in Resources */ = {isa = PBXBuildFile; fileRef = 2197EA5119F51A2700B0B632 /* cinema.png */; };
+		2197EA5819F51A2700B0B632 /* dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = 2197EA5219F51A2700B0B632 /* dinner.png */; };
+		2197EA5919F51A2700B0B632 /* group.png in Resources */ = {isa = PBXBuildFile; fileRef = 2197EA5319F51A2700B0B632 /* group.png */; };
+		2197EA5A19F51A2700B0B632 /* hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = 2197EA5419F51A2700B0B632 /* hotel.png */; };
+		2197EA5B19F51A2700B0B632 /* scenic.png in Resources */ = {isa = PBXBuildFile; fileRef = 2197EA5519F51A2700B0B632 /* scenic.png */; };
+		2197EA5C19F51A2700B0B632 /* taxi.png in Resources */ = {isa = PBXBuildFile; fileRef = 2197EA5619F51A2700B0B632 /* taxi.png */; };
 		219890AC19F2219F009E5575 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219890AB19F2219F009E5575 /* BaseViewController.m */; };
 		219890B019F221B2009E5575 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219890AE19F221B2009E5575 /* MainViewController.m */; };
 		219890B119F221B2009E5575 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219890AF19F221B2009E5575 /* MainViewController.xib */; };
@@ -66,6 +85,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2197EA2919F4BD0600B0B632 /* hotWordSearchModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hotWordSearchModelData.h; sourceTree = "<group>"; };
+		2197EA2A19F4BD0600B0B632 /* hotWordSearchModelData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hotWordSearchModelData.m; sourceTree = "<group>"; };
+		2197EA3719F4BF2900B0B632 /* zhoumoqunaer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhoumoqunaer.png; sourceTree = "<group>"; };
+		2197EA3B19F4C07300B0B632 /* bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bus.png; sourceTree = "<group>"; };
+		2197EA3D19F4C18E00B0B632 /* main_map_drawer_icon_poi_scene_meishi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_map_drawer_icon_poi_scene_meishi.png; sourceTree = "<group>"; };
+		2197EA3F19F4C19400B0B632 /* main_map_drawer_icon_poi_scene_jiudian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_map_drawer_icon_poi_scene_jiudian.png; sourceTree = "<group>"; };
+		2197EA4119F4C1A000B0B632 /* main_map_drawer_icon_poi_scene_xiuxianyule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_map_drawer_icon_poi_scene_xiuxianyule.png; sourceTree = "<group>"; };
+		2197EA4319F4C1A800B0B632 /* main_map_drawer_icon_poi_scene_jiaotongsheshi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_map_drawer_icon_poi_scene_jiaotongsheshi.png; sourceTree = "<group>"; };
+		2197EA4519F4C1B600B0B632 /* main_map_drawer_icon_poi_scene_shenghuofuwu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_map_drawer_icon_poi_scene_shenghuofuwu.png; sourceTree = "<group>"; };
+		2197EA4719F4C1C600B0B632 /* main_map_drawer_icon_poi_tour_recommand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_map_drawer_icon_poi_tour_recommand.png; sourceTree = "<group>"; };
+		2197EA4919F4C27D00B0B632 /* scene_arrow_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_arrow_blue.png; sourceTree = "<group>"; };
+		2197EA4A19F4C27D00B0B632 /* scene_arrow_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_arrow_green.png; sourceTree = "<group>"; };
+		2197EA4B19F4C27D00B0B632 /* scene_arrow_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_arrow_orange.png; sourceTree = "<group>"; };
+		2197EA4C19F4C27D00B0B632 /* scene_arrow_pink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_arrow_pink.png; sourceTree = "<group>"; };
+		2197EA5119F51A2700B0B632 /* cinema.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cinema.png; sourceTree = "<group>"; };
+		2197EA5219F51A2700B0B632 /* dinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dinner.png; sourceTree = "<group>"; };
+		2197EA5319F51A2700B0B632 /* group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group.png; sourceTree = "<group>"; };
+		2197EA5419F51A2700B0B632 /* hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hotel.png; sourceTree = "<group>"; };
+		2197EA5519F51A2700B0B632 /* scenic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scenic.png; sourceTree = "<group>"; };
+		2197EA5619F51A2700B0B632 /* taxi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taxi.png; sourceTree = "<group>"; };
 		219890AA19F2219F009E5575 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		219890AB19F2219F009E5575 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		219890AD19F221B2009E5575 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -226,6 +265,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2197EA2C19F4BD1200B0B632 /* HotImages */ = {
+			isa = PBXGroup;
+			children = (
+				2197EA5119F51A2700B0B632 /* cinema.png */,
+				2197EA5219F51A2700B0B632 /* dinner.png */,
+				2197EA3719F4BF2900B0B632 /* zhoumoqunaer.png */,
+				2197EA5319F51A2700B0B632 /* group.png */,
+				2197EA5419F51A2700B0B632 /* hotel.png */,
+				2197EA5519F51A2700B0B632 /* scenic.png */,
+				2197EA5619F51A2700B0B632 /* taxi.png */,
+				2197EA3B19F4C07300B0B632 /* bus.png */,
+				2197EA3D19F4C18E00B0B632 /* main_map_drawer_icon_poi_scene_meishi.png */,
+				2197EA3F19F4C19400B0B632 /* main_map_drawer_icon_poi_scene_jiudian.png */,
+				2197EA4119F4C1A000B0B632 /* main_map_drawer_icon_poi_scene_xiuxianyule.png */,
+				2197EA4319F4C1A800B0B632 /* main_map_drawer_icon_poi_scene_jiaotongsheshi.png */,
+				2197EA4519F4C1B600B0B632 /* main_map_drawer_icon_poi_scene_shenghuofuwu.png */,
+				2197EA4719F4C1C600B0B632 /* main_map_drawer_icon_poi_tour_recommand.png */,
+				2197EA4919F4C27D00B0B632 /* scene_arrow_blue.png */,
+				2197EA4A19F4C27D00B0B632 /* scene_arrow_green.png */,
+				2197EA4B19F4C27D00B0B632 /* scene_arrow_orange.png */,
+				2197EA4C19F4C27D00B0B632 /* scene_arrow_pink.png */,
+			);
+			name = HotImages;
+			sourceTree = "<group>";
+		};
 		3BA8712119F21D04000C17CA = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +435,9 @@
 		3BA8716619F21D47000C17CA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2197EA2919F4BD0600B0B632 /* hotWordSearchModelData.h */,
+				2197EA2A19F4BD0600B0B632 /* hotWordSearchModelData.m */,
+				2197EA2C19F4BD1200B0B632 /* HotImages */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -545,19 +612,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2197EA5019F4C27D00B0B632 /* scene_arrow_pink.png in Resources */,
 				21A2B10519F3A70000050EE5 /* nav_backbtn@2x.png in Resources */,
+				2197EA5B19F51A2700B0B632 /* scenic.png in Resources */,
 				3BA871C019F26E5D000C17CA /* zoomout_idle_tool_dis.png in Resources */,
 				3BA871B219F21F38000C17CA /* mapapi.bundle in Resources */,
+				2197EA4E19F4C27D00B0B632 /* scene_arrow_green.png in Resources */,
+				2197EA4419F4C1A800B0B632 /* main_map_drawer_icon_poi_scene_jiaotongsheshi.png in Resources */,
+				2197EA4019F4C19400B0B632 /* main_map_drawer_icon_poi_scene_jiudian.png in Resources */,
+				2197EA5A19F51A2700B0B632 /* hotel.png in Resources */,
 				219890D719F271B8009E5575 /* mini_webview_back.png in Resources */,
+				2197EA5C19F51A2700B0B632 /* taxi.png in Resources */,
 				3BA8713A19F21D04000C17CA /* InfoPlist.strings in Resources */,
+				2197EA4F19F4C27D00B0B632 /* scene_arrow_orange.png in Resources */,
 				3BA871C119F26E5D000C17CA /* zoomout_idle_tool_hl.png in Resources */,
+				2197EA3819F4BF2900B0B632 /* zhoumoqunaer.png in Resources */,
 				3BA871C219F26E5D000C17CA /* zoomout_idle_tool.png in Resources */,
 				3BA871B619F26E00000C17CA /* location.png in Resources */,
+				2197EA5819F51A2700B0B632 /* dinner.png in Resources */,
 				3BA8714519F21D04000C17CA /* Images.xcassets in Resources */,
 				21A2B11019F3B0BB00050EE5 /* NearByViewController.xib in Resources */,
+				2197EA3C19F4C07300B0B632 /* bus.png in Resources */,
+				2197EA4D19F4C27D00B0B632 /* scene_arrow_blue.png in Resources */,
+				2197EA4819F4C1C600B0B632 /* main_map_drawer_icon_poi_tour_recommand.png in Resources */,
+				2197EA3E19F4C18E00B0B632 /* main_map_drawer_icon_poi_scene_meishi.png in Resources */,
+				2197EA5719F51A2700B0B632 /* cinema.png in Resources */,
 				219890D519F2689B009E5575 /* nav_settings_icon_back_btn_normal.png in Resources */,
+				2197EA4619F4C1B600B0B632 /* main_map_drawer_icon_poi_scene_shenghuofuwu.png in Resources */,
 				219890B119F221B2009E5575 /* MainViewController.xib in Resources */,
+				2197EA5919F51A2700B0B632 /* group.png in Resources */,
 				3BA871BE19F26E5D000C17CA /* zoomin_idle_tool_hl.png in Resources */,
+				2197EA4219F4C1A000B0B632 /* main_map_drawer_icon_poi_scene_xiuxianyule.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +662,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				219890CA19F242A5009E5575 /* BaseTableViewCell.m in Sources */,
+				2197EA2B19F4BD0600B0B632 /* hotWordSearchModelData.m in Sources */,
 				21A2B11319F3B35300050EE5 /* BaseCollectionView.m in Sources */,
 				21A2B10F19F3B0BB00050EE5 /* NearByViewController.m in Sources */,
 				219890C719F242A5009E5575 /* BaseNavgationViewController.m in Sources */,

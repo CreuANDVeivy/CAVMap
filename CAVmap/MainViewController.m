@@ -86,17 +86,17 @@ NSMutableArray *btnImageArr;
 - (void)initButtonView
 {
     
-    UIImage *image1 = [UIImage imageNamed:@"zoomin_idle_tool"];
-    UIImage *image2 = [UIImage imageNamed:@"zoomin_idle_tool_hl"];
-    UIImage *image3 = [UIImage imageNamed:@"zoomout_idle_tool"];
-    UIImage *image4 = [UIImage imageNamed:@"zoomout_idle_tool_hl"];
+    UIImage *image1 = [UIImage imageNamed:@"zoomin_idle_tool.png"];
+    UIImage *image2 = [UIImage imageNamed:@"zoomin_idle_tool_hl.png"];
+    UIImage *image3 = [UIImage imageNamed:@"zoomout_idle_tool.png"];
+    UIImage *image4 = [UIImage imageNamed:@"zoomout_idle_tool_hl.png"];
     
-    NSLog(@"iamge=%@",image3);
+//    NSLog(@"iamge=%@",image1);
     
 //    [btnImageArr addObject:image1];
 
 
-    NSLog(@"%@",btnImageArr);
+//    NSLog(@"%@",btnImageArr);
     int temp = 0;
     for (int i = 0; i < 2; i++)
     {

@@ -10,6 +10,8 @@
 
 //----------Mydefine----------//
 #define kFrame(x,y,w,h) CGRectMake(x,y,w,h)
+#define kTableViewFrame CGRectMake(0, 60, kScreenWidth, kScreenHeight - 60 - 40)  // 固定的tableView的frame
+
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -39,6 +41,7 @@
     #import "BaseTextField.h"
     #import "BaseViewController.h"
     #import "BaseCollectionView.h"
+    #import "BaseTableView.h"
     //
 
 #endif

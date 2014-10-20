@@ -34,7 +34,7 @@
 
 
 
-
+// 自定义导航栏
 - (void)initCustomNavgationBar
 {
     navView = [[UIView alloc] initWithFrame:CGRectMake(-2, -2, kScreenWidth + 4, 62)];  //
@@ -54,9 +54,10 @@
     [self.view addSubview:navView];
 }
 
+// 返回按钮事件
 - (void)backButtonClickAction:(UIButton *)sender
 {
-    NSLog(@"返回按钮按了");
+    //    NSLog(@"返回按钮按了");
     [self.navigationController popViewControllerAnimated:YES];
 }
 

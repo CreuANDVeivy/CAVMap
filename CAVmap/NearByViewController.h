@@ -8,8 +8,15 @@
 
 #import "BaseViewController.h"
 
-@interface NearByViewController : BaseViewController
+@interface NearByViewController : BaseViewController <UITableViewDataSource,UITableViewDelegate>
 
-@property (retain, nonatomic) BaseCollectionView *hotWordSearchView;  // 热词搜索视图
+//@property (retain, nonatomic) BaseCollectionView *hotWordSearchView;  // 热词搜索视图
 
+
+//
+@property (retain, nonatomic) NSMutableArray *hotWordSearchDataSourceArray;  // 附近热词搜索视图数据源
+@property (retain, nonatomic) BaseTableView *hotWordSearchTableView;  // 附近热词搜索视图
+
+
+//
 @end
