@@ -54,6 +54,12 @@
 		3BA36A8C19F51B1000BB3892 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA36A7E19F51B1000BB3892 /* SBJsonTokeniser.m */; };
 		3BA36A8D19F51B1000BB3892 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA36A8019F51B1000BB3892 /* SBJsonUTF8Stream.m */; };
 		3BA36A8E19F51B1000BB3892 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA36A8219F51B1000BB3892 /* SBJsonWriter.m */; };
+		3BA36A9219F524FB00BB3892 /* AMBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA36A9119F524FB00BB3892 /* AMBlurView.m */; };
+		3BA36A9719F52AA000BB3892 /* main_icon_mine.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36A9319F52AA000BB3892 /* main_icon_mine.png */; };
+		3BA36A9819F52AA000BB3892 /* main_icon_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36A9419F52AA000BB3892 /* main_icon_nav.png */; };
+		3BA36A9919F52AA000BB3892 /* main_icon_nearby.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36A9519F52AA000BB3892 /* main_icon_nearby.png */; };
+		3BA36A9A19F52AA000BB3892 /* main_icon_route.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36A9619F52AA000BB3892 /* main_icon_route.png */; };
+		3BA36A9D19F52D2F00BB3892 /* qrcode_tabbar_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36A9C19F52D2F00BB3892 /* qrcode_tabbar_background.png */; };
 		3BA8712E19F21D04000C17CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8712D19F21D04000C17CA /* Foundation.framework */; };
 		3BA8713019F21D04000C17CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8712F19F21D04000C17CA /* CoreGraphics.framework */; };
 		3BA8713219F21D04000C17CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8713119F21D04000C17CA /* UIKit.framework */; };
@@ -174,6 +180,13 @@
 		3BA36A8019F51B1000BB3892 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		3BA36A8119F51B1000BB3892 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		3BA36A8219F51B1000BB3892 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		3BA36A9019F524FB00BB3892 /* AMBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBlurView.h; sourceTree = "<group>"; };
+		3BA36A9119F524FB00BB3892 /* AMBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBlurView.m; sourceTree = "<group>"; };
+		3BA36A9319F52AA000BB3892 /* main_icon_mine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_icon_mine.png; sourceTree = "<group>"; };
+		3BA36A9419F52AA000BB3892 /* main_icon_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_icon_nav.png; sourceTree = "<group>"; };
+		3BA36A9519F52AA000BB3892 /* main_icon_nearby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_icon_nearby.png; sourceTree = "<group>"; };
+		3BA36A9619F52AA000BB3892 /* main_icon_route.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_icon_route.png; sourceTree = "<group>"; };
+		3BA36A9C19F52D2F00BB3892 /* qrcode_tabbar_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qrcode_tabbar_background.png; sourceTree = "<group>"; };
 		3BA8712A19F21D04000C17CA /* CAVmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAVmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA8712D19F21D04000C17CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3BA8712F19F21D04000C17CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -354,6 +367,29 @@
 			path = SBJson;
 			sourceTree = "<group>";
 		};
+		3BA36A8F19F524DD00BB3892 /* AMBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				3BA36A9019F524FB00BB3892 /* AMBlurView.h */,
+				3BA36A9119F524FB00BB3892 /* AMBlurView.m */,
+			);
+			name = AMBlurView;
+			sourceTree = "<group>";
+		};
+		3BA36A9B19F52AAE00BB3892 /* tabBarImages */ = {
+			isa = PBXGroup;
+			children = (
+				3BA36A9C19F52D2F00BB3892 /* qrcode_tabbar_background.png */,
+				3BA36A5719F4E5AC00BB3892 /* indoor_left.png */,
+				3BA36A5819F4E5AC00BB3892 /* indoor_right.png */,
+				3BA36A9319F52AA000BB3892 /* main_icon_mine.png */,
+				3BA36A9419F52AA000BB3892 /* main_icon_nav.png */,
+				3BA36A9519F52AA000BB3892 /* main_icon_nearby.png */,
+				3BA36A9619F52AA000BB3892 /* main_icon_route.png */,
+			);
+			name = tabBarImages;
+			sourceTree = "<group>";
+		};
 		3BA8712119F21D04000C17CA = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +430,7 @@
 		3BA8713519F21D04000C17CA /* CAVmap */ = {
 			isa = PBXGroup;
 			children = (
+				3BA8716319F21D34000C17CA /* BaseClass */,
 				3BA8716619F21D47000C17CA /* Model */,
 				3BA8716519F21D43000C17CA /* View */,
 				3BA8716419F21D3D000C17CA /* Controller */,
@@ -403,7 +440,6 @@
 				3BA8714119F21D04000C17CA /* CAVmap.xcdatamodeld */,
 				3BA8713619F21D04000C17CA /* Supporting Files */,
 				3BA871B419F26E00000C17CA /* CAVImages */,
-				3BA8716319F21D34000C17CA /* BaseClass */,
 				3BA8716219F21D2B000C17CA /* Kit */,
 			);
 			path = CAVmap;
@@ -441,6 +477,7 @@
 		3BA8716219F21D2B000C17CA /* Kit */ = {
 			isa = PBXGroup;
 			children = (
+				3BA36A8F19F524DD00BB3892 /* AMBlurView */,
 				3BA36A6919F51B1000BB3892 /* SBJson */,
 				3BA36A6119F51B0800BB3892 /* dianpingapi */,
 				3BA36A4719F4C1A600BB3892 /* ImageRedraw */,
@@ -591,8 +628,7 @@
 		3BA871B419F26E00000C17CA /* CAVImages */ = {
 			isa = PBXGroup;
 			children = (
-				3BA36A5719F4E5AC00BB3892 /* indoor_left.png */,
-				3BA36A5819F4E5AC00BB3892 /* indoor_right.png */,
+				3BA36A9B19F52AAE00BB3892 /* tabBarImages */,
 				3BA36A5519F4CA4500BB3892 /* main_bottombar_background.png */,
 				3BA36A4D19F4C8DC00BB3892 /* main_icon_zoomin_dis.png */,
 				3BA36A4E19F4C8DC00BB3892 /* main_icon_zoomin.png */,
@@ -692,16 +728,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BA36A4C19F4C40800BB3892 /* navi_idle_gps_unlocked.png in Resources */,
+				3BA36A9A19F52AA000BB3892 /* main_icon_route.png in Resources */,
 				21A2B10519F3A70000050EE5 /* nav_backbtn@2x.png in Resources */,
 				3BA36A5919F4E5AC00BB3892 /* indoor_left.png in Resources */,
 				3BA871C019F26E5D000C17CA /* zoomout_idle_tool_dis.png in Resources */,
 				3BA871B219F21F38000C17CA /* mapapi.bundle in Resources */,
 				219890D719F271B8009E5575 /* mini_webview_back.png in Resources */,
+				3BA36A9919F52AA000BB3892 /* main_icon_nearby.png in Resources */,
 				3BA8713A19F21D04000C17CA /* InfoPlist.strings in Resources */,
 				3BA36A5619F4CA4500BB3892 /* main_bottombar_background.png in Resources */,
 				3BA36A5119F4C8DC00BB3892 /* main_icon_zoomin_dis.png in Resources */,
+				3BA36A9819F52AA000BB3892 /* main_icon_nav.png in Resources */,
 				3BA36A4519F4BF3600BB3892 /* main_icon_compass.png in Resources */,
 				3BA36A5219F4C8DC00BB3892 /* main_icon_zoomin.png in Resources */,
+				3BA36A9D19F52D2F00BB3892 /* qrcode_tabbar_background.png in Resources */,
 				3BA36A4619F4BF3600BB3892 /* main_icon_follow.png in Resources */,
 				3BA871C119F26E5D000C17CA /* zoomout_idle_tool_hl.png in Resources */,
 				3BA871C219F26E5D000C17CA /* zoomout_idle_tool.png in Resources */,
@@ -710,6 +750,7 @@
 				3BA8714519F21D04000C17CA /* Images.xcassets in Resources */,
 				21A2B11019F3B0BB00050EE5 /* NearByViewController.xib in Resources */,
 				3BA36A5319F4C8DC00BB3892 /* main_icon_zoomout_dis.png in Resources */,
+				3BA36A9719F52AA000BB3892 /* main_icon_mine.png in Resources */,
 				3BA36A5A19F4E5AC00BB3892 /* indoor_right.png in Resources */,
 				219890D519F2689B009E5575 /* nav_settings_icon_back_btn_normal.png in Resources */,
 				219890B119F221B2009E5575 /* MainViewController.xib in Resources */,
@@ -767,6 +808,7 @@
 				3BA8713C19F21D04000C17CA /* main.m in Sources */,
 				3BA36A8919F51B1000BB3892 /* SBJsonStreamWriter.m in Sources */,
 				3BA36A8E19F51B1000BB3892 /* SBJsonWriter.m in Sources */,
+				3BA36A9219F524FB00BB3892 /* AMBlurView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,6 +17,6 @@ typedef void(^receiveDataBlock)(BMKPoiResult*);
 }
 
 // 发送周边检索请求
-- (void)RequertDataWith:(NSString*)keyWord currentLocation:(BMKUserLocation*)location block:(receiveDataBlock)block;
+- (void)requertDataWith:(NSString*)keyWord currentLocation:(BMKUserLocation*)location block:(receiveDataBlock)block;
 
 @end

@@ -37,7 +37,7 @@
 
 - (void)initCustomNavgationBar
 {
-    navView = [[UIView alloc] initWithFrame:CGRectMake(-2, -2, kScreenWidth + 4, 62)];  //
+    navView = [[AMBlurView alloc] initWithFrame:CGRectMake(-2, -2, kScreenWidth + 4, 62)];  //
     //
     navView.backgroundColor = [UIColor whiteColor];  // 测试
     

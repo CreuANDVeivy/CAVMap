@@ -12,7 +12,7 @@
 #import "SBJson.h"
 #import <CommonCrypto/CommonDigest.h>
 
-#import "DPAppDelegate.h"
+#import "AppDelegate.h"
 
 #define kDPRequestTimeOutInterval   180.0
 #define kDPRequestStringBoundary    @"9536429F8AAB441bA4055A74B72B57DE"
@@ -195,14 +195,14 @@
 		[paramsDic setValuesForKeysWithDictionary:params];
 	}
 	
-	NSMutableString *signString = [NSMutableString stringWithString:[[DPAppDelegate instance] appKey]];
-	NSMutableString *paramsString = [NSMutableString stringWithFormat:@"appkey=%@", [[DPAppDelegate instance] appKey]];
+	NSMutableString *signString = [NSMutableString stringWithString:[[AppDelegate instance] appKey]];
+	NSMutableString *paramsString = [NSMutableString stringWithFormat:@"appkey=%@", [[AppDelegate instance] appKey]];
 	NSArray *sortedKeys = [[paramsDic allKeys] sortedArrayUsingSelector: @selector(compare:)];
 	for (NSString *key in sortedKeys) {
 		[signString appendFormat:@"%@%@", key, [paramsDic objectForKey:key]];
 		[paramsString appendFormat:@"&%@=%@", key, [paramsDic objectForKey:key]];
 	}
-	[signString appendString:[[DPAppDelegate instance] appSecret]];
+	[signString appendString:[[AppDelegate instance] appSecret]];
 	unsigned char digest[CC_SHA1_DIGEST_LENGTH];
 	NSData *stringBytes = [signString dataUsingEncoding: NSUTF8StringEncoding];
 	if (CC_SHA1([stringBytes bytes], [stringBytes length], digest)) {

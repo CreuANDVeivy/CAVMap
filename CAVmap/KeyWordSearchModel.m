@@ -10,10 +10,9 @@
 
 @implementation KeyWordSearchModel
 
-- (void)RequertDataWith:(NSString *)keyWord currentLocation:(BMKUserLocation*)location block:(receiveDataBlock)block
+
+- (void)requertDataWith:(NSString *)keyWord currentLocation:(BMKUserLocation*)location block:(receiveDataBlock)block
 {
-    
-    
     // 初始化检索对象
     BMKPoiSearch *searcher = [[BMKPoiSearch alloc]init];
     searcher.delegate = self;

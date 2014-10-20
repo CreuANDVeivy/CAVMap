@@ -18,6 +18,7 @@
 @synthesize searchBarView;
 @synthesize locationService;
 @synthesize currentLocation;
+@synthesize tabBarView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -69,6 +70,7 @@
     // 初始化地图
     mapV = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth,kScreenHeight)];
     mapV.mapType = BMKMapTypeStandard; // 地图类型 ： 标准地图
+
     [mapV updateConstraints];
     [self.view addSubview:mapV];
     
@@ -92,11 +94,32 @@
     }
     
     locationBtn = [UIButton buttonWithType:UIButtonTypeCustom];;
-    locationBtn.frame = kFrame(kScreenWidth-40, kScreenHeight-80, 40, 40);
+    locationBtn.frame = kFrame(kScreenWidth-40, kScreenHeight-85, 40, 40);
     [locationBtn setBackgroundImage:[UIImage imageNamed:@"main_bottombar_background"] forState:UIControlStateNormal];
     [locationBtn setImage:[UIImage imageNamed:@"navi_idle_gps_unlocked"] forState:UIControlStateNormal];
     [locationBtn addTarget:self action:@selector(loactionBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:locationBtn];
+    
+    tabBarView = [[AMBlurView alloc]initWithFrame:kFrame(0, kScreenHeight-40, kScreenWidth, 41)];
+    tabBarView.blurTintColor = [UIColor whiteColor];
+    [self.view addSubview:tabBarView];
+    
+    NSArray *tabBarBtnImageArr =  [NSArray arrayWithObjects:[UIImage imageNamed:@"main_icon_nearby"],[UIImage imageNamed:@"main_icon_route"],[UIImage imageNamed:@"main_icon_nav"],[UIImage imageNamed:@"main_icon_mine"], nil];
+    NSArray *tabBarBtnTitleArr = @[@"附近",@"路线",@"导航",@"我的"];
+    for (int i = 0; i < 4; i++)
+    {
+        
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom
+                                           frame:kFrame(10+i*75, 10, 60, 20)
+                                           image:tabBarBtnImageArr[i]
+                                           title:tabBarBtnTitleArr[i]
+                                          target:self
+                                          action:@selector(tabBarBtnAction:)];
+        btn.tag = 102+i;
+        [tabBarView addSubview:btn];
+        
+    }
+    
     
     
 }
@@ -146,6 +169,12 @@
     mapV.showsUserLocation = YES;
 }
 
+- (void)tabBarBtnAction:(id)sender
+{
+    
+    
+    
+}
 
 - (void)nearByClicksAction:(BaseButton *)sender
 {
@@ -185,7 +214,7 @@
     BMKCoordinateRegion region = {currentLocation.location.coordinate};
     [mapV setRegion:region];
     KeyWordSearchModel *keyWord = [[KeyWordSearchModel alloc]init];
-    [keyWord RequertDataWith:@"快餐" currentLocation:currentLocation block:^(BMKPoiResult *) {
+    [keyWord requertDataWith:@"快餐" currentLocation:currentLocation block:^(BMKPoiResult *) {
         
     }];
 }

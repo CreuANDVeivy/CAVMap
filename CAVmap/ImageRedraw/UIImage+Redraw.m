@@ -14,12 +14,20 @@
 
 @implementation UIButton(addtion)
 
-+(UIButton*)buttonWithType:(UIButtonType)buttonType frame:(CGRect)frame backgroundImage:(UIImage *)backgroundImage title:(NSString *)title target:(id)target action:(SEL)action{
++(UIButton*)buttonWithType:(UIButtonType)buttonType frame:(CGRect)frame image:(UIImage *)image title:(NSString *)title target:(id)target action:(SEL)action{
     UIButton*button=[UIButton buttonWithType:buttonType];
     button.frame=frame;
-    [button setTitle:title forState:UIControlStateNormal];
-    [button setBackgroundImage:backgroundImage forState:UIControlStateNormal];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    UIImageView *imageV = [[UIImageView alloc]initWithFrame:kFrame(0, 0, 20, 20)];
+    imageV.image = image;
+    [button addSubview:imageV];
+    
+    UILabel *label = [[UILabel alloc]initWithFrame:kFrame(20, 0, 40,20)];
+    label.text = title;
+    label.font = [UIFont systemFontOfSize:12];
+    [button addSubview:label];
+    
     return button;
 }
 

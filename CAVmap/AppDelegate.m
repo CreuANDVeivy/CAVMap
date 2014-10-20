@@ -16,6 +16,33 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
++ (AppDelegate *)instance
+{
+	return (AppDelegate *)[[UIApplication sharedApplication] delegate];
+}
+
+- (id)init
+{
+	self = [super init];
+    if (self)
+    {
+        
+        _dpapi = [[DPAPI alloc] init];
+		_appKey = [[NSUserDefaults standardUserDefaults] valueForKey:@"appkey"];
+		if (_appKey.length<1)
+        {
+			_appKey = kDPAppKey;
+		}
+        
+		_appSecret = [[NSUserDefaults standardUserDefaults] valueForKey:@"appsecret"];
+		if (_appSecret.length<1)
+        {
+			_appSecret = kDPAppSecret;
+		}
+    }
+    return self;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -57,6 +84,18 @@
 {
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+}
+#pragma mark - DPapi
+- (void)setAppKey:(NSString *)appKey
+{
+	_appKey = appKey;
+	[[NSUserDefaults standardUserDefaults] setValue:appKey forKey:@"appkey"];
+}
+
+- (void)setAppSecret:(NSString *)appSecret
+{
+	_appSecret = appSecret;
+	[[NSUserDefaults standardUserDefaults] setValue:appSecret forKey:@"appsecret"];
 }
 
 - (void)saveContext
