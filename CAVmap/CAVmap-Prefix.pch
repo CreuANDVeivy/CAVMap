@@ -41,4 +41,9 @@
     #import "BaseCollectionView.h"
     //
 
+    // 引入类目的头文件
+    #import "UIImage+Redraw.h"
+    #import "UIAlertView+TipsUser.h"
+    //
+
 #endif
