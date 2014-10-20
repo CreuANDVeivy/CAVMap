@@ -10,7 +10,7 @@
 
 @interface BaseViewController : UIViewController
 
-@property (retain, nonatomic) UIView *navView; // 导航栏视图
+@property (retain, nonatomic) AMBlurView *navView; // 导航栏视图
 @property (retain, nonatomic) UIButton *backButton;  // 返回按钮
 
 // 初始化自定义导航栏的方法

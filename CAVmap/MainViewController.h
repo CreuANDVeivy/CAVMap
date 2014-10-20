@@ -7,14 +7,18 @@
 //
 
 #import "BaseViewController.h"
+#import "KeyWordSearchModel.h"
 
-@interface MainViewController : BaseViewController<BMKGeneralDelegate,BMKMapViewDelegate>
+@interface MainViewController : BaseViewController<BMKGeneralDelegate,BMKMapViewDelegate,BMKLocationServiceDelegate>
 {
-    BMKMapManager *mapManager;//地图管理者
-    BMKMapView *mapV;//地图视图
+    BMKMapManager *mapManager;  // 地图管理者
+    BMKMapView *mapV;  // 地图视图
+    UIButton *locationBtn;
 }
 
-@property (retain, nonatomic) BaseButton *nearBy;  // 附近的按钮
-@property (retain, nonatomic) UIView *searchBarView;//搜
+@property (retain, nonatomic) UIView *searchBarView;  // 搜
+@property (retain, nonatomic) AMBlurView *tabBarView;
+@property (retain, nonatomic) BMKLocationService *locationService;  // 定位服务
+@property (retain, nonatomic) BMKUserLocation *currentLocation;  // 当前位置
 
 @end

@@ -31,7 +31,11 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
+    // 引入第三方库头文件
     #import "BMapKit.h"
+    #import "DPAPI.h"
+    #import "AMBlurView.h"
+
     // 引入基类的头文件
     #import "BaseNavgationViewController.h"
     #import "BaseLabel.h"
