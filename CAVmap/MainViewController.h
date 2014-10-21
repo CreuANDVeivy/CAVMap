@@ -13,7 +13,9 @@
 {
     BMKMapManager *mapManager;  // 地图管理者
     BMKMapView *mapV;  // 地图视图
-    UIButton *locationBtn;
+    UIButton *locationBtn; // 定位按钮
+    UIView *menuView; // 菜单视图
+    UIButton *tabBarBtn; // tabBar动画按钮
 }
 
 @property (retain, nonatomic) UIView *searchBarView;  // 搜

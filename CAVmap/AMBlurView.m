@@ -48,7 +48,7 @@
     [self setBlurLayer:[[self toolbar] layer]];
     
     UIView *blurView = [UIView new];
-    [blurView setUserInteractionEnabled:NO];
+//    [blurView setUserInteractionEnabled:NO];
     [blurView.layer addSublayer:[self blurLayer]];
 //    [blurView setTranslatesAutoresizingMaskIntoConstraints:NO];
 //    [blurView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];

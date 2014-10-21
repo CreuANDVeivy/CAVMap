@@ -44,9 +44,7 @@
 		21A2B11319F3B35300050EE5 /* BaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A2B11219F3B35300050EE5 /* BaseCollectionView.m */; };
 		3BA36A6019F5074000BB3892 /* UIAlertView+TipsUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA36A5F19F5074000BB3892 /* UIAlertView+TipsUser.m */; };
 		3BA36ADD19F5E82D00BB3892 /* UIImage+Redraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA36AC119F5E82D00BB3892 /* UIImage+Redraw.m */; };
-		3BA36AF719F5E86900BB3892 /* indoor_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36ADF19F5E86900BB3892 /* indoor_left.png */; };
 		3BA36AF819F5E86900BB3892 /* indoor_loc_suc.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36AE019F5E86900BB3892 /* indoor_loc_suc.png */; };
-		3BA36AF919F5E86900BB3892 /* indoor_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36AE119F5E86900BB3892 /* indoor_right.png */; };
 		3BA36AFA19F5E86900BB3892 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36AE219F5E86900BB3892 /* location.png */; };
 		3BA36AFB19F5E86900BB3892 /* main_bottombar_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36AE319F5E86900BB3892 /* main_bottombar_background.png */; };
 		3BA36AFC19F5E86900BB3892 /* main_icon_compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36AE419F5E86900BB3892 /* main_icon_compass.png */; };
@@ -84,6 +82,27 @@
 		3BA36B4619F5EA3B00BB3892 /* DPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA36B4219F5EA3B00BB3892 /* DPAPI.m */; };
 		3BA36B4719F5EA3B00BB3892 /* DPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA36B4519F5EA3B00BB3892 /* DPRequest.m */; };
 		3BA36B5A19F5EAF300BB3892 /* AMBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA36A9F19F5E82D00BB3892 /* AMBlurView.m */; };
+		3BA36B5E19F5F88900BB3892 /* userinfo_tabicon_search.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B5D19F5F88900BB3892 /* userinfo_tabicon_search.png */; };
+		3BA36B6219F5FA5900BB3892 /* game_detail_header_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B6119F5FA5900BB3892 /* game_detail_header_bg.png */; };
+		3BA36B6619F5FF8C00BB3892 /* main_map_mode_3d_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B6319F5FF8C00BB3892 /* main_map_mode_3d_normal.png */; };
+		3BA36B6719F5FF8C00BB3892 /* main_map_mode_plain_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B6419F5FF8C00BB3892 /* main_map_mode_plain_normal.png */; };
+		3BA36B6819F5FF8C00BB3892 /* main_map_mode_satellite_normal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B6519F5FF8C00BB3892 /* main_map_mode_satellite_normal.jpg */; };
+		3BA36B6B19F6000800BB3892 /* main_icon_roadcondition_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B6919F6000800BB3892 /* main_icon_roadcondition_off.png */; };
+		3BA36B6C19F6000800BB3892 /* main_icon_roadcondition_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B6A19F6000800BB3892 /* main_icon_roadcondition_on.png */; };
+		3BA36B6E19F6004800BB3892 /* main_icon_maplayers.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B6D19F6004800BB3892 /* main_icon_maplayers.png */; };
+		3BA36B7019F612C900BB3892 /* icon_cancel_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B6F19F612C900BB3892 /* icon_cancel_normal.png */; };
+		3BA36B7419F652B200BB3892 /* map_layer_fav.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B7119F652B200BB3892 /* map_layer_fav.png */; };
+		3BA36B7519F652B200BB3892 /* map_layer_hot.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B7219F652B200BB3892 /* map_layer_hot.png */; };
+		3BA36B7619F652B200BB3892 /* map_layer_indoor.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B7319F652B200BB3892 /* map_layer_indoor.png */; };
+		3BA36B7A19F6553F00BB3892 /* sendtocar_dotted_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B7919F6553F00BB3892 /* sendtocar_dotted_line.png */; };
+		3BA36B7D19F660BB00BB3892 /* route_push_back_btn_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B7B19F660BB00BB3892 /* route_push_back_btn_normal.png */; };
+		3BA36B7E19F660BB00BB3892 /* route_push_back_btn_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B7C19F660BB00BB3892 /* route_push_back_btn_pressed.png */; };
+		3BA36B8519F6664B00BB3892 /* maplayer_manager_2d_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B7F19F6664B00BB3892 /* maplayer_manager_2d_hl.png */; };
+		3BA36B8619F6664B00BB3892 /* maplayer_manager_2d.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B8019F6664B00BB3892 /* maplayer_manager_2d.png */; };
+		3BA36B8719F6664B00BB3892 /* maplayer_manager_3d_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B8119F6664B00BB3892 /* maplayer_manager_3d_hl.png */; };
+		3BA36B8819F6664B00BB3892 /* maplayer_manager_3d.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B8219F6664B00BB3892 /* maplayer_manager_3d.png */; };
+		3BA36B8919F6664B00BB3892 /* maplayer_manager_sate_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B8319F6664B00BB3892 /* maplayer_manager_sate_hl.png */; };
+		3BA36B8A19F6664B00BB3892 /* maplayer_manager_sate.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36B8419F6664B00BB3892 /* maplayer_manager_sate.png */; };
 		3BA8712E19F21D04000C17CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8712D19F21D04000C17CA /* Foundation.framework */; };
 		3BA8713019F21D04000C17CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8712F19F21D04000C17CA /* CoreGraphics.framework */; };
 		3BA8713219F21D04000C17CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8713119F21D04000C17CA /* UIKit.framework */; };
@@ -175,9 +194,7 @@
 		3BA36A9F19F5E82D00BB3892 /* AMBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBlurView.m; sourceTree = "<group>"; };
 		3BA36AC019F5E82D00BB3892 /* UIImage+Redraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Redraw.h"; sourceTree = "<group>"; };
 		3BA36AC119F5E82D00BB3892 /* UIImage+Redraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Redraw.m"; sourceTree = "<group>"; };
-		3BA36ADF19F5E86900BB3892 /* indoor_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indoor_left.png; sourceTree = "<group>"; };
 		3BA36AE019F5E86900BB3892 /* indoor_loc_suc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indoor_loc_suc.png; sourceTree = "<group>"; };
-		3BA36AE119F5E86900BB3892 /* indoor_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indoor_right.png; sourceTree = "<group>"; };
 		3BA36AE219F5E86900BB3892 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
 		3BA36AE319F5E86900BB3892 /* main_bottombar_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_bottombar_background.png; sourceTree = "<group>"; };
 		3BA36AE419F5E86900BB3892 /* main_icon_compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_icon_compass.png; sourceTree = "<group>"; };
@@ -231,6 +248,27 @@
 		3BA36B4319F5EA3B00BB3892 /* DPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPConstants.h; sourceTree = "<group>"; };
 		3BA36B4419F5EA3B00BB3892 /* DPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRequest.h; sourceTree = "<group>"; };
 		3BA36B4519F5EA3B00BB3892 /* DPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRequest.m; sourceTree = "<group>"; };
+		3BA36B5D19F5F88900BB3892 /* userinfo_tabicon_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userinfo_tabicon_search.png; sourceTree = "<group>"; };
+		3BA36B6119F5FA5900BB3892 /* game_detail_header_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_detail_header_bg.png; sourceTree = "<group>"; };
+		3BA36B6319F5FF8C00BB3892 /* main_map_mode_3d_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_map_mode_3d_normal.png; sourceTree = "<group>"; };
+		3BA36B6419F5FF8C00BB3892 /* main_map_mode_plain_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_map_mode_plain_normal.png; sourceTree = "<group>"; };
+		3BA36B6519F5FF8C00BB3892 /* main_map_mode_satellite_normal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = main_map_mode_satellite_normal.jpg; sourceTree = "<group>"; };
+		3BA36B6919F6000800BB3892 /* main_icon_roadcondition_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_icon_roadcondition_off.png; sourceTree = "<group>"; };
+		3BA36B6A19F6000800BB3892 /* main_icon_roadcondition_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_icon_roadcondition_on.png; sourceTree = "<group>"; };
+		3BA36B6D19F6004800BB3892 /* main_icon_maplayers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_icon_maplayers.png; sourceTree = "<group>"; };
+		3BA36B6F19F612C900BB3892 /* icon_cancel_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_cancel_normal.png; sourceTree = "<group>"; };
+		3BA36B7119F652B200BB3892 /* map_layer_fav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_layer_fav.png; sourceTree = "<group>"; };
+		3BA36B7219F652B200BB3892 /* map_layer_hot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_layer_hot.png; sourceTree = "<group>"; };
+		3BA36B7319F652B200BB3892 /* map_layer_indoor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_layer_indoor.png; sourceTree = "<group>"; };
+		3BA36B7919F6553F00BB3892 /* sendtocar_dotted_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sendtocar_dotted_line.png; sourceTree = "<group>"; };
+		3BA36B7B19F660BB00BB3892 /* route_push_back_btn_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = route_push_back_btn_normal.png; sourceTree = "<group>"; };
+		3BA36B7C19F660BB00BB3892 /* route_push_back_btn_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = route_push_back_btn_pressed.png; sourceTree = "<group>"; };
+		3BA36B7F19F6664B00BB3892 /* maplayer_manager_2d_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maplayer_manager_2d_hl.png; sourceTree = "<group>"; };
+		3BA36B8019F6664B00BB3892 /* maplayer_manager_2d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maplayer_manager_2d.png; sourceTree = "<group>"; };
+		3BA36B8119F6664B00BB3892 /* maplayer_manager_3d_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maplayer_manager_3d_hl.png; sourceTree = "<group>"; };
+		3BA36B8219F6664B00BB3892 /* maplayer_manager_3d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maplayer_manager_3d.png; sourceTree = "<group>"; };
+		3BA36B8319F6664B00BB3892 /* maplayer_manager_sate_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maplayer_manager_sate_hl.png; sourceTree = "<group>"; };
+		3BA36B8419F6664B00BB3892 /* maplayer_manager_sate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maplayer_manager_sate.png; sourceTree = "<group>"; };
 		3BA8712A19F21D04000C17CA /* CAVmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAVmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA8712D19F21D04000C17CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3BA8712F19F21D04000C17CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -388,9 +426,28 @@
 		3BA36ADE19F5E86900BB3892 /* CAVImages */ = {
 			isa = PBXGroup;
 			children = (
-				3BA36ADF19F5E86900BB3892 /* indoor_left.png */,
+				3BA36B7F19F6664B00BB3892 /* maplayer_manager_2d_hl.png */,
+				3BA36B8019F6664B00BB3892 /* maplayer_manager_2d.png */,
+				3BA36B8119F6664B00BB3892 /* maplayer_manager_3d_hl.png */,
+				3BA36B8219F6664B00BB3892 /* maplayer_manager_3d.png */,
+				3BA36B8319F6664B00BB3892 /* maplayer_manager_sate_hl.png */,
+				3BA36B8419F6664B00BB3892 /* maplayer_manager_sate.png */,
+				3BA36B7B19F660BB00BB3892 /* route_push_back_btn_normal.png */,
+				3BA36B7C19F660BB00BB3892 /* route_push_back_btn_pressed.png */,
+				3BA36B7919F6553F00BB3892 /* sendtocar_dotted_line.png */,
+				3BA36B7119F652B200BB3892 /* map_layer_fav.png */,
+				3BA36B7219F652B200BB3892 /* map_layer_hot.png */,
+				3BA36B7319F652B200BB3892 /* map_layer_indoor.png */,
+				3BA36B6F19F612C900BB3892 /* icon_cancel_normal.png */,
+				3BA36B6D19F6004800BB3892 /* main_icon_maplayers.png */,
+				3BA36B6919F6000800BB3892 /* main_icon_roadcondition_off.png */,
+				3BA36B6A19F6000800BB3892 /* main_icon_roadcondition_on.png */,
+				3BA36B6319F5FF8C00BB3892 /* main_map_mode_3d_normal.png */,
+				3BA36B6419F5FF8C00BB3892 /* main_map_mode_plain_normal.png */,
+				3BA36B6519F5FF8C00BB3892 /* main_map_mode_satellite_normal.jpg */,
+				3BA36B6119F5FA5900BB3892 /* game_detail_header_bg.png */,
+				3BA36B5D19F5F88900BB3892 /* userinfo_tabicon_search.png */,
 				3BA36AE019F5E86900BB3892 /* indoor_loc_suc.png */,
-				3BA36AE119F5E86900BB3892 /* indoor_right.png */,
 				3BA36AE219F5E86900BB3892 /* location.png */,
 				3BA36AE319F5E86900BB3892 /* main_bottombar_background.png */,
 				3BA36AE419F5E86900BB3892 /* main_icon_compass.png */,
@@ -774,50 +831,69 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA36B6719F5FF8C00BB3892 /* main_map_mode_plain_normal.png in Resources */,
 				2197EA5019F4C27D00B0B632 /* scene_arrow_pink.png in Resources */,
 				2197EA5B19F51A2700B0B632 /* scenic.png in Resources */,
 				3BA36B0A19F5E86900BB3892 /* zoomin_idle_tool_dis.png in Resources */,
 				3BA36B0B19F5E86900BB3892 /* zoomin_idle_tool_hl.png in Resources */,
 				3BA36B0419F5E86900BB3892 /* main_icon_zoomout.png in Resources */,
+				3BA36B7619F652B200BB3892 /* map_layer_indoor.png in Resources */,
 				3BA871B219F21F38000C17CA /* mapapi.bundle in Resources */,
 				2197EA4E19F4C27D00B0B632 /* scene_arrow_green.png in Resources */,
+				3BA36B7519F652B200BB3892 /* map_layer_hot.png in Resources */,
+				3BA36B7419F652B200BB3892 /* map_layer_fav.png in Resources */,
+				3BA36B8A19F6664B00BB3892 /* maplayer_manager_sate.png in Resources */,
 				2197EA4419F4C1A800B0B632 /* main_map_drawer_icon_poi_scene_jiaotongsheshi.png in Resources */,
-				3BA36AF919F5E86900BB3892 /* indoor_right.png in Resources */,
 				3BA36B0319F5E86900BB3892 /* main_icon_zoomin_dis.png in Resources */,
 				3BA36B0019F5E86900BB3892 /* main_icon_nearby.png in Resources */,
 				3BA36B0919F5E86900BB3892 /* zoomin_idle_tool.png in Resources */,
 				2197EA4019F4C19400B0B632 /* main_map_drawer_icon_poi_scene_jiudian.png in Resources */,
 				2197EA5A19F51A2700B0B632 /* hotel.png in Resources */,
 				2197EA5C19F51A2700B0B632 /* taxi.png in Resources */,
+				3BA36B8919F6664B00BB3892 /* maplayer_manager_sate_hl.png in Resources */,
 				3BA8713A19F21D04000C17CA /* InfoPlist.strings in Resources */,
 				3BA36AFD19F5E86900BB3892 /* main_icon_follow.png in Resources */,
 				3BA36B0219F5E86900BB3892 /* main_icon_zoomin.png in Resources */,
+				3BA36B8819F6664B00BB3892 /* maplayer_manager_3d.png in Resources */,
 				2197EA4F19F4C27D00B0B632 /* scene_arrow_orange.png in Resources */,
+				3BA36B6E19F6004800BB3892 /* main_icon_maplayers.png in Resources */,
 				2197EA3819F4BF2900B0B632 /* zhoumoqunaer.png in Resources */,
+				3BA36B8619F6664B00BB3892 /* maplayer_manager_2d.png in Resources */,
 				2197EA5819F51A2700B0B632 /* dinner.png in Resources */,
 				3BA36B0519F5E86900BB3892 /* main_icon_zoomout_dis.png in Resources */,
+				3BA36B8519F6664B00BB3892 /* maplayer_manager_2d_hl.png in Resources */,
+				3BA36B7A19F6553F00BB3892 /* sendtocar_dotted_line.png in Resources */,
 				3BA36B0E19F5E86900BB3892 /* zoomout_idle_tool_hl.png in Resources */,
 				3BA8714519F21D04000C17CA /* Images.xcassets in Resources */,
 				21A2B11019F3B0BB00050EE5 /* NearByViewController.xib in Resources */,
 				3BA36B0719F5E86900BB3892 /* navi_idle_gps_unlocked.png in Resources */,
 				3BA36AF819F5E86900BB3892 /* indoor_loc_suc.png in Resources */,
 				2197EA3C19F4C07300B0B632 /* bus.png in Resources */,
-				3BA36AF719F5E86900BB3892 /* indoor_left.png in Resources */,
+				3BA36B8719F6664B00BB3892 /* maplayer_manager_3d_hl.png in Resources */,
+				3BA36B5E19F5F88900BB3892 /* userinfo_tabicon_search.png in Resources */,
 				2197EA4D19F4C27D00B0B632 /* scene_arrow_blue.png in Resources */,
 				2197EA4819F4C1C600B0B632 /* main_map_drawer_icon_poi_tour_recommand.png in Resources */,
 				3BA36B0C19F5E86900BB3892 /* zoomout_idle_tool.png in Resources */,
 				3BA36AFF19F5E86900BB3892 /* main_icon_nav.png in Resources */,
+				3BA36B7E19F660BB00BB3892 /* route_push_back_btn_pressed.png in Resources */,
 				2197EA3E19F4C18E00B0B632 /* main_map_drawer_icon_poi_scene_meishi.png in Resources */,
 				3BA36AFB19F5E86900BB3892 /* main_bottombar_background.png in Resources */,
+				3BA36B6619F5FF8C00BB3892 /* main_map_mode_3d_normal.png in Resources */,
+				3BA36B7019F612C900BB3892 /* icon_cancel_normal.png in Resources */,
+				3BA36B7D19F660BB00BB3892 /* route_push_back_btn_normal.png in Resources */,
 				3BA36AFC19F5E86900BB3892 /* main_icon_compass.png in Resources */,
+				3BA36B6B19F6000800BB3892 /* main_icon_roadcondition_off.png in Resources */,
 				2197EA5719F51A2700B0B632 /* cinema.png in Resources */,
 				3BA36B0D19F5E86900BB3892 /* zoomout_idle_tool_dis.png in Resources */,
+				3BA36B6819F5FF8C00BB3892 /* main_map_mode_satellite_normal.jpg in Resources */,
 				3BA36AFA19F5E86900BB3892 /* location.png in Resources */,
 				3BA36AFE19F5E86900BB3892 /* main_icon_mine.png in Resources */,
 				2197EA4619F4C1B600B0B632 /* main_map_drawer_icon_poi_scene_shenghuofuwu.png in Resources */,
 				3BA36B0819F5E86900BB3892 /* qrcode_tabbar_background.png in Resources */,
+				3BA36B6219F5FA5900BB3892 /* game_detail_header_bg.png in Resources */,
 				219890B119F221B2009E5575 /* MainViewController.xib in Resources */,
 				2197EA5919F51A2700B0B632 /* group.png in Resources */,
+				3BA36B6C19F6000800BB3892 /* main_icon_roadcondition_on.png in Resources */,
 				3BA36B0619F5E86900BB3892 /* nav_backbtn@2x.png in Resources */,
 				2197EA4219F4C1A000B0B632 /* main_map_drawer_icon_poi_scene_xiuxianyule.png in Resources */,
 				3BA36B0119F5E86900BB3892 /* main_icon_route.png in Resources */,
