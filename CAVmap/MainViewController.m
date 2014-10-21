@@ -18,7 +18,7 @@
 @synthesize searchBarView;
 @synthesize locationService;
 @synthesize currentLocation;
-@synthesize tabBarView;
+@synthesize tabBarView,navBarView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -80,9 +80,8 @@
 #pragma mark - 初始化按钮视图
 - (void)initButtonView
 {
+    // 放大缩小按钮初始化
     NSArray *btnImageArr = [NSArray arrayWithObjects:[UIImage redraw:[UIImage imageNamed:@"main_icon_zoomin"] Frame:kFrame(0, 0, 20, 20)],[UIImage redraw:[UIImage imageNamed:@"main_icon_zoomout"] Frame:kFrame(0, 0, 20, 20)], nil];
-    
-    
 
     for (int i = 0; i < 2; i++)
     {
@@ -95,6 +94,7 @@
         [self.view addSubview:btn];
     }
     
+    // 定位按钮初始化
     locationBtn = [UIButton buttonWithType:UIButtonTypeCustom];;
     locationBtn.frame = kFrame(kScreenWidth-40, kScreenHeight-85, 40, 40);
     [locationBtn setBackgroundImage:[UIImage imageNamed:@"main_bottombar_background"] forState:UIControlStateNormal];
@@ -102,10 +102,12 @@
     [locationBtn addTarget:self action:@selector(loactionBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:locationBtn];
     
+    // tabBar视图初始化
     tabBarView = [[AMBlurView alloc]initWithFrame:kFrame(0, kScreenHeight-40, kScreenWidth, 41)];
     tabBarView.blurTintColor = [UIColor whiteColor];
     [self.view addSubview:tabBarView];
     
+    // tabBar按钮初始化
     NSArray *tabBarBtnImageArr =  [NSArray arrayWithObjects:[UIImage imageNamed:@"main_icon_nearby"],[UIImage imageNamed:@"main_icon_route"],[UIImage imageNamed:@"main_icon_nav"],[UIImage imageNamed:@"main_icon_mine"], nil];
     NSArray *tabBarBtnTitleArr = @[@"附近",@"路线",@"导航",@"我的"];
     for (int i = 0; i < 4; i++)
@@ -117,10 +119,15 @@
                                            title:tabBarBtnTitleArr[i]
                                           target:self
                                           action:@selector(tabBarBtnAction:)];
-        btn.tag = 102+i;
+        btn.tag = 111+i;
         [tabBarView addSubview:btn];
         
     }
+    
+    // naviBar初始
+    navBarView = [[AMBlurView alloc]initWithFrame:kFrame(0, 0, kScreenWidth, 60)];
+    navBarView.transform = CGAffineTransformMakeRotation(M_PI);
+    [self.view addSubview:navBarView];
     
     
     
@@ -171,10 +178,36 @@
     mapV.showsUserLocation = YES;
 }
 
-- (void)tabBarBtnAction:(id)sender
+- (void)tabBarBtnAction:(UIButton*)sender
 {
-    
-    NSLog(@"-----");
+    switch (sender.tag) {
+        case 111:
+        {
+            [self.navigationController pushViewController:[NearByViewController new] animated:YES];
+        }
+            break;
+            
+        case 112:
+        {
+            
+        }
+            break;
+            
+        case 113:
+        {
+            
+        }
+            break;
+            
+        case 114:
+        {
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
     
 }
 
