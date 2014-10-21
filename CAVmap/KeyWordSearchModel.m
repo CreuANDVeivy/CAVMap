@@ -7,11 +7,12 @@
 //
 
 #import "KeyWordSearchModel.h"
+#import "AppDelegate.h"
 
 @implementation KeyWordSearchModel
 
 
-- (void)requertDataWith:(NSString *)keyWord currentLocation:(BMKUserLocation*)location block:(receiveDataBlock)block
+- (void)requestDataWith:(NSString *)keyWord currentLocation:(BMKUserLocation*)location block:(receiveDataBlock)block
 {
     // 初始化检索对象
     BMKPoiSearch *searcher = [[BMKPoiSearch alloc]init];
@@ -40,12 +41,7 @@
 {
     if (error == BMK_SEARCH_NO_ERROR)
     {
-        //在此处理正常结果
-        for (BMKPoiInfo *info in poiResultList.poiInfoList)
-        {
-            NSLog(@"name = %@ \n address = %@",info.name,info.address);
-            currentBlock(poiResultList);
-        }
+        currentBlock(poiResultList);
     }
     else if (error == BMK_SEARCH_AMBIGUOUS_KEYWORD)
     {
@@ -56,6 +52,24 @@
     {
         NSLog(@"抱歉，未找到结果");
     }
+}
+
+- (void)requestDataWith:(NSString*)url params:(NSString*)params block:(receiveDataBlock)block errorBlock:(receiveDataBlock)errorblock
+{
+    [[[AppDelegate instance] dpapi] requestWithURL:url paramsString:params delegate:self];
+    dpBlock = block;
+    errorBlock = errorblock;
+}
+
+
+- (void)request:(DPRequest *)request didFailWithError:(NSError *)error
+{
+    errorBlock(error);
+}
+
+- (void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result
+{
+	dpBlock(result);
 }
 
 @end
