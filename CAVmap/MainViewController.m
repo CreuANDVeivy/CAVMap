@@ -82,18 +82,8 @@
 {
     NSArray *btnImageArr = [NSArray arrayWithObjects:[UIImage redraw:[UIImage imageNamed:@"main_icon_zoomin"] Frame:kFrame(0, 0, 20, 20)],[UIImage redraw:[UIImage imageNamed:@"main_icon_zoomout"] Frame:kFrame(0, 0, 20, 20)], nil];
     
-    UIImage *image1 = [UIImage imageNamed:@"zoomin_idle_tool.png"];
-    UIImage *image2 = [UIImage imageNamed:@"zoomin_idle_tool_hl.png"];
-    UIImage *image3 = [UIImage imageNamed:@"zoomout_idle_tool.png"];
-    UIImage *image4 = [UIImage imageNamed:@"zoomout_idle_tool_hl.png"];
     
-//    NSLog(@"iamge=%@",image1);
-    
-//    [btnImageArr addObject:image1];
 
-
-//    NSLog(@"%@",btnImageArr);
-    int temp = 0;
     for (int i = 0; i < 2; i++)
     {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -121,7 +111,7 @@
     for (int i = 0; i < 4; i++)
     {
         
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect
                                            frame:kFrame(10+i*75, 10, 60, 20)
                                            image:tabBarBtnImageArr[i]
                                            title:tabBarBtnTitleArr[i]
@@ -184,7 +174,7 @@
 - (void)tabBarBtnAction:(id)sender
 {
     
-    
+    NSLog(@"-----");
     
 }
 

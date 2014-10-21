@@ -48,4 +48,8 @@
     #import "BaseTableView.h"
     //
 
+    // 引入类目头文件
+    #import "UIImage+Redraw.h"
+    #import "UIAlertView+TipsUser.h"
+
 #endif
