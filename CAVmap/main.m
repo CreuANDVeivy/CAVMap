@@ -1,5 +1,4 @@
-//
-//  main.m
+///  main.m
 //  CAVmap
 //
 //  Created by Ibokan on 14-10-18.

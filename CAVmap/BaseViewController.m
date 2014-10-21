@@ -54,6 +54,39 @@
     [self.view addSubview:navView];
 }
 
+- (void)addRightMapButton
+{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = kFrame(kScreenWidth - 70, 25, 60, 28);
+    [btn addTarget:self action:@selector(transformToMapView:) forControlEvents:UIControlEventTouchUpInside];  // 添加方法
+    btn.layer.borderWidth = 0.5;
+    btn.layer.borderColor = [UIColor grayColor].CGColor;
+    // 设置圆角
+    btn.layer.cornerRadius = 3;
+    btn.layer.masksToBounds = NO;
+    [navView addSubview:btn];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topbar_view_map.png"] highlightedImage:[UIImage imageNamed:@"topbar_view_map.png"]];
+    imageView.frame = kFrame(5, 2.5, 20, 20);
+    [btn addSubview:imageView];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:kFrame(27.5, 3, 30, 20)];
+    titleLabel.text = @"地图";
+    titleLabel.adjustsFontSizeToFitWidth = YES;
+    titleLabel.textColor = [UIColor colorWithRed:10/255.0 green:95/255.0 blue:254/255.0 alpha:1];
+    [btn addSubview:titleLabel];
+    
+}
+
+#pragma mark - 点击方法
+
+// 切换到地图视图的方法
+- (void)transformToMapView:(UIButton *)sender
+{
+    // 去地图的方法
+    NSLog(@"切换到地图视图");
+}
+
 // 返回按钮事件
 - (void)backButtonClickAction:(UIButton *)sender
 {
