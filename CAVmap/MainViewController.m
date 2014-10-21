@@ -46,7 +46,7 @@
     [super viewDidLoad];
     
     [self initMapView];  // 初始化地图视图
-    [self initButtonView];  // 初始化按钮视图
+//    [self initButtonView];  // 初始化按钮视图
     [self initMenuView];  // 初始化菜单视图
     
     // 初始化定位服务
