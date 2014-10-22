@@ -48,7 +48,7 @@
     [self initMapView];  // 初始化地图视图
     [self initButtonView];  // 初始化按钮视图
     [self initMenuView];  // 初始化菜单视图
-    
+    [self initTabBarAndNavBar]; // 初始化tabBar和navBar视图
     // 初始化定位服务
     locationService = [[BMKLocationService alloc]init];
     [locationService startUserLocationService];  // 开启定位服务
@@ -177,6 +177,11 @@
     [locationBtn addTarget:self action:@selector(loactionBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:locationBtn];
     
+}
+
+#pragma mark - 初始化tabBar和navBar视图
+- (void)initTabBarAndNavBar
+{
     // tabBar视图初始化
     tabBarView = [[AMBlurView alloc]initWithFrame:kFrame(0, kScreenHeight-40, kScreenWidth, 41)];
     tabBarView.blurTintColor = [UIColor whiteColor];
@@ -200,7 +205,7 @@
     tabBarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     tabBarBtn.frame = kFrame(kScreenWidth-30, kScreenHeight-30, 20, 20);
     tabBarBtn.backgroundColor = [UIColor whiteColor];
-
+    
     [tabBarBtn setImage:[UIImage imageNamed:@"route_push_back_btn_normal"] forState:UIControlStateNormal];
     [tabBarBtn addTarget:self action:@selector(hiddenTabBarAction:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -256,7 +261,6 @@
     
     [self.view addSubview:navImageView];
     
-    
 }
 
 #pragma mark - ButtonClicksAction
@@ -304,10 +308,11 @@
     mapV.showsUserLocation = YES;
 }
 
-//tabBar按钮
+// tabBar按钮
 - (void)tabBarBtnAction:(UIButton*)sender
 {
-    switch (sender.tag) {
+    switch (sender.tag)
+    {
         case 111:
         {
             [self.navigationController pushViewController:[NearByViewController new] animated:YES];
@@ -504,8 +509,6 @@
 }
 
 #pragma mark - MapView Delegate
-
-
 
 #pragma mark - LocationService Delegate
 
