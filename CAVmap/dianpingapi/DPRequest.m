@@ -114,7 +114,9 @@
 	
 	SBJsonParser *parser = [[SBJsonParser alloc] init];
     id result = [parser objectWithData:data];
-	NSLog(@"return: \n%@", result);
+    
+    kPostNotification(kReceiveData, result);
+    
     if (!result) {
 		NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
 								  parser.error, @"error", nil];

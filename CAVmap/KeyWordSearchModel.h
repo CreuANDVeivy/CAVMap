@@ -11,15 +11,25 @@
 // 接收数据
 typedef void(^receiveDataBlock)(id);
 
-@interface KeyWordSearchModel : NSObject <BMKPoiSearchDelegate,DPRequestDelegate>
+@interface KeyWordSearchModel : NSObject <BMKPoiSearchDelegate>
 {
     receiveDataBlock currentBlock;
-    receiveDataBlock errorBlock;
-    receiveDataBlock dpBlock;
+    receiveDataBlock baiduBlock;
+    receiveDataBlock detailBlock;
+    
 }
 
 // 发送周边检索请求
-- (void)requestDataWith:(NSString*)keyWord currentLocation:(BMKUserLocation*)location block:(receiveDataBlock)block;
+- (void)requestDataWith:(NSString*)keyWord currentLocation:(CLLocationCoordinate2D)location block:(receiveDataBlock)block;
+
+// POI检索
+- (void)requestBaiduDetailDataWithUid:(NSString *)uid andBlock:(receiveDataBlock)block;
+
 // 点评检索
-- (void)requestDataWith:(NSString*)url params:(NSString*)params block:(receiveDataBlock)block errorBlock:(receiveDataBlock)errorblock;
+- (void)requestDataWithUrl:(NSString *)url params:(NSString *)params reponse:(receiveDataBlock)block;
+
+//单例
++ (KeyWordSearchModel *)keyWordModel;
+
 @end
+

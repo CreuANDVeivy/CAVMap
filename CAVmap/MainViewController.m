@@ -8,11 +8,15 @@
 
 #import "MainViewController.h"
 #import "NearByViewController.h"
+#import "RouteViewController.h"
+#import "AppDelegate.h"
 
 @interface MainViewController ()
 {
     int selectType;
+    BOOL isTouchLocationBtn;
     NSArray *typeImageArr;
+    UIImage *follow, *compass;
 }
 @end
 
@@ -23,6 +27,17 @@
 @synthesize currentLocation;
 @synthesize tabBarView;
 @synthesize navBarView;
+
++ (MainViewController *)onlyOneMainViewController
+{
+    static MainViewController *mainV;
+    if (!mainV)
+    {
+        mainV = [[MainViewController alloc]init];
+    }
+    
+    return mainV;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,15 +60,27 @@
 {
     [super viewDidLoad];
     
+    // 跟随图片，罗盘图片初始化
+    follow = [UIImage redraw:[UIImage imageNamed:@"main_icon_follow"] Frame:kFrame(0, 0, 30, 30)];
+    compass = [UIImage redraw:[UIImage imageNamed:@"main_icon_compass"] Frame:kFrame(0, 0, 30, 30)];
+    
     [self initMapView];  // 初始化地图视图
     [self initButtonView];  // 初始化按钮视图
-    [self initMenuView];  // 初始化菜单视图
     [self initTabBarAndNavBar]; // 初始化tabBar和navBar视图
+    [self initMenuView];  // 初始化菜单视图
+    
     // 初始化定位服务
-    locationService = [[BMKLocationService alloc]init];
-    [locationService startUserLocationService];  // 开启定位服务
+//    locationService = [[BMKLocationService alloc]init];
+//    [locationService startUserLocationService];  // 开启定位服务
+    [[KeyWordSearchModel keyWordModel]requestDataWithUrl:@"v1/business/find_businesses" params:@"category=美食&city=上海&latitude=31.18268013000488&longitude=121.42769622802734&sort=1&limit=20&offset_type=1&out_offset_type=1&platform=2" reponse:^(id result) {
+        
+//        NSLog(@"===== %@ ",result);
+        
+    }];
     
 }
+
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -75,9 +102,11 @@
 {
     // 初始化地图
     mapV = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth,kScreenHeight+22)];
+    
+    [mapV setCompassPosition:CGPointMake(10,70)];
     mapV.mapType = BMKMapTypeStandard; // 地图类型 ： 标准地图
     selectType = 2;
-    [mapV updateConstraints];
+
     [self.view addSubview:mapV];
     
 }
@@ -154,6 +183,24 @@
 #pragma mark - 初始化按钮视图
 - (void)initButtonView
 {
+    // 路况、地图菜单按钮初始化
+    NSArray *menuBtnImageArr = [NSArray arrayWithObjects:[UIImage imageNamed:@"main_icon_maplayers"],[UIImage imageNamed:@"main_icon_roadcondition_off"],[UIImage imageNamed:@"main_map_icon_streetscape"], nil];
+    
+    for (int i = 0; i < 3; i++)
+    {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.frame = kFrame(kScreenWidth - 30, 80+40*i, 25, 25);
+        [btn setImage:menuBtnImageArr[i] forState:UIControlStateNormal];
+        btn.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6];
+        
+        btn.layer.cornerRadius = 3;
+        btn.layer.masksToBounds = NO;
+        
+        btn.tag = 121+i;
+        [btn addTarget:self action:@selector(menuBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:btn];
+    }
+    
     // 放大缩小按钮初始化
     NSArray *btnImageArr = [NSArray arrayWithObjects:[UIImage redraw:[UIImage imageNamed:@"main_icon_zoomin"] Frame:kFrame(0, 0, 20, 20)],[UIImage redraw:[UIImage imageNamed:@"main_icon_zoomout"] Frame:kFrame(0, 0, 20, 20)], nil];
 
@@ -176,6 +223,9 @@
     [locationBtn setImage:[UIImage imageNamed:@"navi_idle_gps_unlocked"] forState:UIControlStateNormal];
     [locationBtn addTarget:self action:@selector(loactionBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:locationBtn];
+    
+    // 是否单击locationBtn
+    isTouchLocationBtn = NO;
     
 }
 
@@ -215,24 +265,6 @@
     tabBarBtn.layer.borderWidth = 0.5;
     
     [self.view addSubview:tabBarBtn];
-    
-    // 路况、地图菜单按钮初始化
-    NSArray *menuBtnImageArr = [NSArray arrayWithObjects:[UIImage imageNamed:@"main_icon_maplayers"],[UIImage imageNamed:@"main_icon_roadcondition_off"], nil];
-    
-    for (int i = 0; i < 2; i++)
-    {
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = kFrame(kScreenWidth - 30, 80+40*i, 25, 25);
-        [btn setImage:menuBtnImageArr[i] forState:UIControlStateNormal];
-        btn.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6];
-        
-        btn.layer.cornerRadius = 3;
-        btn.layer.masksToBounds = NO;
-        
-        btn.tag = 121+i;
-        [btn addTarget:self action:@selector(menuBtnAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:btn];
-    }
     
     // naviBar初始化
     navBarView = [[AMBlurView alloc]initWithFrame:kFrame(0, 0, kScreenWidth, 60)];
@@ -293,19 +325,26 @@
 // 开启定位
 - (void)loactionBtnAction:(UIButton*)sender
 {
+    isTouchLocationBtn = YES;
     [self setMapViewRegion];
-    if (![[sender imageForState:UIControlStateNormal]isEqual:[UIImage imageNamed:@"navi_idle_gps_unlocked"]])
+    if ([[sender imageForState:UIControlStateNormal]isEqual:[UIImage imageNamed:@"navi_idle_gps_unlocked"]])
+    {
+        mapV.userTrackingMode = BMKUserTrackingModeFollow;
+        [sender setImage:follow forState:UIControlStateNormal];
+        
+    }
+    else if ([[sender imageForState:UIControlStateNormal]isEqual:follow])
+    {
+        mapV.userTrackingMode = BMKUserTrackingModeFollowWithHeading;
+        [sender setImage:compass forState:UIControlStateNormal];
+    }
+    else
     {
         mapV.userTrackingMode = BMKUserTrackingModeNone;
         [sender setImage:[UIImage imageNamed:@"navi_idle_gps_unlocked"] forState:UIControlStateNormal];
     }
-    else
-    {
-        mapV.userTrackingMode = BMKUserTrackingModeFollow;
-        [sender setImage:[UIImage redraw:[UIImage imageNamed:@"main_icon_follow"] Frame:kFrame(0, 0, 30, 30)] forState:UIControlStateNormal];
-    }
-    
     mapV.showsUserLocation = YES;
+    isTouchLocationBtn = NO;
 }
 
 // tabBar按钮
@@ -321,7 +360,7 @@
             
         case 112:
         {
-            
+            [self.navigationController pushViewController:[RouteViewController new] animated:YES];
         }
             break;
             
@@ -343,6 +382,7 @@
     
 }
 
+// 显示或隐藏菜单
 - (void)menuBtnAction:(UIButton*)sender
 {
     switch (sender.tag)
@@ -400,6 +440,19 @@
                     mapV.mapType = BMKMapTypeSatellite;
                 }
             }
+        }
+            break;
+        case 123:
+        {
+            if ([sender imageForState:UIControlStateNormal] == [UIImage imageNamed:@"main_map_icon_streetscape_normal"])
+            {
+                [sender setImage:[UIImage imageNamed:@"main_map_icon_streetscape"] forState:UIControlStateNormal];
+            }
+            else
+            {
+                [sender setImage:[UIImage imageNamed:@"main_map_icon_streetscape_normal"] forState:UIControlStateNormal];
+            }
+            
         }
             break;
             
@@ -510,6 +563,15 @@
 
 #pragma mark - MapView Delegate
 
+-(void)mapView:(BMKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
+{
+    // 不是点击按钮时执行
+    if (!isTouchLocationBtn)
+    {
+         [locationBtn setImage:[UIImage imageNamed:@"navi_idle_gps_unlocked"] forState:UIControlStateNormal];
+    }
+}
+
 #pragma mark - LocationService Delegate
 
 // 处理方向变更信息
@@ -538,9 +600,9 @@
     [mapV updateLocationData:currentLocation];
     BMKCoordinateRegion region = {currentLocation.location.coordinate};
     [mapV setRegion:region];
-    
+   
     /*
-    KeyWordSearchModel *keyWord = [[KeyWordSearchModel alloc]init];
+    
     [keyWord requestDataWith:@"xiaochi" currentLocation:currentLocation block:^(BMKPoiResult *poiResultList) {
         //在此处理正常结果
         for (BMKPoiInfo *info in poiResultList.poiInfoList)
@@ -548,19 +610,9 @@
             NSLog(@"name = %@ \n address = %@",info.name,info.address);
             
         }
-    }];
+    }];*/
     
-    [keyWord requestDataWith:@"v1/business/find_businesses" params:@"city=北京&region=海淀区&category=火锅&has_coupon=1&sort=2&limit=5" block:^(id result)
-    {
-        NSLog(@"%@",result);
-       
-        
-    }
-    errorBlock:^(id error)
-    {
-        NSLog(@"%@",error);
-    }];
-    */
+    
 }
 
 - (void)didReceiveMemoryWarning

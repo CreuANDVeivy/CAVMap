@@ -50,7 +50,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    mainCtrl = [[MainViewController alloc] init];
+    mainCtrl = [MainViewController onlyOneMainViewController];
     UINavigationController *nav_mainCtrl = [[UINavigationController alloc] initWithRootViewController:mainCtrl];
     
     self.window.rootViewController = nav_mainCtrl;

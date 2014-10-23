@@ -10,7 +10,7 @@
 
 //----------Mydefine----------//
 #define kFrame(x,y,w,h) CGRectMake(x,y,w,h)
-#define kTableViewFrame CGRectMake(0, 60, kScreenWidth, kScreenHeight - 60 - 40)  // 固定的tableView的frame
+#define kTableViewFrame CGRectMake(0, 60, kScreenWidth, kScreenHeight - 60)  // 固定的tableView的frame
 
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
@@ -20,6 +20,19 @@
 //----------------------------//
 
 #define kBDAppKey @"Ip0w2mkmc7lZmBbulpx8MpFR"  // 百度地图appKey
+
+//-----发送和添加监听者宏定义-----//
+
+// 发送通知
+#define kPostNotification(name,obj) [[NSNotificationCenter defaultCenter]postNotificationName:name object:obj]
+
+// 添加侦听者
+#define kAddObserver(observer,action,Name,obj) [[NSNotificationCenter defaultCenter]addObserver:observer selector:action name:Name object:obj]
+
+// 移除监听者
+#define kRemover(observer,Name,obj) [[NSNotificationCenter defaultCenter]removeObserver:observer name:Name object:obj];
+
+#define kReceiveData @"RECEIVEDATA"
 
 //----------------------------//
 
@@ -35,6 +48,7 @@
     #import "BMapKit.h"
     #import "DPAPI.h"
     #import "AMBlurView.h"
+//    #import "UIImageView+WebCache.h"
 
     // 引入基类的头文件
     #import "BaseNavgationViewController.h"

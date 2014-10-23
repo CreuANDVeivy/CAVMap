@@ -9,10 +9,11 @@
 #import "KeyWordSearchModel.h"
 #import "AppDelegate.h"
 
-@implementation KeyWordSearchModel
+@implementation KeyWordSearchModel 
 
+#pragma mark - 百度检索
 
-- (void)requestDataWith:(NSString *)keyWord currentLocation:(BMKUserLocation*)location block:(receiveDataBlock)block
+- (void)requestDataWith:(NSString *)keyWord currentLocation:(CLLocationCoordinate2D )location block:(receiveDataBlock)block
 {
     // 初始化检索对象
     BMKPoiSearch *searcher = [[BMKPoiSearch alloc]init];
@@ -21,10 +22,9 @@
     BMKNearbySearchOption *option = [[BMKNearbySearchOption alloc]init];
     option.pageIndex = 1;
     option.pageCapacity = 10;
-    option.location = location.location.coordinate;
+    option.location = location;
     option.keyword = keyWord;
     BOOL flag = [searcher poiSearchNearBy:option];
-    //    [option release];
     if(flag)
     {
         NSLog(@"周边检索发送成功");
@@ -33,15 +33,50 @@
     {
         NSLog(@"周边检索发送失败");
     }
-    currentBlock = block;
+    baiduBlock = block;
 }
+
+- (void)requestBaiduDetailDataWithUid:(NSString *)uid andBlock:(receiveDataBlock)block
+{
+    
+    BMKPoiSearch *searcher = [[BMKPoiSearch alloc]init];
+    searcher.delegate = self;
+    
+    //POI详情检索
+    BMKPoiDetailSearchOption* option = [[BMKPoiDetailSearchOption alloc] init];
+    option.poiUid = uid;//POI搜索结果中获取的uid
+    BOOL flag = [searcher poiDetailSearch:option];
+
+    if(flag)
+    {
+        //详情检索发起成功
+    }
+    else
+    {
+        //详情检索发送失败
+    }
+    detailBlock = block;
+    
+}
+
+-(void)onGetPoiDetailResult:(BMKPoiSearch *)searcher result:(BMKPoiDetailResult *)poiDetailResult errorCode:(BMKSearchErrorCode)errorCode
+{
+    if(errorCode == BMK_SEARCH_NO_ERROR)
+    {
+        //在此处理正常结果
+        detailBlock(poiDetailResult);
+    }
+}
+
 
 // 实现PoiSearchDeleage处理回调结果
 - (void)onGetPoiResult:(BMKPoiSearch*)searcher result:(BMKPoiResult*)poiResultList errorCode:(BMKSearchErrorCode)error
 {
     if (error == BMK_SEARCH_NO_ERROR)
     {
-        currentBlock(poiResultList);
+        // 完成请求
+        
+        baiduBlock(poiResultList);
     }
     else if (error == BMK_SEARCH_AMBIGUOUS_KEYWORD)
     {
@@ -54,22 +89,30 @@
     }
 }
 
-- (void)requestDataWith:(NSString*)url params:(NSString*)params block:(receiveDataBlock)block errorBlock:(receiveDataBlock)errorblock
++ (KeyWordSearchModel *)keyWordModel
 {
-    [[[AppDelegate instance] dpapi] requestWithURL:url paramsString:params delegate:self];
-    dpBlock = block;
-    errorBlock = errorblock;
+    static KeyWordSearchModel *keyWord;
+    
+    if (!keyWord)
+    {
+        keyWord = [[KeyWordSearchModel alloc]init];
+    }
+    
+    return keyWord;
 }
 
-
-- (void)request:(DPRequest *)request didFailWithError:(NSError *)error
+- (void)requestDataWithUrl:(NSString *)url params:(NSString *)params reponse:(receiveDataBlock)block
 {
-    errorBlock(error);
+    kAddObserver(self, @selector(receiveData:),kReceiveData, nil);
+    
+    [[[AppDelegate instance] dpapi] requestWithURL:url paramsString:params delegate:nil];
+    currentBlock = block;
 }
 
-- (void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result
+- (void)receiveData:(NSNotification *)sender
 {
-	dpBlock(result);
+    currentBlock(sender.object);
+    kRemover(self, kReceiveData, nil);
 }
 
 @end

@@ -18,4 +18,8 @@
 // 返回按钮的方法
 - (void)backButtonClickAction:(UIButton *)sender;
 
+// 添加右边的地图按钮
+- (void)addRightMapButton;
+
+
 @end

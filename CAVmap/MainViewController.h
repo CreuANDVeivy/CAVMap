@@ -24,4 +24,6 @@
 @property (retain, nonatomic) BMKLocationService *locationService;  // 定位服务
 @property (retain, nonatomic) BMKUserLocation *currentLocation;  // 当前位置
 
++ (MainViewController *)onlyOneMainViewController;
+
 @end

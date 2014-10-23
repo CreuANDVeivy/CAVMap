@@ -42,6 +42,25 @@
 		21A2B10F19F3B0BB00050EE5 /* NearByViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A2B10D19F3B0BB00050EE5 /* NearByViewController.m */; };
 		21A2B11019F3B0BB00050EE5 /* NearByViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A2B10E19F3B0BB00050EE5 /* NearByViewController.xib */; };
 		21A2B11319F3B35300050EE5 /* BaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A2B11219F3B35300050EE5 /* BaseCollectionView.m */; };
+		3BA303A019F73EA8008E69C0 /* HotWordSearchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA3039F19F73EA8008E69C0 /* HotWordSearchDetailViewController.m */; };
+		3BA303A219F73F9F008E69C0 /* HotWordSearchDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA303A119F73F9F008E69C0 /* HotWordSearchDetailViewController.xib */; };
+		3BA303A419F7405F008E69C0 /* topbar_view_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA303A319F7405F008E69C0 /* topbar_view_map.png */; };
+		3BA303AB19F741E2008E69C0 /* common_topbar_route_bus_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA303A519F741E2008E69C0 /* common_topbar_route_bus_normal.png */; };
+		3BA303AC19F741E2008E69C0 /* common_topbar_route_bus_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA303A619F741E2008E69C0 /* common_topbar_route_bus_pressed.png */; };
+		3BA303AD19F741E2008E69C0 /* common_topbar_route_car_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA303A719F741E2008E69C0 /* common_topbar_route_car_normal.png */; };
+		3BA303AE19F741E2008E69C0 /* common_topbar_route_car_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA303A819F741E2008E69C0 /* common_topbar_route_car_pressed.png */; };
+		3BA303AF19F741E2008E69C0 /* common_topbar_route_foot_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA303A919F741E2008E69C0 /* common_topbar_route_foot_normal.png */; };
+		3BA303B019F741E2008E69C0 /* common_topbar_route_foot_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA303AA19F741E2008E69C0 /* common_topbar_route_foot_pressed.png */; };
+		3BA303B519F74246008E69C0 /* RouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA303B319F74246008E69C0 /* RouteViewController.m */; };
+		3BA303B619F74246008E69C0 /* RouteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA303B419F74246008E69C0 /* RouteViewController.xib */; };
+		3BA303B919F7521F008E69C0 /* main_map_icon_streetscape_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA303B719F7521F008E69C0 /* main_map_icon_streetscape_normal.png */; };
+		3BA303BA19F7521F008E69C0 /* main_map_icon_streetscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA303B819F7521F008E69C0 /* main_map_icon_streetscape.png */; };
+		3BA3040119F78AA5008E69C0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA303DD19F78A00008E69C0 /* CFNetwork.framework */; };
+		3BA3042119F7AA6A008E69C0 /* DianPingPoiSearchType.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA3042019F7AA6A008E69C0 /* DianPingPoiSearchType.m */; };
+		3BA3042419F7C596008E69C0 /* DetailPageCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA3042319F7C596008E69C0 /* DetailPageCustomTableViewCell.m */; };
+		3BA3042719F7C602008E69C0 /* UIView+CustomActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA3042619F7C602008E69C0 /* UIView+CustomActivity.m */; };
+		3BA3042919F7C761008E69C0 /* icon_open_route.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA3042819F7C761008E69C0 /* icon_open_route.png */; };
+		3BA3042B19F7C76B008E69C0 /* icon_open_telephone.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA3042A19F7C76B008E69C0 /* icon_open_telephone.png */; };
 		3BA36A6019F5074000BB3892 /* UIAlertView+TipsUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA36A5F19F5074000BB3892 /* UIAlertView+TipsUser.m */; };
 		3BA36ADD19F5E82D00BB3892 /* UIImage+Redraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA36AC119F5E82D00BB3892 /* UIImage+Redraw.m */; };
 		3BA36AF819F5E86900BB3892 /* indoor_loc_suc.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA36AE019F5E86900BB3892 /* indoor_loc_suc.png */; };
@@ -188,6 +207,30 @@
 		21A2B10E19F3B0BB00050EE5 /* NearByViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearByViewController.xib; sourceTree = "<group>"; };
 		21A2B11119F3B35300050EE5 /* BaseCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionView.h; sourceTree = "<group>"; };
 		21A2B11219F3B35300050EE5 /* BaseCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionView.m; sourceTree = "<group>"; };
+		3BA3039E19F73EA8008E69C0 /* HotWordSearchDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotWordSearchDetailViewController.h; sourceTree = "<group>"; };
+		3BA3039F19F73EA8008E69C0 /* HotWordSearchDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotWordSearchDetailViewController.m; sourceTree = "<group>"; };
+		3BA303A119F73F9F008E69C0 /* HotWordSearchDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotWordSearchDetailViewController.xib; sourceTree = "<group>"; };
+		3BA303A319F7405F008E69C0 /* topbar_view_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topbar_view_map.png; sourceTree = "<group>"; };
+		3BA303A519F741E2008E69C0 /* common_topbar_route_bus_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = common_topbar_route_bus_normal.png; sourceTree = "<group>"; };
+		3BA303A619F741E2008E69C0 /* common_topbar_route_bus_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = common_topbar_route_bus_pressed.png; sourceTree = "<group>"; };
+		3BA303A719F741E2008E69C0 /* common_topbar_route_car_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = common_topbar_route_car_normal.png; sourceTree = "<group>"; };
+		3BA303A819F741E2008E69C0 /* common_topbar_route_car_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = common_topbar_route_car_pressed.png; sourceTree = "<group>"; };
+		3BA303A919F741E2008E69C0 /* common_topbar_route_foot_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = common_topbar_route_foot_normal.png; sourceTree = "<group>"; };
+		3BA303AA19F741E2008E69C0 /* common_topbar_route_foot_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = common_topbar_route_foot_pressed.png; sourceTree = "<group>"; };
+		3BA303B219F74246008E69C0 /* RouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteViewController.h; sourceTree = "<group>"; };
+		3BA303B319F74246008E69C0 /* RouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteViewController.m; sourceTree = "<group>"; };
+		3BA303B419F74246008E69C0 /* RouteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RouteViewController.xib; sourceTree = "<group>"; };
+		3BA303B719F7521F008E69C0 /* main_map_icon_streetscape_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_map_icon_streetscape_normal.png; sourceTree = "<group>"; };
+		3BA303B819F7521F008E69C0 /* main_map_icon_streetscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_map_icon_streetscape.png; sourceTree = "<group>"; };
+		3BA303DD19F78A00008E69C0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		3BA3041F19F7AA6A008E69C0 /* DianPingPoiSearchType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DianPingPoiSearchType.h; sourceTree = "<group>"; };
+		3BA3042019F7AA6A008E69C0 /* DianPingPoiSearchType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DianPingPoiSearchType.m; sourceTree = "<group>"; };
+		3BA3042219F7C596008E69C0 /* DetailPageCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPageCustomTableViewCell.h; sourceTree = "<group>"; };
+		3BA3042319F7C596008E69C0 /* DetailPageCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPageCustomTableViewCell.m; sourceTree = "<group>"; };
+		3BA3042519F7C602008E69C0 /* UIView+CustomActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CustomActivity.h"; sourceTree = "<group>"; };
+		3BA3042619F7C602008E69C0 /* UIView+CustomActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CustomActivity.m"; sourceTree = "<group>"; };
+		3BA3042819F7C761008E69C0 /* icon_open_route.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_open_route.png; sourceTree = "<group>"; };
+		3BA3042A19F7C76B008E69C0 /* icon_open_telephone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_open_telephone.png; sourceTree = "<group>"; };
 		3BA36A5E19F5074000BB3892 /* UIAlertView+TipsUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+TipsUser.h"; sourceTree = "<group>"; };
 		3BA36A5F19F5074000BB3892 /* UIAlertView+TipsUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+TipsUser.m"; sourceTree = "<group>"; };
 		3BA36A9E19F5E82D00BB3892 /* AMBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBlurView.h; sourceTree = "<group>"; };
@@ -362,6 +405,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA3040119F78AA5008E69C0 /* CFNetwork.framework in Frameworks */,
 				3BA8717219F21EAB000C17CA /* Security.framework in Frameworks */,
 				3BA8713019F21D04000C17CA /* CoreGraphics.framework in Frameworks */,
 				3BA8717019F21E97000C17CA /* SystemConfiguration.framework in Frameworks */,
@@ -414,6 +458,19 @@
 			name = HotImages;
 			sourceTree = "<group>";
 		};
+		3BA303B119F741E5008E69C0 /* route */ = {
+			isa = PBXGroup;
+			children = (
+				3BA303A519F741E2008E69C0 /* common_topbar_route_bus_normal.png */,
+				3BA303A619F741E2008E69C0 /* common_topbar_route_bus_pressed.png */,
+				3BA303A719F741E2008E69C0 /* common_topbar_route_car_normal.png */,
+				3BA303A819F741E2008E69C0 /* common_topbar_route_car_pressed.png */,
+				3BA303A919F741E2008E69C0 /* common_topbar_route_foot_normal.png */,
+				3BA303AA19F741E2008E69C0 /* common_topbar_route_foot_pressed.png */,
+			);
+			name = route;
+			sourceTree = "<group>";
+		};
 		3BA36ABF19F5E82D00BB3892 /* ImageRedraw */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +483,8 @@
 		3BA36ADE19F5E86900BB3892 /* CAVImages */ = {
 			isa = PBXGroup;
 			children = (
+				3BA3042A19F7C76B008E69C0 /* icon_open_telephone.png */,
+				3BA3042819F7C761008E69C0 /* icon_open_route.png */,
 				3BA36B7F19F6664B00BB3892 /* maplayer_manager_2d_hl.png */,
 				3BA36B8019F6664B00BB3892 /* maplayer_manager_2d.png */,
 				3BA36B8119F6664B00BB3892 /* maplayer_manager_3d_hl.png */,
@@ -539,6 +598,7 @@
 		3BA8712C19F21D04000C17CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3BA303DD19F78A00008E69C0 /* CFNetwork.framework */,
 				3BA8717119F21EAB000C17CA /* Security.framework */,
 				3BA8716F19F21E97000C17CA /* SystemConfiguration.framework */,
 				3BA8716D19F21E8E000C17CA /* OpenGLES.framework */,
@@ -619,6 +679,7 @@
 			children = (
 				219890AA19F2219F009E5575 /* BaseViewController.h */,
 				219890AB19F2219F009E5575 /* BaseViewController.m */,
+				3BA303A319F7405F008E69C0 /* topbar_view_map.png */,
 				219890B219F242A5009E5575 /* BaseButton.h */,
 				219890B319F242A5009E5575 /* BaseButton.m */,
 				219890B419F242A5009E5575 /* BaseImageView.h */,
@@ -641,6 +702,8 @@
 				21A2B11119F3B35300050EE5 /* BaseCollectionView.h */,
 				3BA36A5E19F5074000BB3892 /* UIAlertView+TipsUser.h */,
 				3BA36A5F19F5074000BB3892 /* UIAlertView+TipsUser.m */,
+				3BA3042519F7C602008E69C0 /* UIView+CustomActivity.h */,
+				3BA3042619F7C602008E69C0 /* UIView+CustomActivity.m */,
 			);
 			name = BaseClass;
 			sourceTree = "<group>";
@@ -648,10 +711,17 @@
 		3BA8716419F21D3D000C17CA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3BA303B219F74246008E69C0 /* RouteViewController.h */,
+				3BA303B319F74246008E69C0 /* RouteViewController.m */,
+				3BA303B119F741E5008E69C0 /* route */,
+				3BA3039E19F73EA8008E69C0 /* HotWordSearchDetailViewController.h */,
+				3BA3039F19F73EA8008E69C0 /* HotWordSearchDetailViewController.m */,
 				21A2B10C19F3B0BB00050EE5 /* NearByViewController.h */,
 				21A2B10D19F3B0BB00050EE5 /* NearByViewController.m */,
 				219890AD19F221B2009E5575 /* MainViewController.h */,
 				219890AE19F221B2009E5575 /* MainViewController.m */,
+				3BA303B719F7521F008E69C0 /* main_map_icon_streetscape_normal.png */,
+				3BA303B819F7521F008E69C0 /* main_map_icon_streetscape.png */,
 				3BA871B319F26607000C17CA /* Controller_xib */,
 			);
 			name = Controller;
@@ -660,6 +730,8 @@
 		3BA8716519F21D43000C17CA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3BA3042219F7C596008E69C0 /* DetailPageCustomTableViewCell.h */,
+				3BA3042319F7C596008E69C0 /* DetailPageCustomTableViewCell.m */,
 				219890CD19F243AA009E5575 /* CustomNavigationBar.h */,
 				219890CE19F243AA009E5575 /* CustomNavigationBar.m */,
 			);
@@ -671,6 +743,8 @@
 			children = (
 				3BA36B3519F5E8D000BB3892 /* KeyWordSearchModel.h */,
 				3BA36B3619F5E8D000BB3892 /* KeyWordSearchModel.m */,
+				3BA3041F19F7AA6A008E69C0 /* DianPingPoiSearchType.h */,
+				3BA3042019F7AA6A008E69C0 /* DianPingPoiSearchType.m */,
 				2197EA2919F4BD0600B0B632 /* hotWordSearchModelData.h */,
 				2197EA2A19F4BD0600B0B632 /* hotWordSearchModelData.m */,
 				2197EA2C19F4BD1200B0B632 /* HotImages */,
@@ -750,6 +824,8 @@
 		3BA871B319F26607000C17CA /* Controller_xib */ = {
 			isa = PBXGroup;
 			children = (
+				3BA303B419F74246008E69C0 /* RouteViewController.xib */,
+				3BA303A119F73F9F008E69C0 /* HotWordSearchDetailViewController.xib */,
 				21A2B10E19F3B0BB00050EE5 /* NearByViewController.xib */,
 				219890AF19F221B2009E5575 /* MainViewController.xib */,
 			);
@@ -833,6 +909,7 @@
 			files = (
 				3BA36B6719F5FF8C00BB3892 /* main_map_mode_plain_normal.png in Resources */,
 				2197EA5019F4C27D00B0B632 /* scene_arrow_pink.png in Resources */,
+				3BA303A219F73F9F008E69C0 /* HotWordSearchDetailViewController.xib in Resources */,
 				2197EA5B19F51A2700B0B632 /* scenic.png in Resources */,
 				3BA36B0A19F5E86900BB3892 /* zoomin_idle_tool_dis.png in Resources */,
 				3BA36B0B19F5E86900BB3892 /* zoomin_idle_tool_hl.png in Resources */,
@@ -841,6 +918,7 @@
 				3BA871B219F21F38000C17CA /* mapapi.bundle in Resources */,
 				2197EA4E19F4C27D00B0B632 /* scene_arrow_green.png in Resources */,
 				3BA36B7519F652B200BB3892 /* map_layer_hot.png in Resources */,
+				3BA3042B19F7C76B008E69C0 /* icon_open_telephone.png in Resources */,
 				3BA36B7419F652B200BB3892 /* map_layer_fav.png in Resources */,
 				3BA36B8A19F6664B00BB3892 /* maplayer_manager_sate.png in Resources */,
 				2197EA4419F4C1A800B0B632 /* main_map_drawer_icon_poi_scene_jiaotongsheshi.png in Resources */,
@@ -850,17 +928,23 @@
 				2197EA4019F4C19400B0B632 /* main_map_drawer_icon_poi_scene_jiudian.png in Resources */,
 				2197EA5A19F51A2700B0B632 /* hotel.png in Resources */,
 				2197EA5C19F51A2700B0B632 /* taxi.png in Resources */,
+				3BA303AF19F741E2008E69C0 /* common_topbar_route_foot_normal.png in Resources */,
 				3BA36B8919F6664B00BB3892 /* maplayer_manager_sate_hl.png in Resources */,
 				3BA8713A19F21D04000C17CA /* InfoPlist.strings in Resources */,
 				3BA36AFD19F5E86900BB3892 /* main_icon_follow.png in Resources */,
 				3BA36B0219F5E86900BB3892 /* main_icon_zoomin.png in Resources */,
+				3BA303BA19F7521F008E69C0 /* main_map_icon_streetscape.png in Resources */,
 				3BA36B8819F6664B00BB3892 /* maplayer_manager_3d.png in Resources */,
 				2197EA4F19F4C27D00B0B632 /* scene_arrow_orange.png in Resources */,
 				3BA36B6E19F6004800BB3892 /* main_icon_maplayers.png in Resources */,
 				2197EA3819F4BF2900B0B632 /* zhoumoqunaer.png in Resources */,
 				3BA36B8619F6664B00BB3892 /* maplayer_manager_2d.png in Resources */,
 				2197EA5819F51A2700B0B632 /* dinner.png in Resources */,
+				3BA303B919F7521F008E69C0 /* main_map_icon_streetscape_normal.png in Resources */,
 				3BA36B0519F5E86900BB3892 /* main_icon_zoomout_dis.png in Resources */,
+				3BA303AD19F741E2008E69C0 /* common_topbar_route_car_normal.png in Resources */,
+				3BA303B019F741E2008E69C0 /* common_topbar_route_foot_pressed.png in Resources */,
+				3BA3042919F7C761008E69C0 /* icon_open_route.png in Resources */,
 				3BA36B8519F6664B00BB3892 /* maplayer_manager_2d_hl.png in Resources */,
 				3BA36B7A19F6553F00BB3892 /* sendtocar_dotted_line.png in Resources */,
 				3BA36B0E19F5E86900BB3892 /* zoomout_idle_tool_hl.png in Resources */,
@@ -870,8 +954,10 @@
 				3BA36AF819F5E86900BB3892 /* indoor_loc_suc.png in Resources */,
 				2197EA3C19F4C07300B0B632 /* bus.png in Resources */,
 				3BA36B8719F6664B00BB3892 /* maplayer_manager_3d_hl.png in Resources */,
+				3BA303AC19F741E2008E69C0 /* common_topbar_route_bus_pressed.png in Resources */,
 				3BA36B5E19F5F88900BB3892 /* userinfo_tabicon_search.png in Resources */,
 				2197EA4D19F4C27D00B0B632 /* scene_arrow_blue.png in Resources */,
+				3BA303B619F74246008E69C0 /* RouteViewController.xib in Resources */,
 				2197EA4819F4C1C600B0B632 /* main_map_drawer_icon_poi_tour_recommand.png in Resources */,
 				3BA36B0C19F5E86900BB3892 /* zoomout_idle_tool.png in Resources */,
 				3BA36AFF19F5E86900BB3892 /* main_icon_nav.png in Resources */,
@@ -883,6 +969,8 @@
 				3BA36B7D19F660BB00BB3892 /* route_push_back_btn_normal.png in Resources */,
 				3BA36AFC19F5E86900BB3892 /* main_icon_compass.png in Resources */,
 				3BA36B6B19F6000800BB3892 /* main_icon_roadcondition_off.png in Resources */,
+				3BA303A419F7405F008E69C0 /* topbar_view_map.png in Resources */,
+				3BA303AB19F741E2008E69C0 /* common_topbar_route_bus_normal.png in Resources */,
 				2197EA5719F51A2700B0B632 /* cinema.png in Resources */,
 				3BA36B0D19F5E86900BB3892 /* zoomout_idle_tool_dis.png in Resources */,
 				3BA36B6819F5FF8C00BB3892 /* main_map_mode_satellite_normal.jpg in Resources */,
@@ -896,6 +984,7 @@
 				3BA36B6C19F6000800BB3892 /* main_icon_roadcondition_on.png in Resources */,
 				3BA36B0619F5E86900BB3892 /* nav_backbtn@2x.png in Resources */,
 				2197EA4219F4C1A000B0B632 /* main_map_drawer_icon_poi_scene_xiuxianyule.png in Resources */,
+				3BA303AE19F741E2008E69C0 /* common_topbar_route_car_pressed.png in Resources */,
 				3BA36B0119F5E86900BB3892 /* main_icon_route.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -915,6 +1004,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA3042719F7C602008E69C0 /* UIView+CustomActivity.m in Sources */,
 				3BA36B5A19F5EAF300BB3892 /* AMBlurView.m in Sources */,
 				219890CA19F242A5009E5575 /* BaseTableViewCell.m in Sources */,
 				2197EA2B19F4BD0600B0B632 /* hotWordSearchModelData.m in Sources */,
@@ -927,8 +1017,11 @@
 				219890CB19F242A5009E5575 /* BaseTextField.m in Sources */,
 				3BA36B2A19F5E89D00BB3892 /* SBJsonParser.m in Sources */,
 				3BA36B4719F5EA3B00BB3892 /* DPRequest.m in Sources */,
+				3BA303B519F74246008E69C0 /* RouteViewController.m in Sources */,
+				3BA303A019F73EA8008E69C0 /* HotWordSearchDetailViewController.m in Sources */,
 				3BA36B3719F5E8D000BB3892 /* KeyWordSearchModel.m in Sources */,
 				219890C519F242A5009E5575 /* BaseImageView.m in Sources */,
+				3BA3042419F7C596008E69C0 /* DetailPageCustomTableViewCell.m in Sources */,
 				3BA36B3119F5E89D00BB3892 /* SBJsonStreamWriterState.m in Sources */,
 				3BA36B3319F5E89D00BB3892 /* SBJsonUTF8Stream.m in Sources */,
 				219890CF19F243AA009E5575 /* CustomNavigationBar.m in Sources */,
@@ -939,6 +1032,7 @@
 				219890CC19F242A5009E5575 /* BaseView.m in Sources */,
 				219890B019F221B2009E5575 /* MainViewController.m in Sources */,
 				3BA36B2C19F5E89D00BB3892 /* SBJsonStreamParserAccumulator.m in Sources */,
+				3BA3042119F7AA6A008E69C0 /* DianPingPoiSearchType.m in Sources */,
 				219890C819F242A5009E5575 /* BaseTabBarViewController.m in Sources */,
 				3BA36B2F19F5E89D00BB3892 /* SBJsonStreamWriter.m in Sources */,
 				3BA36A6019F5074000BB3892 /* UIAlertView+TipsUser.m in Sources */,
@@ -1077,7 +1171,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1096,7 +1190,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
