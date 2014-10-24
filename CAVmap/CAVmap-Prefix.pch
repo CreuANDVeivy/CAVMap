@@ -48,7 +48,6 @@
     #import "BMapKit.h"
     #import "DPAPI.h"
     #import "AMBlurView.h"
-    #import "UIImageView+WebCache.h"
 
     // 引入基类的头文件
     #import "BaseNavgationViewController.h"
@@ -65,5 +64,6 @@
     // 引入类目头文件
     #import "UIImage+Redraw.h"
     #import "UIAlertView+TipsUser.h"
-
+    #import "UIImageView+SeparateLine.h"
+    #import "UIImageView+WebCache.h"
 #endif

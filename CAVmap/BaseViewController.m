@@ -37,12 +37,9 @@
 // 自定义导航栏
 - (void)initCustomNavgationBar
 {
-    navView = [[AMBlurView alloc] initWithFrame:CGRectMake(-2, -2, kScreenWidth + 4, 62)];  //
+    navView = [[AMBlurView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 60)];  //
     //
-    navView.backgroundColor = [UIColor whiteColor];  // 测试
-    
-    navView.layer.borderWidth = 0.3;
-    navView.layer.borderColor = [UIColor grayColor].CGColor;
+    navView.blurTintColor = [UIColor whiteColor];  // 测试
     
     backButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 60 - 30, 20, 20)];  // 按钮的frame
     [backButton addTarget:self action:@selector(backButtonClickAction:) forControlEvents:UIControlEventTouchUpInside];  // 添加返回的方法

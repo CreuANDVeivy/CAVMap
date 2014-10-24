@@ -42,9 +42,7 @@
         self.layer.cornerRadius = 2;
         self.layer.masksToBounds = NO;
         
-        UIImageView *separaLine = [[UIImageView alloc]initWithFrame:kFrame(0, 70, kScreenWidth-10, 1)];
-        separaLine.image = [UIImage imageNamed:@"sendtocar_dotted_line"];
-        [self addSubview:separaLine];
+        [self addSubview:[UIImageView addSeparateLineWithFrame:kFrame(0, 70, kScreenWidth-10, 1)]];
         
         UIImageView *separa = [[UIImageView alloc]initWithFrame:kFrame((kScreenWidth-45)/2, 70, 1, 30)];
         separa.image = [UIImage imageNamed:@"Aboutpage_SeparatorLine_Vertical@2x"];

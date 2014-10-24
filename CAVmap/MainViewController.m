@@ -14,7 +14,7 @@
 
 @interface MainViewController ()
 {
-    int selectType;
+    NSInteger selectType;
     BOOL isTouchLocationBtn;
     NSArray *typeImageArr;
     UIImage *follow, *compass;
@@ -99,14 +99,14 @@
     // 初始化地图
     mapV = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth,kScreenHeight+22)];
     [mapV viewWillAppear];
+    
     // 地图比例尺
     mapV.showMapScaleBar = YES;
-    mapV.mapScaleBarPosition = CGPointMake(kScreenWidth-200,kScreenHeight-60);
-    
-    mapV.zoomLevel = 15;// 地图尺寸
+    mapV.mapScaleBarPosition = CGPointMake(kScreenWidth-200,kScreenHeight-80);
     
     [mapV setCompassPosition:CGPointMake(10,70)];  // 指南针位置
     mapV.mapType = BMKMapTypeStandard; // 地图类型 ： 标准地图
+    mapV.zoomLevel = 15;// 地图尺寸
     selectType = 2;
 
     [self.view addSubview:mapV];
@@ -253,7 +253,7 @@
         [tabBarView addSubview:btn];
     }
     tabBarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    tabBarBtn.frame = kFrame(kScreenWidth-30, kScreenHeight-30, 20, 20);
+    tabBarBtn.frame = kFrame(kScreenWidth-32.5, kScreenHeight-30, 20,20);
     tabBarBtn.backgroundColor = [UIColor whiteColor];
     
     [tabBarBtn setImage:[UIImage imageNamed:@"route_push_back_btn_normal"] forState:UIControlStateNormal];
@@ -487,7 +487,7 @@
         [self ifMapTypeAction:sender.tag-140];
         selectType = sender.tag-140;
         [sender setImage:typeImageArr[selectType+3-1] forState:UIControlStateNormal];
-    }
+   } 
 }
 
 // tabBar动画方法
@@ -516,7 +516,7 @@
 
 #pragma mark - funcation
 // 判断地图类型
-- (void)ifMapTypeAction:(int)tag
+- (void)ifMapTypeAction:(NSInteger)tag
 {
     switch (selectType)
     {
