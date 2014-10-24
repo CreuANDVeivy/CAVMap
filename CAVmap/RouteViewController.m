@@ -11,7 +11,8 @@
 
 @interface RouteViewController ()
 {
-    NSArray *navBarImageArr;//图片视图
+    NSArray *navBarImageArr;  // 图片视图
+    int selectNavBtn; // 选中的导航按钮
 }
 @end
 
@@ -33,9 +34,10 @@
     
     [self initNavBarView]; // 初始化navBar视图
     
+    selectNavBtn = 1;
     
     CLLocationCoordinate2D location = {23.135927,113.256316};
-    [[KeyWordSearchModel keyWordModel]requestDataWith:@"小吃" currentLocation:location block:^(id result)
+    [[KeyWordSearchModel keyWordModel]requestDataWith:@"雷达" currentLocation:location block:^(id result)
     {
 
         BMKPoiResult *poi = (BMKPoiResult *)result;
@@ -43,11 +45,7 @@
         for (BMKPoiInfo *info in poi.poiInfoList)
         {
             NSLog(@"%@",info.address);
-            [[KeyWordSearchModel keyWordModel]requestBaiduDetailDataWithUid:info.uid andBlock:^(id detail) {
-               
-                BMKPoiDetailResult *poiDetail = (BMKPoiDetailResult *)detail;
-                NSLog(@"综合评分 ： %f",poiDetail.tasteRating);
-            }];
+
         }
         
         

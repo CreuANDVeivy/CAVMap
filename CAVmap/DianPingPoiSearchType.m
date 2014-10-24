@@ -26,8 +26,8 @@
     {
         photo_url = [dict objectForKey:@"s_photo_url"];
         name = [dict objectForKey:@"name"];
-        comment = [dict objectForKey:@"rating_s_img_url"];
-        price = [dict objectForKey:@"avg_price"];
+        comment = [dict objectForKey:@"rating_img_url"];
+        price = [NSString stringWithFormat:@"%@",[dict objectForKey:@"avg_price"]];
         storeName = [dict objectForKey:@"categories"];
         address = [dict objectForKey:@"address"];
         distance = [dict objectForKey:@"distance"];

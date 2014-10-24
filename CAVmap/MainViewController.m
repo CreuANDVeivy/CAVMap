@@ -10,6 +10,7 @@
 #import "NearByViewController.h"
 #import "RouteViewController.h"
 #import "AppDelegate.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface MainViewController ()
 {
@@ -70,17 +71,12 @@
     [self initMenuView];  // 初始化菜单视图
     
     // 初始化定位服务
-//    locationService = [[BMKLocationService alloc]init];
-//    [locationService startUserLocationService];  // 开启定位服务
-    [[KeyWordSearchModel keyWordModel]requestDataWithUrl:@"v1/business/find_businesses" params:@"category=美食&city=上海&latitude=31.18268013000488&longitude=121.42769622802734&sort=1&limit=20&offset_type=1&out_offset_type=1&platform=2" reponse:^(id result) {
-        
-//        NSLog(@"===== %@ ",result);
-        
-    }];
+    locationService = [[BMKLocationService alloc]init];
+    [locationService startUserLocationService];  // 开启定位服务
+    
+    
     
 }
-
-
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -102,8 +98,14 @@
 {
     // 初始化地图
     mapV = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth,kScreenHeight+22)];
+    [mapV viewWillAppear];
+    // 地图比例尺
+    mapV.showMapScaleBar = YES;
+    mapV.mapScaleBarPosition = CGPointMake(kScreenWidth-200,kScreenHeight-60);
     
-    [mapV setCompassPosition:CGPointMake(10,70)];
+    mapV.zoomLevel = 15;// 地图尺寸
+    
+    [mapV setCompassPosition:CGPointMake(10,70)];  // 指南针位置
     mapV.mapType = BMKMapTypeStandard; // 地图类型 ： 标准地图
     selectType = 2;
 
@@ -176,8 +178,6 @@
     }
 
     [self.view addSubview:menuView];
-    
-   
 }
 
 #pragma mark - 初始化按钮视图
@@ -218,7 +218,7 @@
     
     // 定位按钮初始化
     locationBtn = [UIButton buttonWithType:UIButtonTypeCustom];;
-    locationBtn.frame = kFrame(kScreenWidth-40, kScreenHeight-85, 40, 40);
+    locationBtn.frame = kFrame(kScreenWidth-40, kScreenHeight-80, 40, 40);
     [locationBtn setBackgroundImage:[UIImage imageNamed:@"main_bottombar_background"] forState:UIControlStateNormal];
     [locationBtn setImage:[UIImage imageNamed:@"navi_idle_gps_unlocked"] forState:UIControlStateNormal];
     [locationBtn addTarget:self action:@selector(loactionBtnAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -293,6 +293,8 @@
     
     [self.view addSubview:navImageView];
     
+    
+    
 }
 
 #pragma mark - ButtonClicksAction
@@ -303,6 +305,7 @@
     {
         case 101:  // 放大按钮
         {
+            
             if (mapV.zoomLevel != 19)
             {
                 mapV.zoomLevel++;
@@ -326,23 +329,22 @@
 - (void)loactionBtnAction:(UIButton*)sender
 {
     isTouchLocationBtn = YES;
-    [self setMapViewRegion];
-    if ([[sender imageForState:UIControlStateNormal]isEqual:[UIImage imageNamed:@"navi_idle_gps_unlocked"]])
+    [self setMapViewRegionWith:currentLocation.location.coordinate];
+
+    // 转换定位方式
+    if ([[sender imageForState:UIControlStateNormal]isEqual:compass] || [[sender imageForState:UIControlStateNormal]isEqual:[UIImage imageNamed:@"navi_idle_gps_unlocked"]])
     {
+        mapV.userTrackingMode = BMKUserTrackingModeNone;
         mapV.userTrackingMode = BMKUserTrackingModeFollow;
         [sender setImage:follow forState:UIControlStateNormal];
-        
     }
     else if ([[sender imageForState:UIControlStateNormal]isEqual:follow])
     {
         mapV.userTrackingMode = BMKUserTrackingModeFollowWithHeading;
         [sender setImage:compass forState:UIControlStateNormal];
+        
     }
-    else
-    {
-        mapV.userTrackingMode = BMKUserTrackingModeNone;
-        [sender setImage:[UIImage imageNamed:@"navi_idle_gps_unlocked"] forState:UIControlStateNormal];
-    }
+    
     mapV.showsUserLocation = YES;
     isTouchLocationBtn = NO;
 }
@@ -404,8 +406,9 @@
             
             [btn addTarget:self action:@selector(remoVeMenuViewAction:) forControlEvents:UIControlEventTouchUpInside];
             [backView addSubview:btn];
-            [self.view insertSubview:backView atIndex:self.view.subviews.count-1];
+            [self.view addSubview:backView];
             
+            [self.view insertSubview:menuView atIndex:self.view.subviews.count];
             [UIView animateWithDuration:0.3 animations:^{
                 menuView.frame = kFrame(5, 105, kScreenWidth-10, 210);
             }];
@@ -477,43 +480,14 @@
 // 设置地图样式
 - (void)setMapTypeWithBtn:(UIButton*)sender
 {
-    
-    void(^block)() = ^{
-        if (sender.tag-140 != selectType)
-        {
-            UIButton *btn = (UIButton *)[menuView viewWithTag:selectType+140];
-            [btn setImage:typeImageArr[selectType-1] forState:UIControlStateNormal];
-            selectType = sender.tag-140;
-            [sender setImage:typeImageArr[selectType+3-1] forState:UIControlStateNormal];
-            [self ifMapTypeAction];
-        }
-    };
-    
-    switch (sender.tag)
+    if (sender.tag-140 != selectType)
     {
-        case 141:
-        {
-            block();
-        }
-            break;
-            
-        case 142:
-        {
-            block();
-        }
-            break;
-            
-        case 143:
-        {
-            
-        }
-            break;
-            
-        default:
-            
-            break;
+        UIButton *btn = (UIButton *)[menuView viewWithTag:selectType+140];
+        [btn setImage:typeImageArr[selectType-1] forState:UIControlStateNormal];
+        [self ifMapTypeAction:sender.tag-140];
+        selectType = sender.tag-140;
+        [sender setImage:typeImageArr[selectType+3-1] forState:UIControlStateNormal];
     }
-    
 }
 
 // tabBar动画方法
@@ -541,35 +515,162 @@
 }
 
 #pragma mark - funcation
-
-- (void)ifMapTypeAction
+// 判断地图类型
+- (void)ifMapTypeAction:(int)tag
 {
-    if (mapV.mapType == BMKMapTypeStandard || mapV.mapType == BMKMapTypeSatellite)
+    switch (selectType)
     {
-        
-        mapV.mapType = mapV.mapType == BMKMapTypeStandard ? BMKMapTypeSatellite : BMKMapTypeStandard;
-    }
-    else
-    {
-        mapV.mapType = mapV.mapType == BMKMapTypeTrafficOn ? BMKMapTypeTrafficAndSatellite : BMKMapTypeTrafficOn;
+        case 1:
+        {
+            mapV.mapType = mapV.mapType == BMKMapTypeTrafficAndSatellite ? BMKMapTypeTrafficOn : BMKMapTypeStandard;
+            if (tag == 3)
+            {
+                 mapV.overlooking = -45;
+            }
+            
+        }
+            break;
+            
+        case 2:
+        {
+            if (tag == 1)
+            {
+                mapV.mapType = mapV.mapType == BMKMapTypeStandard ? BMKMapTypeSatellite : BMKMapTypeTrafficAndSatellite;
+            }
+            else
+            {
+                mapV.overlooking = -45;
+            }
+            
+        }
+            break;
+            
+        case 3:
+        {
+            if (tag == 1)
+            {
+                mapV.mapType = mapV.mapType == BMKMapTypeStandard ? BMKMapTypeSatellite : BMKMapTypeTrafficAndSatellite;
+            }
+            mapV.overlooking = 0;
+        }
+            break;
+            
+        default:
+            break;
     }
     
 }
 
-- (void)nearByClicksAction:(BaseButton *)sender
+// 设定地图中心
+- (void)setMapViewRegionWith:(CLLocationCoordinate2D )cordinate
 {
-    [self.navigationController pushViewController:[NearByViewController new] animated:YES];
+    // 显示定位图层
+    mapV.showsUserLocation = YES;
+    [mapV updateLocationData:currentLocation];
+    
+    BMKCoordinateRegion region = {cordinate};
+    [mapV setRegion:region animated:YES];
+    
 }
 
 #pragma mark - MapView Delegate
 
+// 地图内容改变时调用
 -(void)mapView:(BMKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
-    // 不是点击按钮时执行
-    if (!isTouchLocationBtn)
+    if (!animated)
     {
-         [locationBtn setImage:[UIImage imageNamed:@"navi_idle_gps_unlocked"] forState:UIControlStateNormal];
+        mapV.userTrackingMode = BMKUserTrackingModeNone;
+        [locationBtn setImage:[UIImage imageNamed:@"navi_idle_gps_unlocked"] forState:UIControlStateNormal];
     }
+}
+
+// 点击地图上的标注时调用
+- (void)mapView:(BMKMapView *)mapView onClickedMapPoi:(BMKMapPoi *)mapPoi
+{
+    // 移除之前的大头针
+    [mapV removeAnnotations:mapV.annotations];
+    
+    // 添加一个大头针
+    BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
+    annotation.coordinate = mapPoi.pt;
+    [mapV addAnnotation:annotation];
+    
+    // 设为地图中心
+    [self setMapViewRegionWith:mapPoi.pt];
+    
+    if (!tipsView)
+    {
+        // 创建tips
+        tipsView = [[NavigationTipsView alloc]initWithMapPoi:mapPoi];
+        [self.view addSubview:tipsView];
+        
+    }
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        tipsView.frame = kFrame(5, kScreenHeight-145, kScreenWidth-45, 100);
+    }];// 出现动画
+    tipsView.mapP = mapPoi;
+    tipsView.title.text = mapPoi.text;
+    
+}
+
+// 点击地图空白处时调用
+- (void)mapView:(BMKMapView *)mapView onClickedMapBlank:(CLLocationCoordinate2D)coordinate
+{
+    [mapV removeAnnotations:mapV.annotations];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        tipsView.frame = kFrame(-kScreenWidth, kScreenHeight-145, kScreenWidth-45, 100);
+    }];
+    
+    
+}
+
+// 定义大头针
+- (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation
+{
+    
+    NSString *AnnotationViewID = @"tips";
+    
+    tipsAnnotation = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+    
+    // 设置颜色
+    tipsAnnotation.pinColor = BMKPinAnnotationColorPurple;
+    // 从天上掉下效果
+//    tipsAnnotation.animatesDrop = YES;
+    // 设置可拖拽
+//    ((BMKPinAnnotationView*)newAnnotation).draggable = YES;
+    //设置大头针图标
+    tipsAnnotation.image = [UIImage imageNamed:@"icon_openmap_focuse_mark"];
+    /*
+    UIView *popView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 60)];
+    //设置弹出气泡图片
+    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"game_detail_header_bg"]];
+    image.frame = CGRectMake(0, 0, 100, 60);
+    [popView addSubview:image];
+    
+    //自定义显示的内容
+    UILabel *driverName = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, 100, 20)];
+    driverName.text = @"张前海老家";
+    driverName.backgroundColor = [UIColor clearColor];
+    driverName.font = [UIFont systemFontOfSize:14];
+    driverName.textColor = [UIColor blackColor];
+    driverName.textAlignment = NSTextAlignmentCenter;
+    [popView addSubview:driverName];
+    
+    BMKActionPaopaoView *pView = [[BMKActionPaopaoView alloc]initWithCustomView:popView];
+    pView.frame = CGRectMake(0, 0, 100, 60);
+    tipsAnnotation.paopaoView = nil;
+    tipsAnnotation.paopaoView = pView;
+    */
+    return tipsAnnotation;
+    
+}
+
+- (void)updateLocationViewWithParam:(BMKLocationViewDisplayParam*)locationViewDisplayParam
+{
+
 }
 
 #pragma mark - LocationService Delegate
@@ -577,43 +678,20 @@
 // 处理方向变更信息
 - (void)didUpdateUserHeading:(BMKUserLocation *)userLocation
 {
-    NSLog(@"------");
+    
 }
 
 // 处理位置坐标更新
 - (void)didUpdateUserLocation:(BMKUserLocation *)userLocation
 {
-//    NSLog(@"-+----");
+
     currentLocation = userLocation;
     if (!mapV.showsUserLocation)
     {
-        [self setMapViewRegion];
+        [self setMapViewRegionWith:userLocation.location.coordinate];
     }
 }
 
-// 设定地图中心
-- (void)setMapViewRegion
-{
-    NSLog(@"----------");
-    // 显示定位图层
-    mapV.showsUserLocation = YES;
-    [mapV updateLocationData:currentLocation];
-    BMKCoordinateRegion region = {currentLocation.location.coordinate};
-    [mapV setRegion:region];
-   
-    /*
-    
-    [keyWord requestDataWith:@"xiaochi" currentLocation:currentLocation block:^(BMKPoiResult *poiResultList) {
-        //在此处理正常结果
-        for (BMKPoiInfo *info in poiResultList.poiInfoList)
-        {
-            NSLog(@"name = %@ \n address = %@",info.name,info.address);
-            
-        }
-    }];*/
-    
-    
-}
 
 - (void)didReceiveMemoryWarning
 {

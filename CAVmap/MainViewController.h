@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "KeyWordSearchModel.h"
+#import "NavigationTipsView.h"
 
 @interface MainViewController : BaseViewController<BMKGeneralDelegate,BMKMapViewDelegate,BMKLocationServiceDelegate>
 {
@@ -16,6 +17,8 @@
     UIButton *locationBtn; // 定位按钮
     UIView *menuView; // 菜单视图
     UIButton *tabBarBtn; // tabBar动画按钮
+    NavigationTipsView *tipsView; // 提示框
+    BMKPinAnnotationView *tipsAnnotation; // 大头针view
 }
 
 @property (retain, nonatomic) UIView *searchBarView;  // 搜

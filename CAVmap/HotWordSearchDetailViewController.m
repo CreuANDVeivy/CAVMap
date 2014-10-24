@@ -42,9 +42,9 @@
     // 初始化tableView
     [self initSearchDetialTableView];
     infoArr = [[NSMutableArray alloc]init];
-    [[KeyWordSearchModel keyWordModel]requestDataWithUrl:@"v1/business/find_businesses" params:@"category=酒吧&latitude=23.135927&longitude=113.256316&sort=1&limit=10&offset_type=1&out_offset_type=1&platform=2" reponse:^(id result) {
+    [[KeyWordSearchModel keyWordModel]requestDataWithUrl:@"v1/business/find_businesses" params:@"category=酒店&latitude=23.135927&longitude=113.256316&sort=6&limit=20&offset_type=1&out_offset_type=1&platform=2" reponse:^(id result) {
         
-//        NSLog(@"===== %@",result);
+        NSLog(@"===== %@",result);
 
         NSArray *arr = [(NSDictionary *)result objectForKey:@"businesses"];
         for (NSDictionary *dict in arr)
@@ -183,9 +183,22 @@
         }
     }
     cell.titleLabel_Dinner.text = info.name;
+    [cell.imageView_Dinner sd_setImageWithURL:[NSURL URLWithString:info.photo_url] placeholderImage:nil];
+    [cell.comment_Dinner setImage:[UIImage imageNamed:@"POIRatingView_Star_Foreground@2x"]];
+
+    cell.priceLabel_Dinner.text = [NSString stringWithFormat:@"￥%@",info.price];
     
+    NSString *store ;
+    for (NSString *str in info.storeName)
+    {
+       store = str;
+        break;
+    }
+    cell.storeType_Dinner.text = store;
     
+    cell.address_Dinner.text = info.address;
     
+    cell.distanceLabel_Dinner.text = [NSString stringWithFormat:@"%@ m",info.distance];
     return cell;
 }
 

@@ -44,14 +44,15 @@
     titleLabel_Dinner.font = [UIFont systemFontOfSize:12];
     [view addSubview:titleLabel_Dinner];
     // 星评
-    comment_Dinner = [[UIImageView alloc] initWithFrame:kFrame(90, 30 + 10, (kScreenWidth - 70 - 20) - 80, 15)];
+    comment_Dinner = [[UIImageView alloc] initWithFrame:kFrame(90, 30 + 10,60, 10)];
     comment_Dinner.image = [UIImage imageNamed:@"indoor_loc_suc.png"];
     [view addSubview:comment_Dinner];
     
     // 价格
-    priceLabel_Dinner = [[UILabel alloc] initWithFrame:kFrame(kScreenWidth - 80 - 10, 30 + 10, 80, 15)];
+    priceLabel_Dinner = [[UILabel alloc] initWithFrame:kFrame(300 - 80 - 10, 30 + 10, 80, 15)];
     priceLabel_Dinner.text = @"￥54";
-    priceLabel_Dinner.textAlignment = NSTextAlignmentCenter;
+    priceLabel_Dinner.textAlignment = NSTextAlignmentRight;
+    priceLabel_Dinner.textColor = [UIColor orangeColor];
     priceLabel_Dinner.font = [UIFont systemFontOfSize:10];
     [view addSubview:priceLabel_Dinner];
     
@@ -63,16 +64,16 @@
     [view addSubview:storeType_Dinner];
     
     // 地址
-    address_Dinner = [[UILabel alloc] initWithFrame:kFrame(90 + (kScreenWidth - 90 - 20 - 80)/2 , 50 + 15, (kScreenWidth - 70 - 20) - 80/2, 15)];
+    address_Dinner = [[UILabel alloc] initWithFrame:kFrame(90 + (kScreenWidth - 90 - 20 - 80)/2 , 50 + 15, 100, 15)];
     address_Dinner .text = @"火车站";
     address_Dinner.textAlignment = NSTextAlignmentLeft;
     address_Dinner.font = [UIFont systemFontOfSize:10];
     [view addSubview:address_Dinner];
     
     // 距离
-    distanceLabel_Dinner = [[UILabel alloc] initWithFrame:kFrame(kScreenWidth - 10 - 80, 45 + 15, 80, 15)];
+    distanceLabel_Dinner = [[UILabel alloc] initWithFrame:kFrame(300 - 10 - 80, 65,80, 15)];
     distanceLabel_Dinner.text = @"203 m";
-    distanceLabel_Dinner.textAlignment = NSTextAlignmentCenter;
+    distanceLabel_Dinner.textAlignment = NSTextAlignmentRight;
     distanceLabel_Dinner.font = [UIFont systemFontOfSize:8];
     [view addSubview:distanceLabel_Dinner];
     
