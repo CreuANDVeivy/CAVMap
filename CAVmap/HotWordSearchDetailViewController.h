@@ -8,6 +8,11 @@
 
 #import "BaseViewController.h"
 #import "SelectView.h"
+#import "UIView+CustomActivity.h"
+#import "MJRefresh/MJRefresh.h"
+//#import "BMKNavigation.h"
+
+
 
 @interface HotWordSearchDetailViewController : BaseViewController <UITableViewDataSource,UITableViewDelegate>
 
@@ -18,6 +23,5 @@
 
 
 
-- (UIView *)mySelectViewWithTitleArray:(NSArray *)titleName;
 
 @end

@@ -46,7 +46,7 @@
     */
     
     
-    NSLog(@"%d",arr.count);
+    NSLog(@"%lu",(unsigned long)arr.count);
     
     
 }

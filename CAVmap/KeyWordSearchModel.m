@@ -12,7 +12,7 @@
 @implementation KeyWordSearchModel
 
 
-- (void)requestDataWith:(NSString *)keyWord currentLocation:(BMKUserLocation*)location block:(receiveDataBlock)block
+- (void)requestDataWith:(NSString *)keyWord currentLocation:(CLLocationCoordinate2D)location block:(receiveDataBlock)block
 {
     // 初始化检索对象
     BMKPoiSearch *searcher = [[BMKPoiSearch alloc]init];
@@ -21,7 +21,7 @@
     BMKNearbySearchOption *option = [[BMKNearbySearchOption alloc]init];
     option.pageIndex = 1;
     option.pageCapacity = 10;
-    option.location = location.location.coordinate;
+    option.location = location;
     option.keyword = keyWord;
     BOOL flag = [searcher poiSearchNearBy:option];
     //    [option release];

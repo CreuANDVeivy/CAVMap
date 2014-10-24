@@ -19,7 +19,7 @@ typedef void(^receiveDataBlock)(id);
 }
 
 // 发送周边检索请求
-- (void)requestDataWith:(NSString*)keyWord currentLocation:(BMKUserLocation*)location block:(receiveDataBlock)block;
+- (void)requestDataWith:(NSString*)keyWord currentLocation:(CLLocationCoordinate2D)location block:(receiveDataBlock)block;
 // 点评检索
 - (void)requestDataWith:(NSString*)url params:(NSString*)params block:(receiveDataBlock)block errorBlock:(receiveDataBlock)errorblock;
 @end
