@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "NearByViewController.h"
+#import "DrivingNavgationViewController.h"
 
 @interface MainViewController ()
 {
@@ -324,7 +325,7 @@
             
         case 113:
         {
-            
+            [self.navigationController pushViewController:[DrivingNavgationViewController new] animated:YES];
         }
             break;
             

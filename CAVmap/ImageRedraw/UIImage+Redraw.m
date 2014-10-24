@@ -31,4 +31,16 @@
     return button;
 }
 
++(UIButton *)buttonWithType:(UIButtonType)buttonType frame:(CGRect)frame image:(UIImage *)image title:(NSString *)title target:(id)target andAction:(SEL)action
+{
+    UIButton*button=[UIButton buttonWithType:buttonType];
+    button.frame=frame;
+    [button setImage:image forState:UIControlStateNormal];
+    [button setTitle:title forState:UIControlStateNormal];
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    return button;
+}
+
+
 @end

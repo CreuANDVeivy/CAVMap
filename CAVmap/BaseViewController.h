@@ -20,6 +20,12 @@
 
 // 添加右边的地图按钮
 - (void)addRightMapButton;
+// 切换到地图视图的方法
+- (void)transformToMapView:(UIButton *)sender;
 
+// 添加搜索按钮
+- (void)addSearchButton;
+// 点击搜索时的方法
+- (void)searchButtonClicksAction:(UIButton *)sender;
 
 @end

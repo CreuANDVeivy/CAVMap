@@ -53,6 +53,7 @@
     mainCtrl = [[MainViewController alloc] init];
     UINavigationController *nav_mainCtrl = [[UINavigationController alloc] initWithRootViewController:mainCtrl];
     
+        
     self.window.rootViewController = nav_mainCtrl;
     
     return YES;

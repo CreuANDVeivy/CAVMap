@@ -33,6 +33,9 @@
     #import <CoreData/CoreData.h>
     // 引入第三方库头文件
     #import "BMapKit.h"
+    #import "BNCoreServices.h"
+    #import "BNaviSoundManager.h"
+
     #import "DPAPI.h"
     #import "AMBlurView.h"
     #import "UIImageView+WebCache.h"
@@ -52,6 +55,7 @@
     // 引入类目的头文件
     #import "UIImage+Redraw.h"
     #import "UIAlertView+TipsUser.h"
+    #import "UIImageView+SeparateLine.h" 
 
 
 #endif
