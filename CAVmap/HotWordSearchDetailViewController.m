@@ -42,10 +42,12 @@
     // 初始化tableView
     [self initSearchDetialTableView];
     infoArr = [[NSMutableArray alloc]init];
+    
+    
     [[KeyWordSearchModel keyWordModel]requestDataWithUrl:@"v1/business/find_businesses" params:@"category=酒店&latitude=23.135927&longitude=113.256316&sort=6&limit=20&offset_type=1&out_offset_type=1&platform=2" reponse:^(id result) {
         
         NSLog(@"===== %@",result);
-
+        
         NSArray *arr = [(NSDictionary *)result objectForKey:@"businesses"];
         for (NSDictionary *dict in arr)
         {
@@ -54,6 +56,9 @@
         }
         [searchDetialTableView reloadData];
     }];
+    
+    
+    
     
 }
 
@@ -67,9 +72,31 @@
     searchDetialTableView.delegate = self;
     searchDetialTableView.dataSource = self;
     
+    [searchDetialTableView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    [searchDetialTableView addFooterWithTarget:self action:@selector(footerRereshing)];
+    [searchDetialTableView headerBeginRefreshing];
+
+    
+    
+    
     searchDetialTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self.view addSubview:searchDetialTableView];
+}
+#pragma mark 开始进入刷新状态
+- (void)headerRereshing
+{
+    // 刷新表格
+    [self.searchDetialTableView reloadData];
+    // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+    [self.searchDetialTableView headerEndRefreshing];
+}
+
+- (void)footerRereshing
+{
+    [self.searchDetialTableView reloadData];
+
+    [self.searchDetialTableView footerEndRefreshing];
 }
 
 #pragma mark - SelectViewInit
@@ -100,7 +127,7 @@
         [btn addSubview:imageView];
         
         UIImageView *spert = [[UIImageView alloc] initWithFrame:kFrame(i * 100 - 1, 7.5, 1, 15)];
-        spert.image = [UIImage imageNamed:@"listitem_bg_down.9.png"];
+        spert.image = [UIImage imageNamed:@"Aboutpage_SeparatorLine_Vertical@2x"];
         
         [selectView addSubview:spert];
         

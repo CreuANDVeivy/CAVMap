@@ -29,4 +29,14 @@
     return activityView;
 }
 
++ (void)setLayerWithView:(UIView *)view
+{
+    view.backgroundColor = [UIColor colorWithWhite:1 alpha:0.98];
+    view.layer.borderWidth = 0.5;
+    view.layer.borderColor = [UIColor colorWithWhite:0.8 alpha:0.4].CGColor;
+    view.layer.cornerRadius = 2;
+    view.layer.masksToBounds = NO;
+}
+
+
 @end

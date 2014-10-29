@@ -11,12 +11,13 @@
 // 接收数据
 typedef void(^receiveDataBlock)(id);
 
-@interface KeyWordSearchModel : NSObject <BMKPoiSearchDelegate>
+@interface KeyWordSearchModel : NSObject <BMKPoiSearchDelegate,BMKRouteSearchDelegate>
 {
-    receiveDataBlock currentBlock;
-    receiveDataBlock baiduBlock;
-    receiveDataBlock detailBlock;
-    
+    receiveDataBlock currentBlock;  // 点评块
+    receiveDataBlock baiduBlock;  // 兴趣点检索块
+    receiveDataBlock detailBlock;  // 详情块
+    receiveDataBlock routeSearchBlock;  // 路径检索块
+    BMKRouteSearch *_searcher;  // 路径检索
 }
 
 // 发送周边检索请求
@@ -27,6 +28,9 @@ typedef void(^receiveDataBlock)(id);
 
 // 点评检索
 - (void)requestDataWithUrl:(NSString *)url params:(NSString *)params reponse:(receiveDataBlock)block;
+
+// 路径检索
+-(void)requearRouteSearchWithStartPoint:(BMKPlanNode *)startNode endPoint:(BMKPlanNode *)endNode city:(NSString *)city andBlock:(receiveDataBlock)block;
 
 //单例
 + (KeyWordSearchModel *)keyWordModel;

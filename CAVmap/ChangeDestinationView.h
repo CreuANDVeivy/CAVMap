@@ -13,9 +13,12 @@
 {
     CGRect upRect, downRect;
     CGRect upPoi, downPoi;
+    BOOL isMylocation,isSelectLocation;
+    CLLocationCoordinate2D one, two;
 }
 @property (strong, nonatomic) UIViewController *viewController;
-@property (assign, nonatomic) CLLocationCoordinate2D myLocation;
-@property (assign, nonatomic) CLLocationCoordinate2D selectPoint;
+@property (assign, nonatomic) CLLocationCoordinate2D origin;
+@property (assign, nonatomic) CLLocationCoordinate2D endPoint;
+@property (nonatomic) NSString *city;
 
 @end

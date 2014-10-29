@@ -11,5 +11,8 @@
 #import "ChangeDestinationView.h"
 
 @interface RouteViewController : BaseViewController
+{
+    ChangeDestinationView *change;
+}
 
 @end

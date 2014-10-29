@@ -7,9 +7,19 @@
 //
 
 #import "BaseViewController.h"
+#import "MapSelectPointViewController.h"
 
-@interface RouteSearchViewController : BaseViewController
+typedef void(^addressBlock)(BMKReverseGeoCodeResult *result);
 
-@property (strong, nonatomic) UITextField *textfiel;
+@interface RouteSearchViewController : BaseViewController<UITextFieldDelegate,BMKGeoCodeSearchDelegate>
+{
+    addressBlock block;
+}
+
+@property (strong, nonatomic) NSString *selectPointText;  // 提示文本
+@property (assign, nonatomic) CLLocationCoordinate2D selectLocation;
+@property (strong, nonatomic) BaseTextField *textfield;
+
+- (void)realizeBlock:(addressBlock)sender;
 
 @end

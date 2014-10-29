@@ -11,6 +11,8 @@
 @implementation HomeAndCompenyView
 
 @synthesize home,compeny;
+@synthesize homeLocation,compenyLocation;
+@synthesize currenViewController;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -39,12 +41,9 @@
     if (self)
     {
         self.backgroundColor = [UIColor colorWithWhite:1 alpha:0.98];
-        self.frame = kFrame(0, 0, kScreenWidth-10, 80);
+        self.frame = kFrame(0, 0, kScreenWidth-20, 80);
         
-        self.layer.borderWidth = 0.5;
-        self.layer.borderColor = [UIColor colorWithWhite:0.8 alpha:0.4].CGColor;
-        self.layer.cornerRadius = 2;
-        self.layer.masksToBounds = NO;
+        [UIView setLayerWithView:self];
         
         NSArray *icon = @[[UIImage imageNamed:@"icon_home@2x"],[UIImage imageNamed:@"icon_company@2x"]];
         NSArray *text = @[@"回家",@"去公司"];
@@ -59,7 +58,7 @@
         for (int i = 0 ; i < icon.count; i++)
         {
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom
-                                               frame:kFrame(0, i*40, kScreenWidth-10, 40)
+                                               frame:kFrame(0, i*40, kScreenWidth-20, 40)
                                                image:[UIImage imageNamed:@"game_detail_header_bg"]
                                                title:nil
                                               target:self
@@ -76,7 +75,7 @@
             UILabel *label = [[UILabel alloc]initWithFrame:kFrame(40, 10, 40+i*20, 20)];
             label.text = text[i];
             label.userInteractionEnabled = NO;
-            label.font = [UIFont systemFontOfSize:16];
+            label.font = [UIFont systemFontOfSize:14];
             [btn addSubview:label];
             
             if (i == 0)
@@ -103,17 +102,26 @@
     return self;
 }
 
+- (void)isHomeOrCompany
+{
+    
+}
+
 - (void)homeOrCompanyAction:(UIButton *)sender
 {
+    
+    
     if (sender.tag == 101)
     {
-        
         
     }
     else
     {
         
     }
+    RouteSearchViewController *routeSearch = [[RouteSearchViewController alloc]init];
+    routeSearch.selectPointText = @"输入名称或地址";
+    [currenViewController.navigationController pushViewController:routeSearch animated:YES];
     
 }
 

@@ -18,4 +18,16 @@
     
     return separaLine;
 }
+
++ (UIImageView *)addYSeparateLine:(UIImage *)image Frame:(CGRect)frame
+{
+    if (!image)
+    {
+        image = [UIImage imageNamed:@"Aboutpage_SeparatorLine_Vertical@2x"];
+    }
+    UIImageView *YSeparateLine = [[UIImageView alloc] initWithImage:image highlightedImage:image];
+    YSeparateLine.frame = frame;
+    
+    return YSeparateLine;
+}
 @end

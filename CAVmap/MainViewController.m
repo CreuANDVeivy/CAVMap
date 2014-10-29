@@ -10,7 +10,9 @@
 #import "NearByViewController.h"
 #import "RouteViewController.h"
 #import "AppDelegate.h"
-#import <CoreLocation/CoreLocation.h>
+#import "DrivingNavgationViewController.h"
+#import "SearchViewController.h"
+
 
 @interface MainViewController ()
 {
@@ -18,6 +20,7 @@
     BOOL isTouchLocationBtn;
     NSArray *typeImageArr;
     UIImage *follow, *compass;
+    BOOL isRealTimeLocation;
 }
 @end
 
@@ -28,6 +31,7 @@
 @synthesize currentLocation;
 @synthesize tabBarView;
 @synthesize navBarView;
+@synthesize cityName;
 
 + (MainViewController *)onlyOneMainViewController
 {
@@ -73,8 +77,12 @@
     // 初始化定位服务
     locationService = [[BMKLocationService alloc]init];
     [locationService startUserLocationService];  // 开启定位服务
+    isRealTimeLocation = NO;  // 实时定位
     
-    
+    if (![[kUserDictionary objectForKey:@"isDidInsert"]isEqualToString:@"YES"])
+    {
+        [self requestAddSaveCityAndDistrictsName];
+    }
     
 }
 
@@ -90,7 +98,7 @@
 {
     [super viewWillDisappear:animated];
     mapV.delegate = nil;  // 视图将要消失 地图代理置nil
-    locationService.delegate = self;
+    locationService.delegate = nil;
 }
 
 #pragma mark - 初始化地图视图
@@ -102,7 +110,7 @@
     
     // 地图比例尺
     mapV.showMapScaleBar = YES;
-    mapV.mapScaleBarPosition = CGPointMake(kScreenWidth-200,kScreenHeight-80);
+    mapV.mapScaleBarPosition = CGPointMake(10,kScreenHeight-70);
     
     [mapV setCompassPosition:CGPointMake(10,70)];  // 指南针位置
     mapV.mapType = BMKMapTypeStandard; // 地图类型 ： 标准地图
@@ -110,7 +118,7 @@
     selectType = 2;
 
     [self.view addSubview:mapV];
-    
+
 }
 
 #pragma mark - 初始化菜单视图
@@ -138,6 +146,7 @@
 
     NSArray *textArr = @[@"卫星图",@"2D平面图",@"3D俯视图",@"收藏点",@"热力图",@"室内图"];
     
+    // 定义label样式块
     void(^labelBlock)(UILabel *,int) = ^(UILabel *label,int a){
         label.text = textArr[a];
         label.textAlignment = a > 2 ? NSTextAlignmentLeft : NSTextAlignmentCenter;
@@ -168,10 +177,10 @@
         imageV.image = imageArr[i];
         [menuView addSubview:imageV];
         
-        UIImageView *separaLine = [[UIImageView alloc]initWithFrame:kFrame(0, 90+40*i, kScreenWidth-10, 1)];
-        separaLine.image = [UIImage imageNamed:@"sendtocar_dotted_line"];
-        [menuView addSubview:separaLine];
+        // 分隔线
+        [menuView addSubview:[UIImageView addSeparateLineWithFrame:kFrame(0, 90+40*i, kScreenWidth-10, 1)]];
         
+        // 选择控件
         UISwitch *switchView = [[UISwitch alloc]initWithFrame:kFrame(kScreenWidth-80, 95+40*i-2, 20, 20)];
         [menuView addSubview:switchView];
         
@@ -286,12 +295,17 @@
     [navImageView addSubview:searchBtn];
     
     UILabel *searchLabel = [[UILabel alloc]initWithFrame:kFrame(30, 5, 200, 20)];
-    searchLabel.text = @"搜索";
+    searchLabel.text = @"搜地点、查公交、找路线";
     searchLabel.textColor = [UIColor colorWithWhite:0.1 alpha:0.5];
     searchLabel.font = [UIFont systemFontOfSize:15];
     [navImageView addSubview:searchLabel];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(navSearchViewTapAction:)];
+    [navImageView addGestureRecognizer:tap];
+    
     [self.view addSubview:navImageView];
+    
+    
     
     
     
@@ -301,27 +315,15 @@
 // 放大缩小地图
 - (void)zoomTransFormAction:(UIButton*)sender
 {
-    switch (sender.tag)
+    if (sender.tag == 101)
     {
-        case 101:  // 放大按钮
-        {
-            
-            if (mapV.zoomLevel != 19)
-            {
-                mapV.zoomLevel++;
-            }
-            
-        }
-            break;
-            
-        default:  // 缩小按钮
-        {
-            if (mapV.zoomLevel != 3)
-            {
-                mapV.zoomLevel--;
-            }
-        }
-            break;
+        if (mapV.zoomLevel != 19)
+            mapV.zoomLevel++;
+    }
+    else
+    {
+        if (mapV.zoomLevel != 3)
+            mapV.zoomLevel--;
     }
 }
 
@@ -329,17 +331,19 @@
 - (void)loactionBtnAction:(UIButton*)sender
 {
     isTouchLocationBtn = YES;
-    [self setMapViewRegionWith:currentLocation.location.coordinate];
+    [locationService startUserLocationService];
 
     // 转换定位方式
     if ([[sender imageForState:UIControlStateNormal]isEqual:compass] || [[sender imageForState:UIControlStateNormal]isEqual:[UIImage imageNamed:@"navi_idle_gps_unlocked"]])
     {
+        isRealTimeLocation = YES;
         mapV.userTrackingMode = BMKUserTrackingModeNone;
         mapV.userTrackingMode = BMKUserTrackingModeFollow;
         [sender setImage:follow forState:UIControlStateNormal];
     }
     else if ([[sender imageForState:UIControlStateNormal]isEqual:follow])
     {
+        isRealTimeLocation = YES;
         mapV.userTrackingMode = BMKUserTrackingModeFollowWithHeading;
         [sender setImage:compass forState:UIControlStateNormal];
         
@@ -368,7 +372,7 @@
             
         case 113:
         {
-            
+            [self.navigationController pushViewController:[DrivingNavgationViewController new] animated:YES];
         }
             break;
             
@@ -416,7 +420,7 @@
         }
             break;
             
-        case 122:
+        case 122:  // 路况按钮方法
         {
             if ([sender imageForState:UIControlStateNormal]==[UIImage imageNamed:@"main_icon_roadcondition_off"])
             {
@@ -445,7 +449,8 @@
             }
         }
             break;
-        case 123:
+            
+        case 123:  // 全景按钮方法
         {
             if ([sender imageForState:UIControlStateNormal] == [UIImage imageNamed:@"main_map_icon_streetscape_normal"])
             {
@@ -514,19 +519,24 @@
     
 }
 
+- (void)navSearchViewTapAction:(id)sender
+{
+    [self.navigationController pushViewController:[SearchViewController new] animated:YES];
+    
+}
+
 #pragma mark - funcation
 // 判断地图类型
 - (void)ifMapTypeAction:(NSInteger)tag
 {
-    switch (selectType)
+    
+    switch (selectType)  // 当前地图类型
     {
         case 1:
         {
             mapV.mapType = mapV.mapType == BMKMapTypeTrafficAndSatellite ? BMKMapTypeTrafficOn : BMKMapTypeStandard;
             if (tag == 3)
-            {
                  mapV.overlooking = -45;
-            }
             
         }
             break;
@@ -534,13 +544,9 @@
         case 2:
         {
             if (tag == 1)
-            {
                 mapV.mapType = mapV.mapType == BMKMapTypeStandard ? BMKMapTypeSatellite : BMKMapTypeTrafficAndSatellite;
-            }
             else
-            {
                 mapV.overlooking = -45;
-            }
             
         }
             break;
@@ -548,9 +554,7 @@
         case 3:
         {
             if (tag == 1)
-            {
                 mapV.mapType = mapV.mapType == BMKMapTypeStandard ? BMKMapTypeSatellite : BMKMapTypeTrafficAndSatellite;
-            }
             mapV.overlooking = 0;
         }
             break;
@@ -567,10 +571,80 @@
     // 显示定位图层
     mapV.showsUserLocation = YES;
     [mapV updateLocationData:currentLocation];
-    
+//    BMKCoordinateSpan span = {0.002,0.002};
     BMKCoordinateRegion region = {cordinate};
     [mapV setRegion:region animated:YES];
-    
+
+}
+
+// 不实时定位
+- (void)noRealTimeLocation
+{
+    isRealTimeLocation = NO;
+    [locationService stopUserLocationService];
+    mapV.userTrackingMode = BMKUserTrackingModeNone;
+    mapV.showsUserLocation = YES;
+    [locationBtn setImage:[UIImage imageNamed:@"navi_idle_gps_unlocked"] forState:UIControlStateNormal];
+}
+
+
+- (void)requestAddSaveCityAndDistrictsName
+{
+    NSMutableDictionary *city_districts = [[NSMutableDictionary alloc] initWithCapacity:100];
+    // 获取城市区信息
+    [[KeyWordSearchModel keyWordModel]requestDataWithUrl:@"v1/metadata/get_regions_with_businesses" params:nil reponse:^(id result)
+     {
+         //         NSLog(@"%@",result);
+         
+         NSArray *cityArray = [result objectForKey:@"cities"];
+         //         NSLog(@"---%d",cityArray.count);
+         NSMutableArray *city = [[NSMutableArray alloc] init];  // 城市名
+         NSMutableArray *districtsNames = [[NSMutableArray alloc] init]; // 区名
+         for (int i = 0; i < cityArray.count; i ++)
+         {
+             [districtsNames removeAllObjects];
+             [city addObject:[cityArray[i] objectForKey:@"city_name"]];
+             //             NSLog(@"cityName=%@",cityName);
+             NSString *district_name = [[NSString alloc] init];   // 区名
+             NSArray *arr = [cityArray[i] objectForKey:@"districts"];
+             for (int j = 0; j < [[cityArray[i] objectForKey:@"districts"] count]; j ++)
+             {
+                 district_name = [arr[j] objectForKey:@"district_name"];
+                 //                 NSLog(@"district_name=%@",district_name);
+                 [districtsNames addObject:district_name];
+             }
+             [city_districts setValue:districtsNames forKey:city[i]];
+         }
+         //         NSLog(@"===============%@",city_districts);
+         [FMDatabase useDatabase:kSqlitePath block:^(FMDatabase *database)
+          {
+              
+              //
+              BOOL createResult = [database executeUpdate:@"create table city_districts(city_dis blob)"];
+              if (createResult)
+              {
+                  //生成归档器
+                  NSMutableData *invitationData = [[NSMutableData alloc]init];
+                  
+                  NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc]initForWritingWithMutableData:invitationData];
+                  //对 对象进行归档
+                  [archiver encodeObject:city_districts forKey:@"city_dis"];
+                  
+                  //完成归档编码
+                  [archiver finishEncoding];
+                  
+                  BOOL insertResult = [database executeUpdate:@"insert into city_districts values(?)",invitationData];
+                  
+                  if (insertResult)
+                  {
+                      NSLog(@"插入成功");
+                      [kUserDictionary setObject:@"YES" forKey:@"isDidInsert"];
+                  }
+                  
+              }
+              
+          }];
+     }];
 }
 
 #pragma mark - MapView Delegate
@@ -580,8 +654,7 @@
 {
     if (!animated)
     {
-        mapV.userTrackingMode = BMKUserTrackingModeNone;
-        [locationBtn setImage:[UIImage imageNamed:@"navi_idle_gps_unlocked"] forState:UIControlStateNormal];
+        [self noRealTimeLocation];
     }
 }
 
@@ -624,7 +697,7 @@
         tipsView.frame = kFrame(-kScreenWidth, kScreenHeight-145, kScreenWidth-45, 100);
     }];
     
-    
+    [self noRealTimeLocation];
 }
 
 // 定义大头针
@@ -684,11 +757,54 @@
 // 处理位置坐标更新
 - (void)didUpdateUserLocation:(BMKUserLocation *)userLocation
 {
-
     currentLocation = userLocation;
-    if (!mapV.showsUserLocation)
+    
+    // 对位置对象进行编码后 存入plist文件
+    NSNumber *latNum = [NSNumber numberWithDouble:userLocation.location.coordinate.latitude];
+    NSNumber *longNum = [NSNumber numberWithDouble:userLocation.location.coordinate.longitude];
+    
+    [kUserDictionary setObject:latNum forKey:@"latitude"];
+    [kUserDictionary setObject:longNum forKey:@"longitude"];
+    
+    [self setMapViewRegionWith:userLocation.location.coordinate];
+    
+    //初始化地理编码类
+    //注意：必须初始化地理编码类
+    BMKGeoCodeSearch *_geoCodeSearch = [[BMKGeoCodeSearch alloc]init];
+    _geoCodeSearch.delegate = self;
+    //初始化逆地理编码类
+    BMKReverseGeoCodeOption *reverseGeoCodeOption= [[BMKReverseGeoCodeOption alloc] init];
+    //需要逆地理编码的坐标位置
+    reverseGeoCodeOption.reverseGeoPoint = currentLocation.location.coordinate;
+    [_geoCodeSearch reverseGeoCode:reverseGeoCodeOption];
+    
+    if (!isRealTimeLocation)
     {
-        [self setMapViewRegionWith:userLocation.location.coordinate];
+        NSLog(@"-----");
+        [locationService stopUserLocationService];
+    }
+    
+}
+
+- (void)didFailToLocateUserWithError:(NSError *)error
+{
+    NSLog(@"定位失败");
+//    [locationService stopUserLocationService];
+}
+#pragma mark - 地理编码
+- (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
+{
+//    NSLog(@"%d",);
+    cityName = result.addressDetail.city;
+    for (int i = 0;i < cityName.length; i++)
+    {
+        NSRange range = {i,1};
+        if ([[cityName substringWithRange:range]isEqualToString:@"市"])
+        {
+            NSRange range1 = {0,i};
+            cityName = [cityName substringWithRange:range1];
+            break;
+        }
     }
 }
 

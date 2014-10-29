@@ -65,8 +65,13 @@
 
 - (void)initView
 {
-    //
-    ChangeDestinationView *change = [[ChangeDestinationView alloc]initWithFrame:kFrame(0, 60, kScreenWidth, 80)];
+    // 搜索按钮
+    UIButton *searchBtn = [UIButton blueSystemButtonWithButtonType:UIButtonTypeRoundedRect title:@"搜索" frame:kFrame(kScreenWidth-45, 27.5, 40, 25)];
+    [searchBtn addTarget:self action:@selector(searchBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:searchBtn];
+    
+    // 起点终点
+    change = [[ChangeDestinationView alloc]initWithFrame:kFrame(0, 60, kScreenWidth, 80)];
     change.viewController = self;
     [self.view addSubview:change];
     
@@ -74,7 +79,8 @@
     
     // 回家或者去公司视图
     HomeAndCompenyView *homeView = [HomeAndCompenyView onlyHomeAndCompenyView];
-    homeView.frame = kFrame(5, 160, kScreenWidth-10, 80);
+    homeView.currenViewController = self;
+    homeView.frame = kFrame(10, 160, kScreenWidth-20, 80);
     [self.view addSubview:homeView];
 }
 
@@ -105,8 +111,6 @@
         btn.tag = 101+i;
         [self.view addSubview:btn];
     }
-    
-
 }
 
 #pragma mark - ButtonClicksAction
@@ -119,8 +123,52 @@
         [btn setImage:navBarImageArr[selectNavBtn-1] forState:UIControlStateNormal];
         selectNavBtn = sender.tag-100;
         [sender setImage:navBarImageArr[selectNavBtn+3-1] forState:UIControlStateNormal];
-        
     }
+    
+}
+
+- (void)searchBtnAction:(id)sender
+{
+    BMKPlanNode *start = [[BMKPlanNode alloc]init];
+    start.pt = change.origin;
+    BMKPlanNode *end = [[BMKPlanNode alloc]init];
+    end.pt = change.endPoint;
+    NSLog(@"%f --- %f   ||||||   %f --- %f      ||||||   %@",start.pt.latitude,start.pt.longitude,end.pt.latitude,end.pt.longitude,change.city);
+    [[KeyWordSearchModel keyWordModel] requearRouteSearchWithStartPoint:start endPoint:end city:change.city andBlock:^(id result)
+    {
+        
+        BMKTransitRouteResult *data = (BMKTransitRouteResult *)result;
+        for (BMKTransitRouteLine *routeline in data.routes)
+        {
+            NSLog(@"*---------------*%@",routeline.steps);
+            NSLog(@"%d ..  %@",routeline.distance,routeline.duration);
+            for (int i = 0; i < routeline.steps.count ; i++)
+            {
+                
+                if ([routeline.steps[i] isKindOfClass:[BMKWalkingStep class]])
+                {
+                    BMKWalkingStep *transit = routeline.steps[i];
+                    NSLog(@"换乘说明--： %@",transit.instruction);
+                    NSLog(@"换乘说明-entrace-： %@",transit.entraceInstruction);
+                    NSLog(@"换乘说明-exit-： %@",transit.exitInstruction);
+                    
+                }
+                else if ([routeline.steps[i] isKindOfClass:[BMKDrivingStep class]])
+                {
+                    
+                }
+                
+                if ([routeline.steps[i] isKindOfClass:[BMKTransitStep class]])
+                {
+                    BMKTransitStep *transit = routeline.steps[i];
+                    NSLog(@"换乘说明--： %@",transit.instruction);
+                    NSLog(@"公交名--： %@  站数%d",transit.vehicleInfo.uid ,transit.vehicleInfo.passStationNum);
+                }
+            }
+        }
+    }];
+    
+    
     
 }
 

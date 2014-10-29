@@ -97,10 +97,6 @@ NSArray *tintColorArray;
     [self.view addSubview:hotWordSearchTableView];  // 加载到视图
 }
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return nil;
-}
 
 #pragma mark -Custom Cell View
 - (UIView *)customCellView:(NSIndexPath *)indexPath
@@ -114,7 +110,7 @@ NSArray *tintColorArray;
     UIButton *totalButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     totalButton.frame = kFrame(0, 0, 100, 120);
     [totalButton addTarget:self action:@selector(cellButtonClicksAction:) forControlEvents:UIControlEventTouchUpInside];
-    totalButton.tag = 1010;
+    totalButton.tag = 1000 + indexPath.row * 10;
     [view addSubview:totalButton];
     // 背景图
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:kFrame(0, 40, 100, 80)];
@@ -151,7 +147,7 @@ NSArray *tintColorArray;
         {
             UIButton *btn = [[UIButton alloc] initWithFrame:kFrame(100 + j * 100, 40 * i, 100, 40)];
             [btn addTarget:self action:@selector(cellButtonClicksAction:) forControlEvents:UIControlEventTouchUpInside];
-            btn.tag = 1011 + i * 2 + j;
+            btn.tag = 1001 + i * 2 + j + indexPath.row * 10;
             btn.titleLabel.textColor = [UIColor redColor];
             btn.layer.borderWidth = 0.5;
             btn.layer.borderColor = [UIColor colorWithWhite:0.1 alpha:0.1].CGColor;
@@ -177,15 +173,20 @@ NSArray *tintColorArray;
 
 - (void)selectClicklAction:(BaseButton *)sender
 {
-    NSLog(@"%ld",(long)sender.tag);
+    //    NSLog(@"%ld",(long)sender.tag);
 }
 
 - (void)cellButtonClicksAction:(UIButton *)sender
 {
+    int section,_index;
+    
+    section = (sender.tag-1000)/10;
+    _index = (sender.tag-1000)%10;
+    
     HotWordSearchDetailViewController *detail = [[HotWordSearchDetailViewController alloc] init];
     
     [self.navigationController pushViewController:detail animated:YES];
-    NSLog(@"%ld",(long)sender.tag);
+    NSLog(@"%@",[hotWordTitleArray[section] objectAtIndex:_index]);
 }
 
 #pragma mark - TableView Delegate
@@ -261,13 +262,9 @@ NSArray *tintColorArray;
     }
     else
     {
-        //        static NSString *identifer = @"navgation";
-        //        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifer];
-        //        if (cell == nil)
-        //        {
         UITableViewCell *cell = [[UITableViewCell alloc] init];
         cell.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.2];
-        //        }
+        
         [cell.contentView addSubview:[self customCellView:indexPath]];  // 自定义cell
         hotWordSearchTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
@@ -276,6 +273,11 @@ NSArray *tintColorArray;
     return [UITableViewCell new];
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
 
 
 #pragma mark - Memory Manage

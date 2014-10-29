@@ -10,6 +10,10 @@
 
 @interface UIView (CustomActivity)
 
+// 加载中
 + (UIView *)creatCustomActivity;
+
+// 默认cell layer
++ (void)setLayerWithView:(UIView *)view;
 
 @end

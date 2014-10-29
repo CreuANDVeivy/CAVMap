@@ -10,7 +10,7 @@
 #import "KeyWordSearchModel.h"
 #import "NavigationTipsView.h"
 
-@interface MainViewController : BaseViewController<BMKGeneralDelegate,BMKMapViewDelegate,BMKLocationServiceDelegate>
+@interface MainViewController : BaseViewController<BMKGeneralDelegate,BMKMapViewDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate>
 {
     BMKMapManager *mapManager;  // 地图管理者
     BMKMapView *mapV;  // 地图视图
@@ -26,7 +26,8 @@
 @property (retain, nonatomic) AMBlurView *navBarView; // navBarView
 @property (retain, nonatomic) BMKLocationService *locationService;  // 定位服务
 @property (retain, nonatomic) BMKUserLocation *currentLocation;  // 当前位置
+@property (copy, nonatomic) NSString *cityName;  // 城市名字
 
-+ (MainViewController *)onlyOneMainViewController;
++ (MainViewController *)onlyOneMainViewController;  // 单例
 
 @end

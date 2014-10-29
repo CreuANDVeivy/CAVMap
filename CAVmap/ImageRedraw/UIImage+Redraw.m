@@ -63,4 +63,18 @@
     return navgationBtn;
 }
 
+//  蓝色按钮
++ (UIButton *)blueSystemButtonWithButtonType:(UIButtonType)type title:(NSString *)title frame:(CGRect)rect
+{
+    UIButton *btn = [UIButton buttonWithType:type];
+    btn.frame = rect;
+    [btn setTitle:title forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont systemFontOfSize:14];
+    btn.layer.borderColor = [UIColor colorWithRed:10/255.0 green:95/255.0 blue:254/255.0 alpha:1].CGColor;
+    btn.layer.borderWidth = 0.5;
+    btn.layer.cornerRadius = 3;
+    btn.layer.masksToBounds = NO;
+    return btn;
+}
+
 @end

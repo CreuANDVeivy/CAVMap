@@ -10,4 +10,10 @@
 
 @interface BaseTextField : UITextField
 
+@property (strong, nonatomic) UIButton *keyBoardBtn;
+
+- (void)addKeyboardBtn;
+
+- (void)keyboardBtnAction:(id)sender;
 @end
+

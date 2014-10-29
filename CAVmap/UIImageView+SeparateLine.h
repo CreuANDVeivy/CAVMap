@@ -11,5 +11,6 @@
 @interface UIImageView (SeparateLine)
 
 + (id)addSeparateLineWithFrame:(CGRect)frame;
-
+// 添加垂直的分隔线
++ (UIImageView *)addYSeparateLine:(UIImage *)image Frame:(CGRect)frame;
 @end

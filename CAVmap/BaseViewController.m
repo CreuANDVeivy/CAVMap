@@ -14,7 +14,7 @@
 
 @implementation BaseViewController
 
-@synthesize navView,backButton;
+@synthesize navView,backButton,searchButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -75,7 +75,27 @@
     
 }
 
-
+// 添加搜索按钮
+- (void)addSearchButton
+{
+    searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    searchButton.frame = kFrame(kScreenWidth - 50, 25, 40, 26);
+    [searchButton addTarget:self action:@selector(searchButtonClicksAction:) forControlEvents:UIControlEventTouchUpInside];  // 添加方法
+    searchButton.layer.borderWidth = 0.5;
+    searchButton.layer.borderColor = [UIColor colorWithRed:10/255.0 green:95/255.0 blue:254/255.0 alpha:1].CGColor;
+    // 设置圆角
+    searchButton.layer.cornerRadius = 3;
+    searchButton.layer.masksToBounds = NO;
+    [navView addSubview:searchButton];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:kFrame(0, 0, 40, 26)];
+    titleLabel.text = @"搜索";
+    titleLabel.font = [UIFont systemFontOfSize:14];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.adjustsFontSizeToFitWidth = YES;
+    titleLabel.textColor = [UIColor colorWithRed:10/255.0 green:95/255.0 blue:254/255.0 alpha:1];
+    [searchButton addSubview:titleLabel];
+}
 
 #pragma mark - 点击方法
 
@@ -84,6 +104,12 @@
 {
     // 去地图的方法
     NSLog(@"切换到地图视图");
+}
+
+// 点击搜索的方法
+- (void)searchButtonClicksAction:(UIButton *)sender
+{
+    NSLog(@"点击搜索的方法");
 }
 
 // 返回按钮事件

@@ -11,6 +11,9 @@
 
 @interface HomeAndCompenyView : UIView
 
+@property (strong, nonatomic) UIViewController *currenViewController;  // 当前viewController
+@property (assign, nonatomic) CLLocationCoordinate2D homeLocation;
+@property (assign, nonatomic) CLLocationCoordinate2D compenyLocation;
 @property (strong, nonatomic) UILabel *home;
 @property (strong, nonatomic) UILabel *compeny;
 

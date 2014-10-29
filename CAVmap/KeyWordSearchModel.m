@@ -59,6 +59,51 @@
     
 }
 
+#pragma mark - 百度路劲检索
+-(void)requearRouteSearchWithStartPoint:(BMKPlanNode *)startNode endPoint:(BMKPlanNode *)endNode city:(NSString *)city andBlock:(receiveDataBlock)block
+{
+    routeSearchBlock = block;
+    //初始化检索对象
+    _searcher = [[BMKRouteSearch alloc]init];
+    _searcher.delegate = self;
+    //发起检索
+    BMKTransitRoutePlanOption *transitRouteSearchOption = [[BMKTransitRoutePlanOption alloc]init];
+    transitRouteSearchOption.city= city;
+    transitRouteSearchOption.from = startNode;
+    transitRouteSearchOption.to = endNode;
+    BOOL flag = [_searcher transitSearch:transitRouteSearchOption];
+    
+    if(flag)
+    {
+        NSLog(@"bus检索发送成功");
+    }
+    else
+    {
+        NSLog(@"bus检索发送失败");
+    }
+}
+
+//实现Deleage处理回调结果
+-(void)onGetTransitRouteResult:(BMKRouteSearch*)searcher result:(BMKTransitRouteResult*)result errorCode:(BMKSearchErrorCode)error
+{
+    if (error == BMK_SEARCH_NO_ERROR)
+    {
+        //在此处理正常结果
+//        NSLog(@"%@",result);
+        
+        routeSearchBlock(result);
+    }
+    else if (error == BMK_SEARCH_AMBIGUOUS_ROURE_ADDR)
+    {
+        //当路线起终点有歧义时通，获取建议检索起终点
+        //result.routeAddrResult
+    }
+    else {
+        NSLog(@"抱歉，未找到结果");
+    }
+    _searcher.delegate = nil;
+}
+
 -(void)onGetPoiDetailResult:(BMKPoiSearch *)searcher result:(BMKPoiDetailResult *)poiDetailResult errorCode:(BMKSearchErrorCode)errorCode
 {
     if(errorCode == BMK_SEARCH_NO_ERROR)

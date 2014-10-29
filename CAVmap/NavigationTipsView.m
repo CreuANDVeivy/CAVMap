@@ -32,19 +32,17 @@
         
         self.frame = kFrame(-kScreenWidth, kScreenHeight-145, kScreenWidth-45, 100);
         
-        self.backgroundColor = [UIColor colorWithWhite:1 alpha:0.98];
         
         self.layer.shadowOffset = CGSizeMake(0, 3); //设置阴影的偏移量
         self.layer.shadowRadius = 5.0;  //设置阴影的半径
         self.layer.shadowColor = [UIColor blackColor].CGColor; //设置阴影的颜色为黑色
         self.layer.shadowOpacity = 0.2; //设置阴影的不透明度
         
-        self.layer.cornerRadius = 2;
-        self.layer.masksToBounds = NO;
+        [UIView setLayerWithView:self];
         
-        [self addSubview:[UIImageView addSeparateLineWithFrame:kFrame(0, 70, kScreenWidth-10, 1)]];
+        [self addSubview:[UIImageView addSeparateLineWithFrame:kFrame(0, 70, kScreenWidth-45, 1)]];
         
-        UIImageView *separa = [[UIImageView alloc]initWithFrame:kFrame((kScreenWidth-45)/2, 70, 1, 30)];
+        UIImageView *separa = [[UIImageView alloc]initWithFrame:kFrame((kScreenWidth-45)/2, 75, 1, 20)];
         separa.image = [UIImage imageNamed:@"Aboutpage_SeparatorLine_Vertical@2x"];
         [self addSubview:separa];
         
@@ -62,9 +60,6 @@
             btn.frame = kFrame((kScreenWidth-45)/2*i, 70, (kScreenWidth-45)/2, 30);
             [self addSubview:btn];
         }
-        
-        
-        
         
     }
     
